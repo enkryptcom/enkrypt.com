@@ -17,6 +17,38 @@
         </div>
       </div>
     </div>
+    <div class="main-fourth__nfts">
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic3.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic4.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic5.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic6.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic3.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic4.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic4.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic3.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic4.png" alt="" />
+      </div>
+      <div class="main-fourth__nfts-item">
+        <img src="../../../assets/pic/pic4.png" alt="" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,6 +60,7 @@
 .main-fourth {
   padding-top: 80px;
   padding-bottom: 80px;
+  position: relative;
 
   h2 {
     .heading2();
@@ -54,6 +87,30 @@
       drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.1))
       drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
     margin-bottom: 62px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__nfts {
+    position: absolute;
+    width: 100%;
+    left: -10.3%;
+    bottom: 77px;
+    white-space: nowrap;
+    text-align: center;
+
+    &-item {
+      margin: 0 0.83%;
+      width: 19%;
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 228px;
+
+      img {
+        width: 100%;
+        border-radius: 16px;
+      }
+    }
   }
 }
 </style>

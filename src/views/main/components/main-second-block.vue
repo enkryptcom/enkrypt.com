@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+    <img class="main-second__pic" src="../../../assets/pic/pic7.png" alt="" />
   </div>
 </template>
 
@@ -31,6 +32,7 @@ import PolkadotApp from "../../../icons/common/polkadot-app.vue";
     #c549ff 249.7deg,
     #704bff 360.59deg
   );
+  position: relative;
 
   h2 {
     .heading2();
@@ -50,6 +52,15 @@ import PolkadotApp from "../../../icons/common/polkadot-app.vue";
     letter-spacing: 0.02em;
     margin: 0;
     color: @white;
+  }
+
+  &__pic {
+    width: 47.6%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 57.3%;
+    max-width: 572px;
   }
 }
 </style>

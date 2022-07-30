@@ -73,6 +73,7 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
   padding-top: 80px;
   padding-bottom: 74px;
   background-size: cover;
+  position: relative;
   .sizing();
   .screen-retina({
     background-image: url("../../../assets/img/chains@2x.jpg");
