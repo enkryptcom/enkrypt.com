@@ -74,6 +74,58 @@ import OpenSource from "../../../icons/secure/open-source.vue";
   background: @secure;
   position: relative;
 
+  .screen-sm({
+    padding-bottom: 41px;
+  });
+
+  .screen-xs({
+    padding-bottom: 63px;
+  });
+
+  .col-8 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
+  .col-5 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    });
+
+    .screen-xs({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      .screen-xs({
+        left: 8%;
+        position: relative
+      });
+    }
+  }
+
+  .justify-content-center {
+    .screen-sm({
+      left: 8.3%;
+      position: relative
+    });
+
+    .screen-xs({
+      left: 0;
+    });
+  }
+
   h2 {
     .heading2();
     color: @white;
@@ -89,6 +141,10 @@ import OpenSource from "../../../icons/secure/open-source.vue";
     letter-spacing: 0.02em;
     color: @white;
     margin: 0 0 80px 0;
+
+    .screen-xs({
+      margin: 0 0 40px 0;
+    });
   }
 
   &__lock {
@@ -96,6 +152,29 @@ import OpenSource from "../../../icons/secure/open-source.vue";
     right: 0;
     top: 21.4%;
     width: 30%;
+
+    .screen-lg({
+      top: 14.7%;
+      width: 45%;
+    });
+
+    .screen-md({
+      top: 27.5%;
+      width: 54%;
+      right: -19%;
+    });
+
+    .screen-sm({
+      top: 24%;
+      width: 62%;
+      right: -22%;
+    });
+
+    .screen-xs({
+      top: 45%;
+      width: 100%;
+      right: -35%;
+    });
   }
 
   &__item {
@@ -104,6 +183,11 @@ import OpenSource from "../../../icons/secure/open-source.vue";
     border: 1px solid @white;
     border-radius: 32px 32px 8px 32px;
     margin-bottom: 40px;
+
+    .screen-xs({
+      margin-right: 25px;
+      margin-bottom: 16px;
+    });
 
     svg {
       width: 48px;

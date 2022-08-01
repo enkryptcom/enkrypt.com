@@ -67,6 +67,18 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     #704bff 360.59deg
   );
 
+  .screen-lg({
+    padding: 80px 0 77px 0;
+  });
+
+  .screen-md({
+    padding: 80px 0 76px 0;
+  });
+
+  .screen-sm({
+    padding: 80px 0 56px 0;
+  });
+
   h2 {
     .heading2();
     color: @white;
@@ -89,6 +101,21 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     justify-content: center;
     align-items: center;
 
+    .screen-lg({
+      padding: 0 0 0 23%;
+      flex-wrap: wrap;
+      justify-content: unset;
+    });
+
+    .screen-md({
+      padding: 0 0 0 13%;
+    });
+
+    .screen-sm({
+      padding: 0;
+      justify-content: space-evenly;
+    });
+
     &-item {
       padding: 12px 24px 12px 20px;
       height: 78px;
@@ -103,8 +130,23 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
       align-items: center;
       margin-right: 24px;
 
+      .screen-lg({
+        margin-bottom: 24px;
+      });
+
+      .screen-sm({
+        margin-bottom: 16px;
+        margin-right: 16px;
+      });
+
       &:last-child {
         margin-right: 0;
+      }
+
+      &:nth-child(2) {
+        .screen-sm({
+         margin-right: 0;
+        });
       }
 
       &-info {

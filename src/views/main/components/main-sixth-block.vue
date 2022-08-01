@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-start">
         <div class="col-8">
-          <h2>Everything you need in one place.</h2>
+          <h2>Everything you need in one place.</h2>
           <p class="main-sixth__description">
             Enkrypt has everything you need to safely explore the decentralized
             world.
@@ -68,6 +68,24 @@ import NoImport from "../../../icons/feature/no-import.vue";
   padding-top: 80px;
   padding-bottom: 40px;
 
+  .col-8 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
+  .col-4 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    });
+  }
+
   h2 {
     .heading2();
     color: @black;
@@ -95,6 +113,18 @@ import NoImport from "../../../icons/feature/no-import.vue";
       color: @black;
       letter-spacing: 0.02em;
       margin: 0;
+
+      .screen-lg({
+        padding-right: 10px
+      });
+
+      .screen-md({
+        padding-right: 28px
+      });
+
+      .screen-xs({
+        padding-right: 13px
+      });
     }
   }
 }

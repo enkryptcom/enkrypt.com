@@ -3,9 +3,12 @@
 @import "./var.less";
 @import "./bootstrap.less";
 
-body {
+body, html {
   font-family: @font;
   background: @white;
   width: 100%;
   min-height: 100%;
+  min-width: 320px;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }

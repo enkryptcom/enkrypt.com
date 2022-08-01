@@ -78,6 +78,36 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
   .screen-retina({
     background-image: url("../../../assets/img/chains@2x.jpg");
   });
+  .screen-lg({
+    padding-bottom: 79px;
+  });
+  .screen-md({
+    padding-bottom: 55px;
+  });
+  .screen-sm({
+    padding-bottom: 150px;
+  });
+  .screen-xs({
+    padding-bottom: 81px;
+  });
+
+  .col-11 {
+    .screen-md({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
+  .col-8 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
 
   h2 {
     .heading2();
@@ -94,6 +124,14 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
     letter-spacing: 0.02em;
     color: @black;
     margin: 0 0 80px 0;
+
+    .screen-sm({
+      margin: 0 0 40px 0;
+    });
+
+    .screen-sm({
+      margin: 0 0 80px 0;
+    });
   }
 
   &__networks {
@@ -104,6 +142,22 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
     align-items: flex-start;
     flex-wrap: wrap;
     font-size: 0;
+
+    .screen-lg({
+      margin-bottom: 65px;
+    });
+
+    .screen-md({
+      margin-bottom: 56px;
+    });
+
+    .screen-sm({
+      margin-bottom: 24px;
+    });
+
+    .screen-xs({
+      margin-bottom: 65px;
+    });
 
     &-item {
       padding: 8px 16px 8px 8px;
@@ -120,18 +174,82 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
       text-decoration: none;
       margin-bottom: 20px;
 
+      .screen-lg({
+        height: 48px;
+        margin-bottom: 16px;
+        margin-right: 16px;
+      });
+
+      .screen-md({
+        margin-bottom: 24px;
+      });
+
+      .screen-sm({
+        height: 44px;
+        margin-bottom: 16px;
+        margin-right: 16px;
+      });
+
+      &:nth-child(4) {
+        .screen-md({
+          margin-left: 56px;
+        });
+
+        .screen-sm({
+          margin-left: 0;
+        });
+      }
+
       &:nth-child(5) {
         margin-right: 0;
+
+        .screen-md({
+          margin-right: 16px;
+        });
       }
 
       &:nth-child(7) {
         margin-left: 88px;
+
+        .screen-lg({
+          margin-left: 76px;
+        });
+
+        .screen-md({
+          margin-left: 0;
+        });
+      }
+
+      &:nth-child(8) {
+        .screen-md({
+          margin-left: 112px;
+        });
+
+        .screen-sm({
+          margin-left: 0;
+        });
+      }
+
+      &:last-child {
+        .screen-md({
+          margin-right: 0;
+        });
       }
 
       svg {
         width: 36px;
         height: 36px;
         margin-right: 8px;
+
+        .screen-lg({
+          width: 32px;
+          height: 32px;
+        });
+
+        .screen-sm({
+          width: 28px;
+          height: 28px;
+        });
       }
 
       &.eth {
@@ -174,6 +292,10 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
     &-devider {
       width: 100%;
       height: 0;
+
+      .screen-md({
+        display: none;
+      });
     }
   }
 
@@ -185,6 +307,14 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
 
     a {
       color: @black;
+
+      .screen-md({
+        display: block;
+      });
+
+      .screen-sm({
+        display: inline;
+      });
 
       &:hover {
         text-decoration: none;

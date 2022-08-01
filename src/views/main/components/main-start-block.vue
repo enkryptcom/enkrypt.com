@@ -45,7 +45,7 @@ import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @import "../../../assets/styles/theme.less";
 
 .main-start {
@@ -57,12 +57,48 @@ import Edge from "../../../icons/browser/edge-icon.vue";
   .screen-retina({
     background-image: url("../../../assets/img/gradient@2x.jpg");
   });
+  .screen-lg({
+    padding-bottom: 73px;
+  });
+  .screen-xs({
+    padding-top: 68px;
+    padding-bottom: 63px;
+  });
+
+  .col-10 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+     });
+  }
+
+  .col-8 {
+    .screen-md({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 83.33333333%;
+      flex: 0 0 83.33333333%;
+      max-width: 83.33333333%;
+     });
+
+    .screen-xs({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
 
   &__title {
     .heading2();
     margin: 0 0 10px 0;
     text-align: center;
     color: @white;
+
+    .screen-sm({
+      margin: 0 0 16px 0;
+    });
   }
 
   &__description {
@@ -80,6 +116,14 @@ import Edge from "../../../icons/browser/edge-icon.vue";
       drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.09))
       drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1))
       drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+
+    .screen-lg({
+      margin-bottom: 45px;
+    });
+
+    .screen-xs({
+      margin-bottom: 48px;
+    });
   }
 
   &__download {
@@ -115,6 +159,27 @@ import Edge from "../../../icons/browser/edge-icon.vue";
       &:hover {
         opacity: 0.7;
       }
+
+      .screen-lg({
+        width: 240px;
+        height: 53px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 53px;
+        margin: 0 0 17px 0;
+      });
+
+      .screen-sm({
+        width: 212px;
+        height: 48px;
+        font-size: 20px;
+        line-height: 48px;
+        margin: 0 0 19px 0;
+      });
+
+      .screen-xs({
+        margin: 0 0 18px 0;
+      });
     }
 
     p {
@@ -123,6 +188,10 @@ import Edge from "../../../icons/browser/edge-icon.vue";
       text-align: center;
       margin: 0 0 16px 0;
       opacity: 0.5;
+
+      .screen-lg({
+        margin: 0 0 17px 0;
+      });
     }
 
     &-icons {
@@ -133,6 +202,11 @@ import Edge from "../../../icons/browser/edge-icon.vue";
 
       a {
         margin: 0 8px;
+
+        .screen-lg({
+          margin: 0 4px;
+        });
+
         svg {
           width: 24px;
           height: 24px;

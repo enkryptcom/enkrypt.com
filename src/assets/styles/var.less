@@ -49,21 +49,62 @@
     font-size: 56px;
     line-height: 110%;    
     letter-spacing: -0.01em;
+
+    .screen-lg({
+        font-style: normal;
+        font-weight: 750;
+        font-size: 48px;
+        line-height: 110%;   
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 750;
+        font-size: 40px;
+        line-height: 110%;
+    });
 }
 
 .heading3 {
-    font-family: 'Albert Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 36px;
     line-height: 110%;
+
+    .screen-lg({
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 110%;
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 110%;
+    });
 }
 
 .heading4 {
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
-    line-height: 150%;    
+    line-height: 150%; 
+    
+    .screen-lg({
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 150%;
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+    });
 }
 
 .caption {
@@ -72,6 +113,20 @@
     font-size: 20px;
     line-height: 150%;    
     letter-spacing: 0.02em;
+
+    .screen-lg({
+        font-style: normal;
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 150%;
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 450;
+        font-size: 15px;
+        line-height: 150%;
+    });
 }
 
 .captionMd {
@@ -86,7 +141,21 @@
     font-style: normal;
     font-weight: 450;
     font-size: 24px;
-    line-height: 150%
+    line-height: 150%;
+
+    .screen-lg({
+        font-style: normal;
+        font-weight: 450;
+        font-size: 20px;
+        line-height: 150%;
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 150%;
+    });
 }
 
 .paragraphMd {
@@ -101,6 +170,20 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
+
+    .screen-lg({
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 150%;
+    });
+
+    .screen-sm({
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+    });
 }
 
 .relative {
@@ -194,28 +277,40 @@
     Screen size variables
     ========================================================================== */
  
- @screen-tablet:  960px;
- @screen-desktop: 1366px;
- @screen-mobile:  740px;
- 
+ @screen-xl: 1200px;
+ @screen-lg: 992px;
+ @screen-md: 768px;
+ @screen-sm: 576px;
+ @screen-xs: 575px;
+
  /* =============================================================================
     Media queries for different screen sizes
     ========================================================================== */
  
- // Desktop
- .screen-desktop(@rules) {
-    @media (max-width: @screen-desktop) { @rules(); }
+ // XL
+ .screen-xl(@rules) {
+    @media (max-width: @screen-xl) { @rules(); }
 }
 
- // Tablet
- .screen-tablet(@rules) {
-     @media (max-width: @screen-tablet) { @rules(); }
+ // LG
+ .screen-lg(@rules) {
+     @media (max-width: @screen-lg) { @rules(); }
  }
  
- // Mobile
- .screen-mobile(@rules) {
-     @media (max-width: @screen-mobile) { @rules(); }
+ // MD
+ .screen-md(@rules) {
+     @media (max-width: @screen-md) { @rules(); }
  }
+
+// MD
+.screen-sm(@rules) {
+    @media (max-width: @screen-sm) { @rules(); }
+}
+
+// XS
+.screen-xs(@rules) {
+    @media (max-width: @screen-xs) { @rules(); }
+}
 
  // Retina
  .screen-retina(@rules) {

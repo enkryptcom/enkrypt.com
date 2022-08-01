@@ -27,6 +27,28 @@ import AddIcon from "../../../icons/common/add-icon.vue";
   padding-top: 160px;
   padding-bottom: 132px;
 
+  .screen-lg({
+    padding-bottom: 157px;
+  });
+
+  .screen-md({
+    padding-bottom: 128px;
+  });
+
+  .screen-sm({
+    padding-top: 240px;
+    padding-bottom: 160px;
+  });
+
+  .col-8 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
   h2 {
     .heading3();
     color: @black;
@@ -38,6 +60,10 @@ import AddIcon from "../../../icons/common/add-icon.vue";
     letter-spacing: 0.02em;
     color: @black;
     margin: 0;
+
+    .screen-md({
+      letter-spacing: 0.018em;
+    });
 
     a {
       color: @primary;
@@ -56,6 +82,19 @@ import AddIcon from "../../../icons/common/add-icon.vue";
     position: absolute;
     top: 0;
     left: -118px;
+
+    .screen-lg({
+      left: -107px;
+    });
+
+    .screen-md({
+      left: -87px;
+    });
+
+    .screen-sm({
+      left: 0;
+      top: -80px;
+    });
   }
 }
 </style>

@@ -45,14 +45,36 @@ import Discord from "../../icons/social/discord.vue";
   padding: 0 0 124px 0;
   width: 100%;
 
+  .screen-lg({
+    padding: 0 0 143px 0;
+  });
+
+  .screen-sm({
+    padding: 0 0 93px 0;
+  });
+
+  .col-8 {
+    .screen-sm({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
   &__logo {
-    width: 110px;
-    height: 20px;
-    margin-bottom: 30px;
+    width: 116px;
+    height: 22px;
+    margin-bottom: 27px;
+    margin-left: -2px;
   }
 
   &__links {
     margin-bottom: 32px;
+
+    .screen-sm({
+      margin-bottom: 24px;
+    });
 
     a {
       .caption();
@@ -66,9 +88,18 @@ import Discord from "../../icons/social/discord.vue";
         margin-right: 0;
       }
 
+      .screen-md({
+        margin-right: 28px;
+      });
+
       &:hover {
         text-decoration: underline;
       }
+
+      .screen-sm({
+        display: block;
+        margin-bottom: 24px;
+      });
     }
   }
 

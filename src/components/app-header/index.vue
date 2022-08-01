@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-12">
-          <logo />
+          <logo class="header__logo" />
           <div class="header__menu">
             <a class="header__menu-item active" href="#">Overview</a>
             <a class="header__menu-item" href="#">Supported chains</a>
@@ -30,6 +30,10 @@ import Logo from "../../icons/common/logo-white.vue";
   left: 0;
   width: 100%;
 
+  .screen-xs({
+    height: 68px;
+  });
+
   .col-12 {
     height: 104px;
     position: relative;
@@ -37,9 +41,24 @@ import Logo from "../../icons/common/logo-white.vue";
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    .screen-xs({
+      height: 68px;
+    });
+  }
+
+  &__logo {
+    .screen-sm({
+      width: 116px;
+      height: 22px;
+      margin-left: -2px;
+    });
   }
 
   &__menu {
+    .screen-sm({
+      display: none;
+    });
     a {
       font-style: normal;
       font-weight: 600;
@@ -87,6 +106,10 @@ import Logo from "../../icons/common/logo-white.vue";
     text-align: center;
     transition: opacity 300ms ease-in-out;
     opacity: 1;
+
+    .screen-xs({
+      display: none;
+    });
 
     &:hover {
       opacity: 0.7;
