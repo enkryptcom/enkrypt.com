@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit && vite build && cp dist/index.html dist/404.html",
     "preserve": "vite build",
     "serve": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "vue": "^3.2.37",
