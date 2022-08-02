@@ -9,7 +9,7 @@
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue",
     "prepare": "husky install",
-    "publish": "git subtree push --prefix dist origin gh-pages"
+    "publish": "git push origin `git subtree split --prefix dist main`:main --force"
   },
   "dependencies": {
     "vue": "^3.2.37",
