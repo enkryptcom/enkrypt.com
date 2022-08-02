@@ -1,5 +1,5 @@
 <template>
-  <div class="main-third">
+  <div id="chains" class="main-third">
     <div class="container">
       <div class="row justify-content-start">
         <div class="col-8">
@@ -45,7 +45,12 @@
 
           <p class="main-third__info">
             Are you a contributor to a specific chain that you would like
-            Enkrypt to support? <a href="#">Get in touch!</a>
+            Enkrypt to support?
+            <a
+              target="_blanck"
+              href="https://mewwallet.typeform.com/enkrypt-inquiry"
+              >Get in touch!</a
+            >
           </p>
         </div>
       </div>
@@ -307,6 +312,7 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
 
     a {
       color: @black;
+      transition: opacity 300ms ease-in-out;
 
       .screen-md({
         display: block;
@@ -317,7 +323,7 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
       });
 
       &:hover {
-        text-decoration: none;
+        opacity: 0.7;
       }
     }
   }

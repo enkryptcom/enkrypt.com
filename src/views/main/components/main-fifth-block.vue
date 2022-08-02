@@ -1,5 +1,5 @@
 <template>
-  <div class="main-fifth">
+  <div id="security" class="main-fifth">
     <div class="container">
       <div class="row justify-content-start">
         <div class="col-8">
@@ -47,7 +47,10 @@
           <div class="main-fifth__item">
             <open-source />
             <h4>Open source</h4>
-            <p>Our code is open and can be independently verified by anyone.</p>
+            <p>
+              Our code is <a href="#">open</a> and can be independently verified
+              by anyone.
+            </p>
           </div>
         </div>
       </div>
@@ -92,6 +95,8 @@ import OpenSource from "../../../icons/secure/open-source.vue";
   }
 
   .col-5 {
+    position: relative;
+    z-index: 2;
     .screen-sm({
       -webkit-box-flex: 0;
       -ms-flex: 0 0 50%;
@@ -130,6 +135,7 @@ import OpenSource from "../../../icons/secure/open-source.vue";
     .heading2();
     color: @white;
     margin: 0 0 16px 0;
+    -webkit-font-smoothing: antialiased;
 
     span {
       color: @black;
@@ -141,6 +147,7 @@ import OpenSource from "../../../icons/secure/open-source.vue";
     letter-spacing: 0.02em;
     color: @white;
     margin: 0 0 80px 0;
+    -webkit-font-smoothing: antialiased;
 
     .screen-xs({
       margin: 0 0 40px 0;
@@ -200,14 +207,24 @@ import OpenSource from "../../../icons/secure/open-source.vue";
       letter-spacing: 0.02em;
       color: @white;
       margin: 0;
+      -webkit-font-smoothing: antialiased;
     }
 
     p {
       .caption();
       letter-spacing: 0.02em;
-      color: @white;
-      opacity: 0.7;
+      color: rgba(255, 255, 255, 0.7);
       margin: 0;
+      -webkit-font-smoothing: antialiased;
+
+      a {
+        transition: color 300ms ease-in-out;
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover {
+          color: @white;
+        }
+      }
     }
   }
 }

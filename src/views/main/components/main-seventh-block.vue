@@ -12,7 +12,11 @@
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="main-seventh__downloads">
-            <a href="#" class="main-seventh__downloads-item">
+            <a
+              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              target="_blank"
+              class="main-seventh__downloads-item"
+            >
               <chrome-icon />
               <div class="main-seventh__downloads-item-info">
                 <p>Download for</p>
@@ -79,11 +83,25 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     padding: 80px 0 56px 0;
   });
 
+  .screen-xs({
+    padding: 80px 0 71px 0;
+  });
+
+  .col-10 {
+    .screen-xs({
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    });
+  }
+
   h2 {
     .heading2();
     color: @white;
     text-align: center;
     margin: 0 0 16px 0;
+    -webkit-font-smoothing: antialiased;
   }
 
   &__description {
@@ -93,6 +111,11 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     margin: 0 0 80px 0;
     text-align: center;
     opacity: 0.7;
+    -webkit-font-smoothing: antialiased;
+
+    .screen-xs({
+      margin: 0 0 40px 0;
+    });
   }
 
   &__downloads {
@@ -100,15 +123,15 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     .screen-lg({
-      padding: 0 0 0 23%;
-      flex-wrap: wrap;
-      justify-content: unset;
+      padding: 0 22% 0 22%;
+      justify-content: space-evenly;
     });
 
     .screen-md({
-      padding: 0 0 0 13%;
+      padding: 0 11% 0 11%;
     });
 
     .screen-sm({
@@ -129,6 +152,11 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
       justify-content: flex-start;
       align-items: center;
       margin-right: 24px;
+      transition: background 300ms ease-in-out;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
 
       .screen-lg({
         margin-bottom: 24px;
@@ -139,12 +167,18 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
         margin-right: 16px;
       });
 
+      .screen-xs({
+        width: 100%;
+        margin-right: 0;
+        height: 74px;
+      });
+
       &:last-child {
         margin-right: 0;
       }
 
       &:nth-child(2) {
-        .screen-sm({
+        .screen-lg({
          margin-right: 0;
         });
       }
@@ -157,6 +191,7 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
           opacity: 0.5;
           margin: 0;
           white-space: nowrap;
+          -webkit-font-smoothing: antialiased;
         }
 
         h5 {
@@ -165,6 +200,7 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
           margin: 0;
           color: @white;
           white-space: nowrap;
+          -webkit-font-smoothing: antialiased;
         }
       }
 

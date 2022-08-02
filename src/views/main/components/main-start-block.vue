@@ -1,5 +1,5 @@
 <template>
-  <div class="main-start">
+  <div id="overview" class="main-start">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-10">
@@ -11,10 +11,31 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-8">
+        <div
+          ref="slider"
+          class="col-8 main-start__slider"
+          :style="{
+            height: height + 'px',
+          }"
+        >
           <img
             class="main-start__pic"
-            src="../../../assets/pic/pic1.png"
+            src="../../../assets/pic/pic1.jpeg"
+            alt=""
+          />
+          <img
+            class="main-start__pic"
+            src="../../../assets/pic/pic2.jpeg"
+            alt=""
+          />
+          <img
+            class="main-start__pic"
+            src="../../../assets/pic/pic3.jpeg"
+            alt=""
+          />
+          <img
+            class="main-start__pic"
+            src="../../../assets/pic/pic4.jpeg"
             alt=""
           />
         </div>
@@ -22,14 +43,44 @@
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="main-start__download">
-            <a href="#" class="main-start__download-button">Download now</a>
+            <a
+              v-if="detect() == 'chrome'"
+              class="main-start__download-button"
+              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              target="_blank"
+            >
+              Download now
+            </a>
+            <a
+              v-if="detect() == 'firefox'"
+              class="main-start__download-button"
+              href="firefox"
+            >
+              Download now
+            </a>
+            <a
+              v-if="detect() == 'edge'"
+              class="main-start__download-button"
+              href="edge"
+            >
+              Download now
+            </a>
+            <a
+              v-if="detect() == 'brave'"
+              class="main-start__download-button"
+              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              target="_blank"
+            >
+              Download now
+            </a>
+
             <p>Available as an extension for your favorite browser.</p>
 
             <div class="main-start__download-icons">
-              <a href="#"><chrome /></a>
-              <a href="#"><firefox /></a>
-              <a href="#"><brave /></a>
-              <a href="#"><edge /></a>
+              <a><chrome /></a>
+              <a><firefox /></a>
+              <a><brave /></a>
+              <a><edge /></a>
             </div>
           </div>
         </div>
@@ -43,6 +94,31 @@ import Chrome from "../../../icons/browser/chrome-icon.vue";
 import Firefox from "../../../icons/browser/firefox-icon.vue";
 import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
+import { onMounted, ref, watch, onUnmounted } from "vue";
+import { detect } from "../../../utils/browser";
+
+const slider = ref(null);
+const height = ref<number>(560);
+
+defineExpose({ slider });
+
+onMounted(() => {
+  window.addEventListener("resize", onResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", onResize);
+});
+
+watch([slider], () => {
+  if (slider.value)
+    height.value = (slider.value as HTMLElement).clientWidth * 0.75;
+});
+
+const onResize = () => {
+  if (slider.value)
+    height.value = (slider.value as HTMLElement).clientWidth * 0.75;
+};
 </script>
 
 <style lang="less">
@@ -106,24 +182,41 @@ import Edge from "../../../icons/browser/edge-icon.vue";
     margin: 0 0 40px 0;
     text-align: center;
     color: @white;
+    opacity: 0.88;
+  }
+
+  &__slider {
+    position: relative;
+    margin-bottom: 52px;
+
+    .screen-lg({
+      margin-bottom: 49px;
+    });
+
+    .screen-xs({
+      margin-bottom: 52px;
+    });
   }
 
   &__pic {
     max-width: 100%;
-    margin-bottom: 48px;
-    filter: drop-shadow(0px 33px 13px rgba(0, 0, 0, 0.01))
-      drop-shadow(0px 19px 11px rgba(0, 0, 0, 0.05))
-      drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.09))
-      drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.1))
-      drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+    border-radius: 12px;
+    box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
+      0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
+      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    animation: fade 8s infinite;
+    opacity: 0;
 
-    .screen-lg({
-      margin-bottom: 45px;
-    });
-
-    .screen-xs({
-      margin-bottom: 48px;
-    });
+    &:nth-child(2) {
+      animation-delay: 2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 4s;
+    }
+    &:nth-child(4) {
+      animation-delay: 6s;
+    }
   }
 
   &__download {
@@ -133,13 +226,7 @@ import Edge from "../../../icons/browser/edge-icon.vue";
       display: inline-block;
       width: 268px;
       height: 58px;
-      background: conic-gradient(
-        from 186.32deg at 112.5% -13.75%,
-        #c549ff -284.63deg,
-        #704bff 0deg,
-        #c549ff 75.37deg,
-        #704bff 360deg
-      );
+      background: linear-gradient(86.81deg, #c549ff -22.41%, #704bff 120.76%);
       box-shadow: 0px 25px 10px rgba(89, 0, 255, 0.01),
         0px 14px 8px rgba(89, 0, 255, 0.05), 0px 6px 6px rgba(89, 0, 255, 0.09),
         0px 2px 3px rgba(89, 0, 255, 0.1), 0px 0px 0px rgba(89, 0, 255, 0.1);
@@ -213,6 +300,18 @@ import Edge from "../../../icons/browser/edge-icon.vue";
         }
       }
     }
+  }
+}
+
+@keyframes fade {
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
   }
 }
 </style>

@@ -100,11 +100,11 @@
 
   h2 {
     .heading2();
-    color: @primary;
+    color: @black;
     margin: 0 0 16px 0;
 
     span {
-      color: @black;
+      color: @primary;
     }
   }
 
@@ -117,11 +117,10 @@
 
   &__pic {
     max-width: 100%;
-    filter: drop-shadow(0px 53px 21px rgba(0, 0, 0, 0.01))
-      drop-shadow(0px 30px 18px rgba(0, 0, 0, 0.05))
-      drop-shadow(0px 13px 13px rgba(0, 0, 0, 0.09))
-      drop-shadow(0px 3px 7px rgba(0, 0, 0, 0.1))
-      drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+    box-shadow: 0px 53px 21px rgba(0, 0, 0, 0.01),
+      0px 30px 18px rgba(0, 0, 0, 0.05), 0px 13px 13px rgba(0, 0, 0, 0.09),
+      0px 3px 7px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     margin-bottom: 62px;
     position: relative;
     z-index: 2;

@@ -14,6 +14,15 @@ const routes = {
 export default createRouter({
   history: createWebHashHistory(),
   routes: Object.values(routes),
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth",
+        top: 71,
+      };
+    }
+  },
 });
 
 export { routes };

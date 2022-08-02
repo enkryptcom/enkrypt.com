@@ -1,15 +1,73 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ fixed: isFixed }">
     <div class="container">
       <div class="row justify-content-end">
-        <div class="col-12">
-          <logo class="header__logo" />
+        <div class="col-12" :class="{ fixed: isFixed }">
+          <logo v-if="!isFixed" class="header__logo" />
+          <logo-color v-else class="header__logo" />
           <div class="header__menu">
-            <a class="header__menu-item active" href="#">Overview</a>
-            <a class="header__menu-item" href="#">Supported chains</a>
-            <a class="header__menu-item" href="#">Security</a>
+            <router-link
+              class="header__menu-item"
+              :class="{
+                fixed: isFixed,
+                active: route.hash == '#overview' || route.hash == '',
+              }"
+              to="#overview"
+            >
+              Overview
+            </router-link>
+            <router-link
+              class="header__menu-item"
+              :class="{ fixed: isFixed, active: route.hash == '#chains' }"
+              to="#chains"
+            >
+              Supported chains
+            </router-link>
+            <router-link
+              class="header__menu-item"
+              :class="{ fixed: isFixed, active: route.hash == '#security' }"
+              to="#security"
+            >
+              Security
+            </router-link>
+            <a class="header__menu-item" :class="{ fixed: isFixed }" href="#">
+              Blog
+            </a>
           </div>
-          <a class="header__download">Download</a>
+          <a
+            v-if="detect() == 'chrome'"
+            class="header__download"
+            href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+            target="_blank"
+            :class="{ fixed: isFixed }"
+          >
+            Download
+          </a>
+          <a
+            v-if="detect() == 'firefox'"
+            class="header__download"
+            href="firefox"
+            :class="{ fixed: isFixed }"
+          >
+            Download
+          </a>
+          <a
+            v-if="detect() == 'edge'"
+            class="header__download"
+            href="edge"
+            :class="{ fixed: isFixed }"
+          >
+            Download
+          </a>
+          <a
+            v-if="detect() == 'brave'"
+            class="header__download"
+            href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+            target="_blank"
+            :class="{ fixed: isFixed }"
+          >
+            Download
+          </a>
         </div>
       </div>
     </div>
@@ -18,6 +76,47 @@
 
 <script setup lang="ts">
 import Logo from "../../icons/common/logo-white.vue";
+import LogoColor from "../../icons/common/logo-color.vue";
+import { useRoute } from "vue-router";
+import { onMounted, ref, onUnmounted } from "vue";
+import { detect } from "../../utils/browser";
+
+const isFixed = ref<boolean>(false);
+const route = useRoute();
+
+onMounted(() => {
+  onScroll();
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("resize", onResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", onScroll);
+  window.addEventListener("resize", onResize);
+});
+
+const onScroll = () => {
+  if (window.innerWidth > 767) {
+    if (window.scrollY > 104) {
+      if (isFixed.value == false) isFixed.value = true;
+    } else {
+      if (isFixed.value == true) isFixed.value = false;
+    }
+  } else {
+    if (isFixed.value == true) isFixed.value = false;
+  }
+};
+const onResize = () => {
+  if (window.innerWidth < 768) {
+    if (isFixed.value == true) isFixed.value = false;
+  } else {
+    if (window.scrollY > 104) {
+      if (isFixed.value == false) isFixed.value = true;
+    } else {
+      if (isFixed.value == true) isFixed.value = false;
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -30,6 +129,14 @@ import Logo from "../../icons/common/logo-white.vue";
   left: 0;
   width: 100%;
 
+  &.fixed {
+    position: fixed;
+    background: @white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 71px;
+    z-index: 11;
+  }
+
   .screen-xs({
     height: 68px;
   });
@@ -41,6 +148,10 @@ import Logo from "../../icons/common/logo-white.vue";
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    &.fixed {
+      height: 71px;
+    }
 
     .screen-xs({
       height: 68px;
@@ -59,7 +170,7 @@ import Logo from "../../icons/common/logo-white.vue";
     .screen-sm({
       display: none;
     });
-    a {
+    &-item {
       font-style: normal;
       font-weight: 600;
       font-size: 16px;
@@ -71,6 +182,24 @@ import Logo from "../../icons/common/logo-white.vue";
       display: inline-block;
       margin-right: 32px;
       position: relative;
+      transition: opacity 300ms ease-in-out;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      .screen-md({
+         margin-right: 20px;
+      });
+
+      &.fixed {
+        color: @primary;
+        transition: color 300ms ease-in-out;
+
+        &:hover {
+          color: @lighter;
+        }
+      }
 
       &:last-child {
         margin-right: 0;
@@ -85,6 +214,29 @@ import Logo from "../../icons/common/logo-white.vue";
           border-radius: 3px;
           left: 0;
           bottom: -4px;
+          transition: opacity 300ms ease-in-out;
+        }
+
+        &.fixed {
+          transition: background 300ms ease-in-out;
+
+          &:before {
+            background: @primary;
+          }
+        }
+
+        &:hover {
+          &:before {
+            opacity: 0.7;
+          }
+        }
+
+        &.fixed {
+          &:hover {
+            &:before {
+              background: @lighter;
+            }
+          }
         }
       }
     }
@@ -104,15 +256,29 @@ import Logo from "../../icons/common/logo-white.vue";
     color: @dark;
     text-decoration: none;
     text-align: center;
-    transition: opacity 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
     opacity: 1;
 
-    .screen-xs({
+    &.fixed {
+      background: @primary;
+      box-shadow: none;
+      color: @white;
+      transition: background 300ms ease-in-out;
+    }
+
+    .screen-sm({
       display: none;
     });
 
     &:hover {
-      opacity: 0.7;
+      color: @primary;
+    }
+
+    &.fixed {
+      &:hover {
+        background: @lighter;
+        color: @white;
+      }
     }
   }
 }

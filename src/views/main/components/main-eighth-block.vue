@@ -8,7 +8,12 @@
           <p class="main-eighth__description">
             We work with blockchain projects to build user friendly tools for
             their ecosystems. Let’s talk about how we can help.<br />
-            <a href="#">Get in touch</a> with our sales team.
+            <a
+              target="_blanck"
+              href="https://mewwallet.typeform.com/enkrypt-inquiry"
+              >Get in touch</a
+            >
+            &nbsp;with our sales team.
           </p>
         </div>
       </div>
@@ -40,6 +45,11 @@ import AddIcon from "../../../icons/common/add-icon.vue";
     padding-bottom: 160px;
   });
 
+  .screen-xs({
+    padding-top: 160px;
+    padding-bottom: 81px;
+  });
+
   .col-8 {
     .screen-sm({
       -webkit-box-flex: 0;
@@ -67,9 +77,10 @@ import AddIcon from "../../../icons/common/add-icon.vue";
 
     a {
       color: @primary;
+      transition: color 300ms ease-in-out;
 
       &:hover {
-        text-decoration: none;
+        color: @lighter;
       }
     }
   }

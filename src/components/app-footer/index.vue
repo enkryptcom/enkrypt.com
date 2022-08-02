@@ -7,18 +7,30 @@
 
           <div class="footer__links">
             <a href="#">Contact us</a>
-            <a href="#">MyEtherWallet.com</a>
+            <a href="https://www.myetherwallet.com/" target="_blank"
+              >MyEtherWallet.com</a
+            >
             <a href="#">GitHub</a>
             <a href="#">Media Kit</a>
           </div>
 
           <div class="footer__social">
-            <a href="#"><facebook /></a>
-            <a href="#"><twitter /></a>
+            <a href="https://www.facebook.com/MyEtherWallet/" target="_blank">
+              <facebook />
+            </a>
+            <a href="https://twitter.com/myetherwallet" target="_blank">
+              <twitter />
+            </a>
             <a href="#"><github /></a>
-            <a href="#"><instagram /></a>
-            <a href="#"><medium /></a>
-            <a href="#"><reddit /></a>
+            <a href="https://www.instagram.com/myetherwallet/" target="_blank">
+              <instagram />
+            </a>
+            <a href="https://medium.com/@myetherwallet" target="_blank">
+              <medium />
+            </a>
+            <a href="https://www.reddit.com/r/MyEtherWallet/" target="_blank">
+              <reddit />
+            </a>
             <a href="#"><discord /></a>
           </div>
         </div>
@@ -53,6 +65,11 @@ import Discord from "../../icons/social/discord.vue";
     padding: 0 0 93px 0;
   });
 
+  .screen-xs({
+    padding: 0 0 80px 0;
+
+  });
+
   .col-8 {
     .screen-sm({
       -webkit-box-flex: 0;
@@ -83,6 +100,8 @@ import Discord from "../../icons/social/discord.vue";
       text-decoration: none;
       display: inline-block;
       margin-right: 32px;
+      transition: opacity 300ms ease-in-out;
+      opacity: 1;
 
       &:last-child {
         margin-right: 0;
@@ -93,7 +112,7 @@ import Discord from "../../icons/social/discord.vue";
       });
 
       &:hover {
-        text-decoration: underline;
+        opacity: 0.7;
       }
 
       .screen-sm({
