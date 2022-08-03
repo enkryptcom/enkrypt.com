@@ -26,7 +26,7 @@
             <a href="#" class="main-seventh__downloads-item">
               <firefox-icon />
               <div class="main-seventh__downloads-item-info">
-                <p>Download for</p>
+                <p>Coming soon for</p>
                 <h5>Firefox</h5>
               </div>
             </a>
@@ -41,7 +41,10 @@
                 <h5>Brave</h5>
               </div>
             </a>
-            <a href="#" class="main-seventh__downloads-item">
+            <a
+              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              class="main-seventh__downloads-item"
+            >
               <edge-icon />
               <div class="main-seventh__downloads-item-info">
                 <p>Download for</p>
