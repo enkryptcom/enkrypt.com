@@ -3,14 +3,17 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-12" :class="{ fixed: isFixed }">
-          <logo v-if="!isFixed" class="header__logo" />
-          <logo-color v-else class="header__logo" />
+          <router-link to="#overview">
+            <logo v-if="!isFixed" class="header__logo" />
+            <logo-color v-else class="header__logo" />
+          </router-link>
+
           <div class="header__menu">
             <router-link
               class="header__menu-item"
               :class="{
                 fixed: isFixed,
-                active: route.hash == '#overview' || route.hash == '',
+                active: isOverview && !isChains,
               }"
               to="#overview"
             >
@@ -18,21 +21,21 @@
             </router-link>
             <router-link
               class="header__menu-item"
-              :class="{ fixed: isFixed, active: route.hash == '#chains' }"
+              :class="{ fixed: isFixed, active: isChains && !isSecure }"
               to="#chains"
             >
               Supported chains
             </router-link>
             <router-link
               class="header__menu-item"
-              :class="{ fixed: isFixed, active: route.hash == '#security' }"
+              :class="{ fixed: isFixed, active: isSecure }"
               to="#security"
             >
               Security
             </router-link>
-            <a class="header__menu-item" :class="{ fixed: isFixed }" href="#">
+            <!-- <a class="header__menu-item" :class="{ fixed: isFixed }" href="#">
               Blog
-            </a>
+            </a> -->
           </div>
           <a
             v-if="detect() == 'chrome'"
@@ -71,29 +74,56 @@
         </div>
       </div>
     </div>
+
+    <mobile-menu />
   </header>
 </template>
 
 <script setup lang="ts">
 import Logo from "../../icons/common/logo-white.vue";
 import LogoColor from "../../icons/common/logo-color.vue";
-import { useRoute } from "vue-router";
 import { onMounted, ref, onUnmounted } from "vue";
 import { detect } from "../../utils/browser";
+import MobileMenu from "../mobile-menu/index.vue";
 
 const isFixed = ref<boolean>(false);
-const route = useRoute();
+const isOverview = ref<boolean>(false);
+const isChains = ref<boolean>(false);
+const isSecure = ref<boolean>(false);
 
 onMounted(() => {
-  onScroll();
   window.addEventListener("scroll", onScroll);
   window.addEventListener("resize", onResize);
+
+  setTimeout(() => {
+    onScroll();
+  }, 700);
 });
 
 onUnmounted(() => {
   window.removeEventListener("scroll", onScroll);
   window.addEventListener("resize", onResize);
 });
+
+function isInViewport(id: string) {
+  const el = document.querySelector(id);
+
+  if (el) {
+    const position = el.getBoundingClientRect();
+
+    if (position.top >= 0 && position.bottom <= window.innerHeight) {
+      return true;
+    }
+
+    if (position.top < window.innerHeight && position.bottom >= 0) {
+      return true;
+    }
+
+    return false;
+  } else {
+    return false;
+  }
+}
 
 const onScroll = () => {
   if (window.innerWidth > 767) {
@@ -105,6 +135,10 @@ const onScroll = () => {
   } else {
     if (isFixed.value == true) isFixed.value = false;
   }
+
+  isOverview.value = isInViewport("#overview");
+  isChains.value = isInViewport("#chains");
+  isSecure.value = isInViewport("#security");
 };
 const onResize = () => {
   if (window.innerWidth < 768) {

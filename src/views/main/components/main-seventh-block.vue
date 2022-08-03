@@ -30,7 +30,11 @@
                 <h5>Firefox</h5>
               </div>
             </a>
-            <a href="#" class="main-seventh__downloads-item">
+            <a
+              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              target="_blank"
+              class="main-seventh__downloads-item"
+            >
               <brave-icon />
               <div class="main-seventh__downloads-item-info">
                 <p>Download for</p>

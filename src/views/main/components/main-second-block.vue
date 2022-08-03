@@ -51,10 +51,10 @@ const tick = () => {
     text.value = fullTxt.substring(0, text.value.length + 1);
   }
 
-  var delta = 200 - Math.random() * 100;
+  var delta = 100 - Math.random() * 100;
 
   if (isDeleting.value) {
-    delta /= 2;
+    delta /= 3;
   }
 
   if (!isDeleting.value && text.value === fullTxt) {
@@ -95,7 +95,7 @@ onMounted(() => {
     padding: 80px 0 243px 0;
   });
 
-  .screen-sm({
+  .screen-xs({
     padding: 80px 0 216px 0;
   });
 
@@ -122,7 +122,7 @@ onMounted(() => {
     });
 
     .screen-sm({
-      margin: 0 0 7px 0;
+      margin: 0 0 17px 0;
     });
   }
 
@@ -157,7 +157,7 @@ onMounted(() => {
     });
 
     .screen-sm({
-      margin: 0 0 8px 0;
+      margin: 0 0 17px 0;
       height: 52px;
     });
   }
@@ -171,26 +171,22 @@ onMounted(() => {
   }
 
   &__pic {
-    width: 47.6%;
+    width: 64%;
     position: absolute;
-    top: 50%;
+    top: 58%;
     transform: translateY(-50%);
-    left: 57.3%;
-    max-width: 572px;
-    filter: drop-shadow(0px 76px 30px rgba(0, 0, 0, 0.01))
-      drop-shadow(0px 43px 26px rgba(0, 0, 0, 0.05))
-      drop-shadow(0px 19px 19px rgba(0, 0, 0, 0.09))
-      drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.1))
-      drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));
+    left: 55%;
+    max-width: 800px;
 
     .screen-lg({
-      width: 54%;    
-      left: 57.8%;
+      width: 73%;
+      left: 54.8%;
     });
 
     .screen-md({
-      width: 70.4%;
-      left: 57.4%;
+      width: 91.4%;
+      left: 54%;
+      top: 57%;
     });
 
     .screen-sm({
@@ -204,12 +200,15 @@ onMounted(() => {
 
       .screen-sm({
         display: block;
-        bottom: -13.2%;
+        bottom: -23.5%;
+        width: 94%;
+        left: 0.5%;
       });
 
-      .screen-sm({
-        bottom: -18%;
-        width: 160%;
+      .screen-xs({
+        bottom: -26%;
+        width: 147%;
+        left: 1.5%;
       });
     }
   }

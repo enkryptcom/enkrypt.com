@@ -6,11 +6,13 @@
           <logo class="footer__logo" color="#1A1919" />
 
           <div class="footer__links">
-            <a href="#">Contact us</a>
+            <a href="mailto:support@enkrypt.com" target="_blank">Contact us</a>
             <a href="https://www.myetherwallet.com/" target="_blank"
               >MyEtherWallet.com</a
             >
-            <a href="#">GitHub</a>
+            <a href="https://github.com/enkryptcom/enKrypt" target="_blank"
+              >GitHub</a
+            >
             <a href="#">Media Kit</a>
           </div>
 
@@ -21,7 +23,9 @@
             <a href="https://twitter.com/myetherwallet" target="_blank">
               <twitter />
             </a>
-            <a href="#"><github /></a>
+            <a href="https://github.com/enkryptcom/enKrypt" target="_blank">
+              <github />
+            </a>
             <a href="https://www.instagram.com/myetherwallet/" target="_blank">
               <instagram />
             </a>
@@ -31,7 +35,7 @@
             <a href="https://www.reddit.com/r/MyEtherWallet/" target="_blank">
               <reddit />
             </a>
-            <a href="#"><discord /></a>
+            <a href="https://discord.gg/W8TrqJXS"><discord /></a>
           </div>
         </div>
       </div>

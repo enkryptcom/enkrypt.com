@@ -13,7 +13,7 @@
               href="https://mewwallet.typeform.com/enkrypt-inquiry"
               >Get in touch</a
             >
-            &nbsp;with our sales team.
+            with our sales team.
           </p>
         </div>
       </div>

@@ -48,8 +48,11 @@
             <open-source />
             <h4>Open source</h4>
             <p>
-              Our code is <a href="#">open</a> and can be independently verified
-              by anyone.
+              Our code is
+              <a href="https://github.com/enkryptcom/enKrypt" target="_blank"
+                >open</a
+              >
+              and can be independently verified by anyone.
             </p>
           </div>
         </div>

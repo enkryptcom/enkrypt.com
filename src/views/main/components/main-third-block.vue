@@ -33,7 +33,7 @@
               <moonbeam /><span>Moonbeam</span>
             </div>
             <div class="main-third__networks-item bnb">
-              <Bnb /><span>BNB smart chain</span>
+              <Bnb /><span>BNB Smart chain</span>
             </div>
             <div class="main-third__networks-item karura">
               <karura /><span>Karura</span>
@@ -49,7 +49,7 @@
             <a
               target="_blanck"
               href="https://mewwallet.typeform.com/enkrypt-inquiry"
-              >Get in touch!</a
+              >Get&nbsp;in&nbsp;touch!</a
             >
           </p>
         </div>
@@ -134,7 +134,7 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
       margin: 0 0 40px 0;
     });
 
-    .screen-sm({
+    .screen-xs({
       margin: 0 0 80px 0;
     });
   }

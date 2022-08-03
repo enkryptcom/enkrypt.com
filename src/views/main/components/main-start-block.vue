@@ -98,7 +98,7 @@ import { onMounted, ref, watch, onUnmounted } from "vue";
 import { detect } from "../../../utils/browser";
 
 const slider = ref(null);
-const height = ref<number>(560);
+const height = ref<number>(528);
 
 defineExpose({ slider });
 
@@ -112,12 +112,18 @@ onUnmounted(() => {
 
 watch([slider], () => {
   if (slider.value)
-    height.value = (slider.value as HTMLElement).clientWidth * 0.75;
+    height.value = Math.min(
+      528,
+      (slider.value as HTMLElement).clientWidth * 0.75
+    );
 });
 
 const onResize = () => {
   if (slider.value)
-    height.value = (slider.value as HTMLElement).clientWidth * 0.75;
+    height.value = Math.min(
+      528,
+      (slider.value as HTMLElement).clientWidth * 0.75
+    );
 };
 </script>
 
@@ -125,14 +131,12 @@ const onResize = () => {
 @import "../../../assets/styles/theme.less";
 
 .main-start {
-  background-image: url("../../../assets/img/gradient.jpg");
+  background-image: url("../../../assets/img/gradient@2x.jpg");
   padding-top: 120px;
   padding-bottom: 72px;
   background-size: cover;
+  background-position: top center;
   .sizing();
-  .screen-retina({
-    background-image: url("../../../assets/img/gradient@2x.jpg");
-  });
   .screen-lg({
     padding-bottom: 73px;
   });
@@ -188,6 +192,10 @@ const onResize = () => {
   &__slider {
     position: relative;
     margin-bottom: 52px;
+    border-radius: 12px;
+    box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
+      0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
+      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 
     .screen-lg({
       margin-bottom: 49px;
@@ -201,21 +209,18 @@ const onResize = () => {
   &__pic {
     max-width: 100%;
     border-radius: 12px;
-    box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
-      0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
-      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
     position: absolute;
-    animation: fade 8s infinite;
+    animation: fade 16s infinite;
     opacity: 0;
 
     &:nth-child(2) {
-      animation-delay: 2s;
-    }
-    &:nth-child(3) {
       animation-delay: 4s;
     }
+    &:nth-child(3) {
+      animation-delay: 8s;
+    }
     &:nth-child(4) {
-      animation-delay: 6s;
+      animation-delay: 12s;
     }
   }
 

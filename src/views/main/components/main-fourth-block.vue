@@ -170,10 +170,14 @@
       display: inline-block;
       vertical-align: middle;
       max-width: 228px;
+      font-size: 0;
 
       img {
         width: 100%;
         border-radius: 16px;
+        box-shadow: 0px 48px 19px rgba(0, 0, 0, 0.01),
+          0px 27px 16px rgba(0, 0, 0, 0.05), 0px 12px 12px rgba(0, 0, 0, 0.09),
+          0px 3px 7px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
       }
     }
   }
