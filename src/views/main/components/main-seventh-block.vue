@@ -1,5 +1,5 @@
 <template>
-  <div class="main-seventh">
+  <div id="downloads" class="main-seventh">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-10">

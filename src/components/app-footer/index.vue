@@ -13,7 +13,12 @@
             <a href="https://github.com/enkryptcom/enKrypt" target="_blank"
               >GitHub</a
             >
-            <a href="#">Media Kit</a>
+            <a
+              href="https://www.notion.so/Media-kit-ecce7262436c42fa8411e59d548b03fc"
+              target="_blank"
+            >
+              Media Kit
+            </a>
           </div>
 
           <div class="footer__social">

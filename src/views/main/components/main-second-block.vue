@@ -15,11 +15,17 @@
       </div>
     </div>
     <img class="main-second__pic" src="../../../assets/pic/pic7.png" alt="" />
-    <img
-      class="main-second__pic-mobile"
-      src="../../../assets/pic/pic7.png"
-      alt=""
-    />
+    <div class="container">
+      <div class="row justify-content-start">
+        <div class="col-7">
+          <img
+            class="main-second__pic-mobile"
+            src="../../../assets/pic/pic7.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -63,7 +69,7 @@ const tick = () => {
   } else if (isDeleting.value && text.value === "") {
     isDeleting.value = false;
     loopNum.value++;
-    delta = 500;
+    delta = 300;
   }
 
   setTimeout(() => {
@@ -92,11 +98,11 @@ onMounted(() => {
   overflow: hidden;
 
   .screen-sm({
-    padding: 80px 0 243px 0;
+    padding: 80px 0 0 0;
   });
 
   .screen-xs({
-    padding: 80px 0 216px 0;
+    padding: 80px 0 0 0;
   });
 
   .col-7 {
@@ -144,7 +150,15 @@ onMounted(() => {
       -webkit-text-fill-color: transparent;
       background-clip: text;
       display: block;
-      min-width: 5px;
+      min-width: 1px;
+      white-space: nowrap;
+
+      .screen-m({
+        font-style: normal;
+        font-weight: 750;
+        font-size: 39px;
+        line-height: 44px;
+      });
     }
 
     .screen-lg({
@@ -196,19 +210,20 @@ onMounted(() => {
     &-mobile {
       display: none;
       width: 100%;
-      position: absolute;
 
       .screen-sm({
         display: block;
-        bottom: -23.5%;
-        width: 94%;
-        left: 0.5%;
+        width: 528px;
+        margin-left: -20px;
+        margin-top: 32px;
+        margin-bottom: -132px;
       });
 
       .screen-xs({
-        bottom: -26%;
-        width: 147%;
-        left: 1.5%;
+        margin-bottom: -138px;
+        width: 428px;
+        margin-left: -16px;
+        margin-top: 46px;
       });
     }
   }

@@ -283,6 +283,7 @@
  @screen-md: 991px;
  @screen-sm: 767px;
  @screen-xs: 575px;
+ @screen-m: 414px;
 
  /* =============================================================================
     Media queries for different screen sizes
@@ -311,6 +312,11 @@
 // XS
 .screen-xs(@rules) {
     @media (max-width: @screen-xs) { @rules(); }
+}
+
+// M
+.screen-m(@rules) {
+    @media (max-width: @screen-m) { @rules(); }
 }
 
  // Retina

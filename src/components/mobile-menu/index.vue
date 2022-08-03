@@ -137,6 +137,10 @@ const onResize = () => {
     .screen-sm({
       display: block;
     });
+
+    .screen-xs({
+      top: 22px;
+    });
   }
 
   &__logo {

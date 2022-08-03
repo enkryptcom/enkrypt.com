@@ -71,6 +71,15 @@
           >
             Download
           </a>
+
+          <router-link
+            v-if="detect() == 'no'"
+            class="header__download"
+            :class="{ fixed: isFixed }"
+            to="#downloads"
+          >
+            Download
+          </router-link>
         </div>
       </div>
     </div>

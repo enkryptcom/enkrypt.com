@@ -14,6 +14,7 @@
         <div
           ref="slider"
           class="col-8 main-start__slider"
+          :class="{ ready: isLoaded }"
           :style="{
             height: height + 'px',
           }"
@@ -22,6 +23,7 @@
             class="main-start__pic"
             src="../../../assets/pic/pic1.jpeg"
             alt=""
+            @load="onImgLoad"
           />
           <img
             class="main-start__pic"
@@ -74,6 +76,14 @@
               Download now
             </a>
 
+            <router-link
+              v-if="detect() == 'no'"
+              class="main-start__download-button"
+              to="#downloads"
+            >
+              Download now
+            </router-link>
+
             <p>Available as an extension for your favorite browser.</p>
 
             <div class="main-start__download-icons">
@@ -99,6 +109,7 @@ import { detect } from "../../../utils/browser";
 
 const slider = ref(null);
 const height = ref<number>(528);
+const isLoaded = ref<boolean>(false);
 
 defineExpose({ slider });
 
@@ -124,6 +135,10 @@ const onResize = () => {
       528,
       (slider.value as HTMLElement).clientWidth * 0.75
     );
+};
+
+const onImgLoad = () => {
+  isLoaded.value = true;
 };
 </script>
 
@@ -192,10 +207,13 @@ const onResize = () => {
   &__slider {
     position: relative;
     margin-bottom: 52px;
-    border-radius: 12px;
-    box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
-      0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
-      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+
+    &.ready {
+      border-radius: 12px;
+      box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
+        0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
+        0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
 
     .screen-lg({
       margin-bottom: 49px;

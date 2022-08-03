@@ -18,41 +18,60 @@
       </div>
     </div>
     <div class="main-fourth__nfts">
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic3.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic4.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic5.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic6.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic3.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic4.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic4.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic3.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic4.png" alt="" />
-      </div>
-      <div class="main-fourth__nfts-item">
-        <img src="../../../assets/pic/pic4.png" alt="" />
-      </div>
+      <carousel duration="140s" :bar-style="{ paddingBottom: '60px' }">
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic3.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic12.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic5.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic6.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic9.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic10.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic11.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic14.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic15.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic16.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic13.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic12.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic17.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic4.png" alt="" />
+        </div>
+        <div class="main-fourth__nfts-item">
+          <img src="../../../assets/pic/pic18.png" alt="" />
+        </div>
+      </carousel>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Carousel from "../../../components/carousel/index.vue";
+</script>
 
 <style lang="less" scoped>
 @import "../../../assets/styles/theme.less";
@@ -143,26 +162,10 @@
   &__nfts {
     position: absolute;
     width: 100%;
-    left: -10.3%;
-    bottom: 77px;
+    left: 0;
+    bottom: 17px;
     white-space: nowrap;
     text-align: center;
-
-    .screen-lg({
-      left: -12.6%;
-    });
-
-    .screen-md({
-      left: -19%;
-    });
-
-    .screen-md({
-      left: -21%;
-    });
-
-    .screen-xs({
-      left: -45%;
-    });
 
     &-item {
       margin: 0 10px;

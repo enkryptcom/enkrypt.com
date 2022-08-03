@@ -74,7 +74,7 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
 @import "../../../assets/styles/theme.less";
 
 .main-third {
-  background-image: url("../../../assets/img/chains.jpg");
+  background-image: url("../../../assets/img/chains@2x.jpg");
   padding-top: 80px;
   padding-bottom: 74px;
   background-size: cover;
