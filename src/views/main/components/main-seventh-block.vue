@@ -23,7 +23,7 @@
                 <h5>Google Chrome</h5>
               </div>
             </a>
-            <a href="#" class="main-seventh__downloads-item">
+            <a class="main-seventh__downloads-item">
               <firefox-icon />
               <div class="main-seventh__downloads-item-info">
                 <p>Coming soon for</p>
