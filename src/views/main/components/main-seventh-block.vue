@@ -51,6 +51,16 @@
                 <h5>Microsoft Edge</h5>
               </div>
             </a>
+            <a
+              href="https://addons.opera.com/en/extensions/details/enkrypt/"
+              class="main-seventh__downloads-item"
+            >
+              <opera-icon />
+              <div class="main-seventh__downloads-item-info">
+                <p>Download for</p>
+                <h5>Opera</h5>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -63,6 +73,7 @@ import ChromeIcon from "../../../icons/browser/chrome-big.vue";
 import FirefoxIcon from "../../../icons/browser/firefox-big.vue";
 import BraveIcon from "../../../icons/browser/brave-big.vue";
 import EdgeIcon from "../../../icons/browser/edge-big.vue";
+import OperaIcon from "../../../icons/browser/opera-big.vue";
 </script>
 
 <style lang="less" scoped>
@@ -147,6 +158,7 @@ import EdgeIcon from "../../../icons/browser/edge-big.vue";
     });
 
     &-item {
+      margin-top: 15px;
       padding: 12px 24px 12px 20px;
       height: 78px;
       background: rgba(255, 255, 255, 0.07);
