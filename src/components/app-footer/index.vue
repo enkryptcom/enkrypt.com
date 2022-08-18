@@ -40,7 +40,7 @@
             <a href="https://www.reddit.com/r/MyEtherWallet/" target="_blank">
               <reddit />
             </a>
-            <a href="https://discord.gg/W8TrqJXS"><discord /></a>
+            <a href="https://discord.gg/Gz8vBneyKe"><discord /></a>
           </div>
         </div>
       </div>
