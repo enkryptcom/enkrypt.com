@@ -115,6 +115,10 @@ defineExpose({ slider });
 
 onMounted(() => {
   window.addEventListener("resize", onResize);
+
+  setTimeout(() => {
+    onResize();
+  }, 400);
 });
 
 onUnmounted(() => {
@@ -122,19 +126,16 @@ onUnmounted(() => {
 });
 
 watch([slider], () => {
-  if (slider.value)
-    height.value = Math.min(
-      528,
-      (slider.value as HTMLElement).clientWidth * 0.75
-    );
+  onResize();
 });
 
 const onResize = () => {
-  if (slider.value)
+  if (slider.value) {
     height.value = Math.min(
       528,
       (slider.value as HTMLElement).clientWidth * 0.75
     );
+  }
 };
 
 const onImgLoad = () => {
