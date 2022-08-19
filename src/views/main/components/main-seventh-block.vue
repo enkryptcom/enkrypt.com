@@ -42,7 +42,7 @@
               </div>
             </a>
             <a
-              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              href="https://microsoftedge.microsoft.com/addons/detail/gfenajajnjjmmdojhdjmnngomkhlnfjl"
               class="main-seventh__downloads-item"
             >
               <edge-icon />
