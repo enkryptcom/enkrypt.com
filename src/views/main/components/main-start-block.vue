@@ -46,51 +46,21 @@
         <div class="col-12">
           <div class="main-start__download">
             <a
-              v-if="detect() == 'chrome'"
               class="main-start__download-button"
-              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
-              target="_blank"
-            >
-              Download now
-            </a>
-            <a
-              v-if="detect() == 'firefox'"
-              class="main-start__download-button"
-              href="firefox"
-            >
-              Download now
-            </a>
-            <a
-              v-if="detect() == 'edge'"
-              class="main-start__download-button"
-              href="edge"
-            >
-              Download now
-            </a>
-            <a
-              v-if="detect() == 'brave'"
-              class="main-start__download-button"
-              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
-              target="_blank"
+              :href="getDownloadLink()"
+              :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
             >
               Download now
             </a>
 
-            <router-link
-              v-if="detect() == 'no'"
-              class="main-start__download-button"
-              to="#downloads"
-            >
-              Download now
-            </router-link>
-
-            <p>Available as an extension for your favorite browser.</p>
+            <p>Available as an extension for your favorite browser.</p>
 
             <div class="main-start__download-icons">
-              <a><chrome /></a>
-              <a><firefox /></a>
-              <a><brave /></a>
-              <a><edge /></a>
+              <a :href="EXTENSION_LINKS.chrome"><chrome /></a>
+              <a :href="EXTENSION_LINKS.firefox"><firefox /></a>
+              <a :href="EXTENSION_LINKS.brave"><brave /></a>
+              <a :href="EXTENSION_LINKS.edge"><edge /></a>
+              <a :href="EXTENSION_LINKS.opera"><opera /></a>
             </div>
           </div>
         </div>
@@ -104,8 +74,10 @@ import Chrome from "../../../icons/browser/chrome-icon.vue";
 import Firefox from "../../../icons/browser/firefox-icon.vue";
 import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
+import Opera from "../../../icons/browser/opera-icon.vue";
 import { onMounted, ref, watch, onUnmounted } from "vue";
 import { detect } from "../../../utils/browser";
+import { EXTENSION_LINKS, BROWSER_NAMES } from "@/configs";
 
 const slider = ref(null);
 const height = ref<number>(528);
@@ -137,7 +109,21 @@ const onResize = () => {
     );
   }
 };
-
+const getDownloadLink = (): string => {
+  const browser = detect();
+  switch (browser) {
+    case BROWSER_NAMES.chrome:
+      return EXTENSION_LINKS.chrome;
+    case BROWSER_NAMES.edge:
+      return EXTENSION_LINKS.edge;
+    case BROWSER_NAMES.firefox:
+      return EXTENSION_LINKS.firefox;
+    case BROWSER_NAMES.opera:
+      return EXTENSION_LINKS.opera;
+    default:
+      return "#downloads";
+  }
+};
 const onImgLoad = () => {
   isLoaded.value = true;
 };

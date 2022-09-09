@@ -13,7 +13,7 @@
         <div class="col-12">
           <div class="main-seventh__downloads">
             <a
-              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              :href="EXTENSION_LINKS.chrome"
               target="_blank"
               class="main-seventh__downloads-item"
             >
@@ -23,15 +23,18 @@
                 <h5>Google Chrome</h5>
               </div>
             </a>
-            <a class="main-seventh__downloads-item">
+            <a
+              :href="EXTENSION_LINKS.firefox"
+              class="main-seventh__downloads-item"
+            >
               <firefox-icon />
               <div class="main-seventh__downloads-item-info">
-                <p>Coming soon for</p>
+                <p>Download for</p>
                 <h5>Firefox</h5>
               </div>
             </a>
             <a
-              href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
+              :href="EXTENSION_LINKS.brave"
               target="_blank"
               class="main-seventh__downloads-item"
             >
@@ -42,7 +45,7 @@
               </div>
             </a>
             <a
-              href="https://microsoftedge.microsoft.com/addons/detail/gfenajajnjjmmdojhdjmnngomkhlnfjl"
+              :href="EXTENSION_LINKS.edge"
               class="main-seventh__downloads-item"
             >
               <edge-icon />
@@ -52,7 +55,7 @@
               </div>
             </a>
             <a
-              href="https://addons.opera.com/en/extensions/details/enkrypt/"
+              :href="EXTENSION_LINKS.opera"
               class="main-seventh__downloads-item"
             >
               <opera-icon />
@@ -74,6 +77,7 @@ import FirefoxIcon from "../../../icons/browser/firefox-big.vue";
 import BraveIcon from "../../../icons/browser/brave-big.vue";
 import EdgeIcon from "../../../icons/browser/edge-big.vue";
 import OperaIcon from "../../../icons/browser/opera-big.vue";
+import { EXTENSION_LINKS } from "@/configs";
 </script>
 
 <style lang="less" scoped>

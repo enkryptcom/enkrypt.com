@@ -1,16 +1,17 @@
+import { BROWSER_NAMES } from "@/configs";
+
 export const detect = (): string => {
   const userAgent = navigator.userAgent;
-  let browserName;
 
-  if (userAgent.match(/chrome|chromium|crios/i)) {
-    browserName = "chrome";
-  } else if (userAgent.match(/firefox|fxios/i)) {
-    browserName = "firefox";
+  if (userAgent.match(/Opera|OPR/i)) {
+    return BROWSER_NAMES.opera;
   } else if (userAgent.match(/edg/i)) {
-    browserName = "edge";
+    return BROWSER_NAMES.edge;
+  } else if (userAgent.match(/chrome|chromium|crios/i)) {
+    return BROWSER_NAMES.chrome;
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    return BROWSER_NAMES.firefox;
   } else {
-    browserName = "no";
+    return "";
   }
-
-  return browserName;
 };
