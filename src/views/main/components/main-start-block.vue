@@ -76,8 +76,8 @@ import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
 import Opera from "../../../icons/browser/opera-icon.vue";
 import { onMounted, ref, watch, onUnmounted } from "vue";
-import { detect } from "../../../utils/browser";
-import { EXTENSION_LINKS, BROWSER_NAMES } from "@/configs";
+import { getDownloadLink } from "../../../utils/browser";
+import { EXTENSION_LINKS } from "@/configs";
 
 const slider = ref(null);
 const height = ref<number>(528);
@@ -109,21 +109,7 @@ const onResize = () => {
     );
   }
 };
-const getDownloadLink = (): string => {
-  const browser = detect();
-  switch (browser) {
-    case BROWSER_NAMES.chrome:
-      return EXTENSION_LINKS.chrome;
-    case BROWSER_NAMES.edge:
-      return EXTENSION_LINKS.edge;
-    case BROWSER_NAMES.firefox:
-      return EXTENSION_LINKS.firefox;
-    case BROWSER_NAMES.opera:
-      return EXTENSION_LINKS.opera;
-    default:
-      return "#downloads";
-  }
-};
+
 const onImgLoad = () => {
   isLoaded.value = true;
 };

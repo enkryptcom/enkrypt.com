@@ -37,49 +37,15 @@
               Blog
             </a> -->
           </div>
-          <a
-            v-if="detect() == 'chrome'"
-            class="header__download"
-            href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
-            target="_blank"
-            :class="{ fixed: isFixed }"
-          >
-            Download
-          </a>
-          <a
-            v-if="detect() == 'firefox'"
-            class="header__download"
-            href="firefox"
-            :class="{ fixed: isFixed }"
-          >
-            Download
-          </a>
-          <a
-            v-if="detect() == 'edge'"
-            class="header__download"
-            href="edge"
-            :class="{ fixed: isFixed }"
-          >
-            Download
-          </a>
-          <a
-            v-if="detect() == 'brave'"
-            class="header__download"
-            href="https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh"
-            target="_blank"
-            :class="{ fixed: isFixed }"
-          >
-            Download
-          </a>
 
-          <router-link
-            v-if="detect() == 'no'"
+          <a
             class="header__download"
+            :href="getDownloadLink()"
+            :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
             :class="{ fixed: isFixed }"
-            to="#downloads"
           >
             Download
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
@@ -92,7 +58,7 @@
 import Logo from "../../icons/common/logo-white.vue";
 import LogoColor from "../../icons/common/logo-color.vue";
 import { onMounted, ref, onUnmounted } from "vue";
-import { detect } from "../../utils/browser";
+import { getDownloadLink } from "../../utils/browser";
 import MobileMenu from "../mobile-menu/index.vue";
 
 const isFixed = ref<boolean>(false);
