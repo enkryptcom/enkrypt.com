@@ -49,6 +49,7 @@
               class="main-start__download-button"
               :href="getDownloadLink()"
               :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
+              onclick="_paq.push(['trackEvent', 'downloadNowButton', 'click'])"
             >
               Download now
             </a>
@@ -56,11 +57,31 @@
             <p>Available as an extension for your favorite browser.</p>
 
             <div class="main-start__download-icons">
-              <a :href="EXTENSION_LINKS.chrome"><chrome /></a>
-              <a :href="EXTENSION_LINKS.firefox"><firefox /></a>
-              <a :href="EXTENSION_LINKS.brave"><brave /></a>
-              <a :href="EXTENSION_LINKS.edge"><edge /></a>
-              <a :href="EXTENSION_LINKS.opera"><opera /></a>
+              <a
+                :href="EXTENSION_LINKS.chrome"
+                onclick="_paq.push(['trackEvent', 'navigateToChromeStore', 'click'])"
+                ><chrome
+              /></a>
+              <a
+                :href="EXTENSION_LINKS.firefox"
+                onclick="_paq.push(['trackEvent', 'navigateToFirefoxStore', 'click'])"
+                ><firefox
+              /></a>
+              <a
+                :href="EXTENSION_LINKS.brave"
+                onclick="_paq.push(['trackEvent', 'navigateToBraveStore', 'click'])"
+                ><brave
+              /></a>
+              <a
+                :href="EXTENSION_LINKS.edge"
+                onclick="_paq.push(['trackEvent', 'navigateToEdgeStore', 'click'])"
+                ><edge
+              /></a>
+              <a
+                :href="EXTENSION_LINKS.opera"
+                onclick="_paq.push(['trackEvent', 'navigateToOperaStore', 'click'])"
+                ><opera
+              /></a>
             </div>
           </div>
         </div>
@@ -100,7 +121,6 @@ onUnmounted(() => {
 watch([slider], () => {
   onResize();
 });
-
 const onResize = () => {
   if (slider.value) {
     height.value = Math.min(
