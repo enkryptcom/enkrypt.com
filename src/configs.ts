@@ -14,5 +14,13 @@ const EXTENSION_LINKS = {
   edge: "https://microsoftedge.microsoft.com/addons/detail/gfenajajnjjmmdojhdjmnngomkhlnfjl",
   opera: "https://addons.opera.com/en/extensions/details/enkrypt/",
 };
+const TRACKING_EVENTS = {
+  btnDownloadNow: ["trackEvent", "downloadNowButton", "click"],
+  chrome: ["trackEvent", "navigateToChromeStore", "click"],
+  firefox: ["trackEvent", "navigateToFirefoxStore", "click"],
+  brave: ["trackEvent", "navigateToBraveStore", "click"],
+  edge: ["trackEvent", "navigateToEdgeStore", "click"],
+  opera: ["trackEvent", "navigateToOperaStore", "click"],
+};
 
-export { EXTENSION_LINKS, BROWSER_NAMES };
+export { EXTENSION_LINKS, BROWSER_NAMES, TRACKING_EVENTS };

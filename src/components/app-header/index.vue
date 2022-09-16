@@ -43,6 +43,9 @@
             :href="getDownloadLink()"
             :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
             :class="{ fixed: isFixed }"
+            @click="
+              trackEvent(TRACKING_EVENTS.btnDownloadNow, getBrowserStoreEvent())
+            "
           >
             Download
           </a>
@@ -58,8 +61,13 @@
 import Logo from "../../icons/common/logo-white.vue";
 import LogoColor from "../../icons/common/logo-color.vue";
 import { onMounted, ref, onUnmounted } from "vue";
-import { getDownloadLink } from "../../utils/browser";
+import {
+  getBrowserStoreEvent,
+  getDownloadLink,
+  trackEvent,
+} from "../../utils/browser";
 import MobileMenu from "../mobile-menu/index.vue";
+import { TRACKING_EVENTS } from "@/configs";
 
 const isFixed = ref<boolean>(false);
 const isOverview = ref<boolean>(false);

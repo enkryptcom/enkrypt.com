@@ -16,6 +16,7 @@
               :href="EXTENSION_LINKS.chrome"
               target="_blank"
               class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.chrome)"
             >
               <chrome-icon />
               <div class="main-seventh__downloads-item-info">
@@ -26,6 +27,7 @@
             <a
               :href="EXTENSION_LINKS.firefox"
               class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.firefox)"
             >
               <firefox-icon />
               <div class="main-seventh__downloads-item-info">
@@ -37,6 +39,7 @@
               :href="EXTENSION_LINKS.brave"
               target="_blank"
               class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.brave)"
             >
               <brave-icon />
               <div class="main-seventh__downloads-item-info">
@@ -47,6 +50,7 @@
             <a
               :href="EXTENSION_LINKS.edge"
               class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.edge)"
             >
               <edge-icon />
               <div class="main-seventh__downloads-item-info">
@@ -57,6 +61,7 @@
             <a
               :href="EXTENSION_LINKS.opera"
               class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.opera)"
             >
               <opera-icon />
               <div class="main-seventh__downloads-item-info">
@@ -77,7 +82,8 @@ import FirefoxIcon from "../../../icons/browser/firefox-big.vue";
 import BraveIcon from "../../../icons/browser/brave-big.vue";
 import EdgeIcon from "../../../icons/browser/edge-big.vue";
 import OperaIcon from "../../../icons/browser/opera-big.vue";
-import { EXTENSION_LINKS } from "@/configs";
+import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
+import { trackEvent } from "@/utils/browser";
 </script>
 
 <style lang="less" scoped>

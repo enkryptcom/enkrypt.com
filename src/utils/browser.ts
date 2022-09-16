@@ -1,4 +1,4 @@
-import { BROWSER_NAMES, EXTENSION_LINKS } from "@/configs";
+import { BROWSER_NAMES, EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
 
 export const detect = (): string => {
   const userAgent = navigator.userAgent;
@@ -29,5 +29,24 @@ export const getDownloadLink = (): string => {
       return EXTENSION_LINKS.opera;
     default:
       return "#downloads";
+  }
+};
+
+export const trackEvent = (...args: string[][]): number =>
+  window._paq.push(...args);
+
+export const getBrowserStoreEvent = (): string[] => {
+  const browser = detect();
+  switch (browser) {
+    case BROWSER_NAMES.chrome:
+      return TRACKING_EVENTS.chrome;
+    case BROWSER_NAMES.edge:
+      return TRACKING_EVENTS.edge;
+    case BROWSER_NAMES.firefox:
+      return TRACKING_EVENTS.firefox;
+    case BROWSER_NAMES.opera:
+      return TRACKING_EVENTS.opera;
+    default:
+      return TRACKING_EVENTS.chrome;
   }
 };

@@ -49,7 +49,12 @@
               class="main-start__download-button"
               :href="getDownloadLink()"
               :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
-              onclick="_paq.push(['trackEvent', 'downloadNowButton', 'click'])"
+              @click="
+                trackEvent(
+                  TRACKING_EVENTS.btnDownloadNow,
+                  getBrowserStoreEvent()
+                )
+              "
             >
               Download now
             </a>
@@ -59,27 +64,32 @@
             <div class="main-start__download-icons">
               <a
                 :href="EXTENSION_LINKS.chrome"
-                onclick="_paq.push(['trackEvent', 'navigateToChromeStore', 'click'])"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.chrome)"
                 ><chrome
               /></a>
               <a
                 :href="EXTENSION_LINKS.firefox"
-                onclick="_paq.push(['trackEvent', 'navigateToFirefoxStore', 'click'])"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.firefox)"
                 ><firefox
               /></a>
               <a
                 :href="EXTENSION_LINKS.brave"
-                onclick="_paq.push(['trackEvent', 'navigateToBraveStore', 'click'])"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.brave)"
                 ><brave
               /></a>
               <a
                 :href="EXTENSION_LINKS.edge"
-                onclick="_paq.push(['trackEvent', 'navigateToEdgeStore', 'click'])"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.edge)"
                 ><edge
               /></a>
               <a
                 :href="EXTENSION_LINKS.opera"
-                onclick="_paq.push(['trackEvent', 'navigateToOperaStore', 'click'])"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.opera)"
                 ><opera
               /></a>
             </div>
@@ -97,8 +107,12 @@ import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
 import Opera from "../../../icons/browser/opera-icon.vue";
 import { onMounted, ref, watch, onUnmounted } from "vue";
-import { getDownloadLink } from "../../../utils/browser";
-import { EXTENSION_LINKS } from "@/configs";
+import {
+  getDownloadLink,
+  trackEvent,
+  getBrowserStoreEvent,
+} from "../../../utils/browser";
+import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
 
 const slider = ref(null);
 const height = ref<number>(528);

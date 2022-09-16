@@ -1,5 +1,8 @@
 module.exports = {
   root: true,
+  globals: {
+    _paq: true,
+  },
   env: { node: true },
   parser: "vue-eslint-parser",
   parserOptions: {
