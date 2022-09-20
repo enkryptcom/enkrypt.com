@@ -41,6 +41,9 @@
             <div class="main-third__networks-item moonriver">
               <moonriver /><span>Moonriver</span>
             </div>
+            <div class="main-third__networks-item astar">
+              <img :src="AstarImg" /><span>Astar</span>
+            </div>
           </div>
 
           <p class="main-third__info">
@@ -68,6 +71,7 @@ import Moonbeam from "../../../icons/networks/moonbeam.vue";
 import Bnb from "../../../icons/networks/bnb.vue";
 import Karura from "../../../icons/networks/karura.vue";
 import Moonriver from "../../../icons/networks/moonriver.vue";
+import AstarImg from "../../../icons/networks/astar.png";
 </script>
 
 <style lang="less" scoped>
@@ -291,6 +295,10 @@ import Moonriver from "../../../icons/networks/moonriver.vue";
 
       &.moonriver {
         background-color: @moonriver;
+      }
+
+      &.astar {
+        background-color: @astar;
       }
     }
 

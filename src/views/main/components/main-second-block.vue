@@ -8,8 +8,8 @@
             <span>{{ text }}</span>
           </div>
           <p>
-            Switch accounts and chains with a single click. Try something new
-            without having to set up another wallet.
+            Switch accounts and chains with a single click. Try something new
+            without having to set up another wallet.
           </p>
         </div>
       </div>
@@ -41,6 +41,8 @@ const networks = [
   "Karura",
   "Polygon",
   "BNB Smart Chain",
+  "Astar",
+  "Shiden",
 ];
 const text = ref<string>("");
 const isDeleting = ref<boolean>(false);
