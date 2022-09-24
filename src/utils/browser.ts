@@ -3,7 +3,9 @@ import { BROWSER_NAMES, EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
 export const detect = (): string => {
   const userAgent = navigator.userAgent;
 
-  if (userAgent.match(/Opera|OPR/i)) {
+  if (userAgent.match(/^((?!chrome|android).)*safari/i)) {
+    return BROWSER_NAMES.safari;
+  } else if (userAgent.match(/Opera|OPR/i)) {
     return BROWSER_NAMES.opera;
   } else if (userAgent.match(/edg/i)) {
     return BROWSER_NAMES.edge;
@@ -27,6 +29,8 @@ export const getDownloadLink = (): string => {
       return EXTENSION_LINKS.firefox;
     case BROWSER_NAMES.opera:
       return EXTENSION_LINKS.opera;
+    case BROWSER_NAMES.safari:
+      return EXTENSION_LINKS.safari;
     default:
       return "#downloads";
   }
@@ -46,6 +50,8 @@ export const getBrowserStoreEvent = (): string[] => {
       return TRACKING_EVENTS.firefox;
     case BROWSER_NAMES.opera:
       return TRACKING_EVENTS.opera;
+    case BROWSER_NAMES.safari:
+      return TRACKING_EVENTS.safari;
     default:
       return TRACKING_EVENTS.chrome;
   }

@@ -92,6 +92,12 @@
                 @click="trackEvent(TRACKING_EVENTS.opera)"
                 ><opera
               /></a>
+              <a
+                :href="EXTENSION_LINKS.safari"
+                target="_blank"
+                @click="trackEvent(TRACKING_EVENTS.safari)"
+                ><safari
+              /></a>
             </div>
           </div>
         </div>
@@ -106,6 +112,7 @@ import Firefox from "../../../icons/browser/firefox-icon.vue";
 import Brave from "../../../icons/browser/brave-icon.vue";
 import Edge from "../../../icons/browser/edge-icon.vue";
 import Opera from "../../../icons/browser/opera-icon.vue";
+import Safari from "../../../icons/browser/safari-icon.vue";
 import { onMounted, ref, watch, onUnmounted } from "vue";
 import {
   getDownloadLink,

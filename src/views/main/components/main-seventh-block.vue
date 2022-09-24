@@ -69,6 +69,17 @@
                 <h5>Opera</h5>
               </div>
             </a>
+            <a
+              :href="EXTENSION_LINKS.safari"
+              class="main-seventh__downloads-item"
+              @click="trackEvent(TRACKING_EVENTS.opera)"
+            >
+              <safari-icon />
+              <div class="main-seventh__downloads-item-info">
+                <p>Download for</p>
+                <h5>Safari</h5>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -82,6 +93,7 @@ import FirefoxIcon from "../../../icons/browser/firefox-big.vue";
 import BraveIcon from "../../../icons/browser/brave-big.vue";
 import EdgeIcon from "../../../icons/browser/edge-big.vue";
 import OperaIcon from "../../../icons/browser/opera-big.vue";
+import SafariIcon from "../../../icons/browser/safari-big.vue";
 import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
 import { trackEvent } from "@/utils/browser";
 </script>

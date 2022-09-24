@@ -4,6 +4,7 @@ const BROWSER_NAMES = {
   brave: "brave",
   edge: "edge",
   opera: "opera",
+  safari: "safari",
 };
 const EXTENSION_LINKS = {
   chrome:
@@ -13,6 +14,7 @@ const EXTENSION_LINKS = {
     "https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh",
   edge: "https://microsoftedge.microsoft.com/addons/detail/gfenajajnjjmmdojhdjmnngomkhlnfjl",
   opera: "https://addons.opera.com/en/extensions/details/enkrypt/",
+  safari: "https://apps.apple.com/app/enkrypt-web3-wallet/id1640164309",
 };
 const TRACKING_EVENTS = {
   btnDownloadNow: ["trackEvent", "downloadNowButton", "click"],
@@ -21,6 +23,7 @@ const TRACKING_EVENTS = {
   brave: ["trackEvent", "navigateToBraveStore", "click"],
   edge: ["trackEvent", "navigateToEdgeStore", "click"],
   opera: ["trackEvent", "navigateToOperaStore", "click"],
+  safari: ["trackEvent", "navigateToAppleStore", "click"],
 };
 
 export { EXTENSION_LINKS, BROWSER_NAMES, TRACKING_EVENTS };
