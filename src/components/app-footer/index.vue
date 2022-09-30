@@ -25,7 +25,7 @@
             <a href="https://www.facebook.com/MyEtherWallet/" target="_blank">
               <facebook />
             </a>
-            <a href="https://twitter.com/myetherwallet" target="_blank">
+            <a href="https://twitter.com/enkrypt" target="_blank">
               <twitter />
             </a>
             <a href="https://github.com/enkryptcom/enKrypt" target="_blank">
