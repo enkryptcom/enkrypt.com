@@ -30,9 +30,9 @@
             >
               Security
             </a>
-            <!-- <a class="mobile-menu__menu-item" :class="{ fixed: isFixed }" href="#">
+            <a class="mobile-menu__menu-item" href="https://blog.enkrypt.com/">
               Blog
-            </a> -->
+            </a>
           </div>
         </div>
       </div>
