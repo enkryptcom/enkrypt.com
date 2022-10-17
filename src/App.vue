@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount } from "vue";
+import { onBeforeMount, onMounted } from "vue";
 import AppHeader from "./components/app-header/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
 import { v4 as uuidv4 } from "uuid";
@@ -18,6 +18,13 @@ onBeforeMount(() => {
     user_id: uuidv4(),
     api_base: "https://api-iam.intercom.io",
   });
+});
+onMounted(() => {
+  const searchURL = new URL(window.location.href);
+  const ref = searchURL.searchParams.get("ref");
+  if (ref === "enkrypt_help") {
+    window.Intercom("show");
+  }
 });
 </script>
 
