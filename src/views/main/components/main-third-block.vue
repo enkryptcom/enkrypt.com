@@ -12,11 +12,11 @@
       </div>
     </div>
     <div class="main-third__carousels">
-      <networks-carousel duration="100s" direction="normal" />
-      <networks-carousel duration="140s" direction="reverse" />
-      <networks-carousel duration="180s" direction="normal" />
-      <networks-carousel duration="120s" direction="reverse" />
-      <networks-carousel duration="140s" direction="normal" />
+      <networks-carousel duration="130s" direction="normal" :line="1" />
+      <networks-carousel duration="140s" direction="reverse" :line="2" />
+      <networks-carousel duration="150s" direction="normal" :line="3" />
+      <networks-carousel duration="130s" direction="reverse" :line="4" />
+      <networks-carousel duration="140s" direction="normal" :line="5" />
     </div>
     <div class="container">
       <div class="row justify-content-start">
