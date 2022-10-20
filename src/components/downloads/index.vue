@@ -88,18 +88,18 @@
 </template>
 
 <script setup lang="ts">
-import ChromeIcon from "../../../icons/browser/chrome-big.vue";
-import FirefoxIcon from "../../../icons/browser/firefox-big.vue";
-import BraveIcon from "../../../icons/browser/brave-big.vue";
-import EdgeIcon from "../../../icons/browser/edge-big.vue";
-import OperaIcon from "../../../icons/browser/opera-big.vue";
-import SafariIcon from "../../../icons/browser/safari-big.vue";
+import ChromeIcon from "@/icons/browser/chrome-big.vue";
+import FirefoxIcon from "@/icons/browser/firefox-big.vue";
+import BraveIcon from "@/icons/browser/brave-big.vue";
+import EdgeIcon from "@/icons/browser/edge-big.vue";
+import OperaIcon from "@/icons/browser/opera-big.vue";
+import SafariIcon from "@/icons/browser/safari-big.vue";
 import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
 import { trackEvent } from "@/utils/browser";
 </script>
 
 <style lang="less" scoped>
-@import "../../../assets/styles/theme.less";
+@import "@/assets/styles/theme.less";
 
 .main-seventh {
   padding: 128px 0;
