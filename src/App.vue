@@ -1,6 +1,5 @@
 <template>
-  <app-header v-if="!isInternal" />
-  <app-header-internal v-else />
+  <app-header-universal />
   <main>
     <router-view name="view"></router-view>
   </main>
@@ -10,8 +9,7 @@
 <script setup lang="ts">
 import { computed, onBeforeMount, onMounted, WritableComputedRef } from "vue";
 import { useStore } from "vuex";
-import AppHeader from "./components/app-header/main/index.vue";
-import AppHeaderInternal from "./components/app-header/internal/index.vue";
+import AppHeaderUniversal from "./components/app-header/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
 import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";

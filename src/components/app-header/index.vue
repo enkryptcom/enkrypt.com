@@ -4,22 +4,22 @@
       <div class="row justify-content-end">
         <div class="col-12" :class="{ fixed: isFixed }">
           <router-link to="#overview">
-            <logo v-if="!isFixed" class="header__logo" />
-            <logo-color v-else class="header__logo" />
+            <logo-color v-if="isInternal || isFixed" class="header__logo" />
+            <logo v-else class="header__logo" />
           </router-link>
           <header-menu
             :is-fixed="isFixed"
             :is-chains="isChains"
             :is-secure="isSecure"
             :is-overview="isOverview"
-            :is-internal="false"
+            :is-internal="isInternal"
           ></header-menu>
 
           <a
             class="header__download"
             :href="getDownloadLink()"
             :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
-            :class="{ fixed: isFixed }"
+            :class="{ fixed: isFixed, internal: isInternal }"
             @click="
               trackEvent(TRACKING_EVENTS.btnDownloadNow, getBrowserStoreEvent())
             "
@@ -38,19 +38,23 @@
 import Logo from "@/icons/common/logo-white.vue";
 import LogoColor from "@/icons/common/logo-color.vue";
 import HeaderMenu from "@/components/app-header/common/header__menu.vue";
-import { onMounted, ref, onUnmounted } from "vue";
+import { onMounted, ref, onUnmounted, computed } from "vue";
 import {
   getBrowserStoreEvent,
   getDownloadLink,
   trackEvent,
-} from "../../../utils/browser";
+} from "../../utils/browser";
 import MobileMenu from "@/components/mobile-menu/index.vue";
 import { TRACKING_EVENTS } from "@/configs";
+import { useStore } from "vuex";
 
 const isFixed = ref<boolean>(false);
 const isOverview = ref<boolean>(false);
 const isChains = ref<boolean>(false);
 const isSecure = ref<boolean>(false);
+
+const store = useStore();
+const isInternal = computed(() => store.getters.isInternalPage);
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll);
@@ -198,6 +202,11 @@ const onResize = () => {
         background: @lighter;
         color: @white;
       }
+    }
+
+    &.internal {
+      background: @primary;
+      color: @white;
     }
   }
 }
