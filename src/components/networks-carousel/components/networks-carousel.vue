@@ -1,37 +1,12 @@
 <template>
   <div class="main-third__networks">
-    <div class="main-third__networks-item moonbeam">
-      <moonbeam /><span>Moonbeam</span>
-    </div>
-    <div class="main-third__networks-item bnb">
-      <Bnb /><span>BNB Smart chain</span>
-    </div>
-    <div class="main-third__networks-item karura">
-      <karura /><span>Karura</span>
-    </div>
-    <div class="main-third__networks-item moonriver">
-      <moonriver /><span>Moonriver</span>
-    </div>
-    <div class="main-third__networks-item astar">
-      <astar /><span>Astar</span>
-    </div>
-    <div class="main-third__networks-item shiden">
-      <shiden /><span>Shiden</span>
-    </div>
-    <div class="main-third__networks-item eth">
-      <eth /><span>Ethereum</span>
-    </div>
-    <div class="main-third__networks-item polkadot">
-      <polkadot /><span>Polkadot</span>
-    </div>
-    <div class="main-third__networks-item kusama">
-      <kusama /><span>Kusama</span>
-    </div>
-    <div class="main-third__networks-item polygon">
-      <Polygon /><span>Polygon</span>
-    </div>
-    <div class="main-third__networks-item acala">
-      <acala /><span>Acala</span>
+    <div
+      v-for="(item, idx) in itemsArr"
+      :key="idx"
+      class="main-third__networks-item"
+      :class="item.class"
+    >
+      <component :is="item.image" /><span>{{ item.name }}</span>
     </div>
   </div>
 </template>
@@ -48,6 +23,78 @@ import Karura from "../../../icons/networks/karura.vue";
 import Moonriver from "../../../icons/networks/moonriver.vue";
 import Astar from "../../../icons/networks/astar.vue";
 import Shiden from "../../../icons/networks/shiden.vue";
+import Okx from "../../../icons/networks/okx.vue";
+
+const cList = {
+  eth: {
+    name: "Ethereum",
+    class: "eth",
+    image: Eth,
+  },
+  polygon: {
+    name: "Polygon",
+    class: "polygon",
+    image: Polygon,
+  },
+  acala: {
+    name: "Acala",
+    class: "acala",
+    image: Acala,
+  },
+  moonriver: {
+    name: "Moonriver",
+    class: "moonriver",
+    image: Moonriver,
+  },
+  astar: {
+    name: "Astar",
+    class: "astar",
+    image: Astar,
+  },
+  polkadot: {
+    name: "Polkadot",
+    class: "polkadot",
+    image: Polkadot,
+  },
+  shiden: {
+    name: "Shiden",
+    class: "shiden",
+    image: Shiden,
+  },
+  okx: {
+    name: "OKX Chain",
+    class: "okx",
+    image: Okx,
+  },
+  kusama: {
+    name: "Kusama",
+    class: "kusama",
+    image: Kusama,
+  },
+  moonbeam: {
+    name: "Moonbeam",
+    class: "moonbeam",
+    image: Moonbeam,
+  },
+  bnb: {
+    name: "BNB Smart chain",
+    class: "bnb",
+    image: Bnb,
+  },
+  karura: {
+    name: "Karura",
+    class: "karura",
+    image: Karura,
+  },
+};
+const shuffleArray = (array: any[]): any[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+const itemsArr = shuffleArray(Object.values(cList));
 </script>
 
 <style lang="less" scoped>
@@ -144,6 +191,9 @@ import Shiden from "../../../icons/networks/shiden.vue";
 
       &.shiden {
         background-color: @shiden;
+      }
+      &.okx {
+        background-color: @okx;
       }
     }
   }
