@@ -1,5 +1,6 @@
 <template>
-  <app-header />
+  <app-header v-if="!isInternal" />
+  <app-header-internal v-else />
   <main>
     <router-view name="view"></router-view>
   </main>
@@ -7,10 +8,21 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, onMounted } from "vue";
-import AppHeader from "./components/app-header/index.vue";
+import { computed, onBeforeMount, onMounted, WritableComputedRef } from "vue";
+import { useStore } from "vuex";
+import AppHeader from "./components/app-header/main/index.vue";
+import AppHeaderInternal from "./components/app-header/internal/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
+import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
+
+const route = useRoute();
+const router = useRouter();
+const store = useStore();
+
+router.afterEach(() => {
+  store.dispatch("initInternal", route.name != "main");
+});
 
 onBeforeMount(() => {
   window.Intercom("boot", {
@@ -26,6 +38,10 @@ onMounted(() => {
     window.Intercom("show");
   }
 });
+
+var isInternal: WritableComputedRef<boolean> = computed(
+  () => store.getters.isInternalPage
+);
 </script>
 
 <style lang="less">
