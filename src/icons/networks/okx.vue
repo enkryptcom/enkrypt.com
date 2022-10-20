@@ -6,7 +6,7 @@
     height="36px"
     viewBox="0 0 36 36"
     version="1.1"
-    style="background-color: white"
+    style="border-radius: 50%"
   >
     <g id="surface1">
       <path
