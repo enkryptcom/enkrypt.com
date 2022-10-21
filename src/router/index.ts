@@ -11,7 +11,7 @@ const routes = {
     name: "main",
   },
   internal: {
-    path: "/internal-page",
+    path: "/networks/:networkName",
     components: {
       view: Internal,
     },
