@@ -3,6 +3,8 @@ export interface InnerPage {
   icon: string;
   title: string;
   blocks: InnerPageBlock[];
+  pageTitle: string;
+  pageDescription: string;
 }
 
 interface InnerPageBlock {

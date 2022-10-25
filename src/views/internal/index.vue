@@ -41,10 +41,7 @@
 import { computed } from "vue";
 import Downloads from "@/components/downloads/index.vue";
 import { useRoute } from "vue-router";
-import { innerPages } from "@/types/mock";
-
-// TODO: handle and discuss v-html, not safety, parse links?
-const networks = innerPages;
+import networks from "@/networks";
 
 var loaded = false;
 var content: {
@@ -57,9 +54,7 @@ const route = useRoute();
 
 const path = route.params.networkName;
 if (path) {
-  console.log("path:  " + path);
   content = networks.filter((i) => i.path === path)[0];
-  console.log("content: " + JSON.stringify(content));
   loaded = true;
 }
 const contentBlocksWithHash = computed(() => {
