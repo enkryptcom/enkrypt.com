@@ -3,7 +3,7 @@ import { InnerPage } from "./inner-page";
 export const innerPages: InnerPage[] = [
   {
     path: "polygon",
-    icon: "/src/assets/internal/polygon.network.svg",
+    icon: require("@/assets/internal/polygon.network.svg"),
     title: "Polygon wallet",
     blocks: [
       {
@@ -24,7 +24,7 @@ export const innerPages: InnerPage[] = [
   },
   {
     path: "ethereum",
-    icon: "/src/assets/internal/polygon.network.svg",
+    icon: require("@/assets/internal/polygon.network.svg"),
     title: "Ethereum wallet",
     blocks: [
       {

@@ -4,6 +4,7 @@
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
+    "importHelpers": true,
     "moduleResolution": "node",
     "isolatedModules": true,
     "strict": true,
@@ -12,11 +13,12 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "skipLibCheck": true
   },
-  "include": ["vite.config.*", "env.d.ts", "src/**/*", "src/**/*.vue"]
+  "include": ["vite.config.*", "env.d.ts", "src/**/*", "src/**/*.vue"],
 }
