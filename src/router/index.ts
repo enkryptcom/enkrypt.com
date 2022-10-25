@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Main from "../views/main/index.vue";
+import Internal from "../views/internal/index.vue";
 
 const routes = {
   intro: {
@@ -8,6 +9,13 @@ const routes = {
       view: Main,
     },
     name: "main",
+  },
+  internal: {
+    path: "/networks/:networkName-wallet",
+    components: {
+      view: Internal,
+    },
+    name: "internal",
   },
 };
 

@@ -1,5 +1,5 @@
 <template>
-  <app-header />
+  <app-header-universal />
   <main>
     <router-view name="view"></router-view>
   </main>
@@ -8,9 +8,19 @@
 
 <script setup lang="ts">
 import { onBeforeMount, onMounted } from "vue";
-import AppHeader from "./components/app-header/index.vue";
+import { useInternalPageStore } from "./store";
+import AppHeaderUniversal from "./components/app-header/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
+import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
+
+const route = useRoute();
+const router = useRouter();
+const store = useInternalPageStore();
+
+router.afterEach(() => {
+  store.setInternal(route.name != "main");
+});
 
 onBeforeMount(() => {
   window.Intercom("boot", {

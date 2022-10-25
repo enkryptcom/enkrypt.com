@@ -16,7 +16,7 @@ import MainThirdBlock from "./components/main-third-block.vue";
 import MainFourthBlock from "./components/main-fourth-block.vue";
 import MainFifthBlock from "./components/main-fifth-block.vue";
 import MainSixthBlock from "./components/main-sixth-block.vue";
-import MainSeventhBlock from "./components/main-seventh-block.vue";
+import MainSeventhBlock from "@/components/downloads/index.vue";
 import MainEighthBlock from "./components/main-eighth-block.vue";
 </script>
 

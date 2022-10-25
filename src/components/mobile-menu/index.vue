@@ -40,7 +40,10 @@
   </div>
   <a class="mobile-menu__link" :class="{ fixed: isOpen }" @click="toggleMenu">
     <mobile-menu-close v-if="isOpen" />
-    <mobile-menu-open v-else />
+    <mobile-menu-open
+      v-else
+      :fill="store.isInternalPage.value ? '#684CFF' : 'white'"
+    />
   </a>
 </template>
 
@@ -50,12 +53,15 @@ import MobileMenuClose from "../../icons/common/mobile-menu-close.vue";
 import LogoColor from "../../icons/common/logo-color.vue";
 import { useRouter } from "vue-router";
 import { onMounted, ref, onUnmounted } from "vue";
+import { useInternalPageStore } from "@/store";
 
 const router = useRouter();
 const isOpen = ref<boolean>(false);
 const isOverview = ref<boolean>(false);
 const isChains = ref<boolean>(false);
 const isSecure = ref<boolean>(false);
+
+const store = useInternalPageStore();
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll);
@@ -143,12 +149,20 @@ const onResize = () => {
     });
   }
 
+  // It changes its position during toggling the menu
   &__logo {
     width: 116px;
     height: 22px;
-    margin-left: -2px;
+    // margin-left: -2px;
     margin-top: 25px;
     margin-bottom: 35px;
+
+    // .screen-sm({
+    //   margin-top: 40px;
+    // });
+    // .screen-xs({
+    //   margin-top: 22px;
+    // });
   }
 
   &__menu {
