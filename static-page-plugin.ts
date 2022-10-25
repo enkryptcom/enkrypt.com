@@ -1,15 +1,9 @@
-import { sync as glob } from "fast-glob";
-import {
-  copyFileSync,
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  writeFileSync,
-} from "fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join as pathJoin, resolve as pathResolve } from "path";
 import { PluginOption } from "vite";
+import networks from "./src/networks/networks";
 
-const StaticNetworkPages = (routes: string[] = []): PluginOption => {
+const StaticNetworkPages = (): PluginOption => {
   const name = "StaticNetworkPages";
   const outDir = "dist";
   const subDir = "networks";
@@ -19,16 +13,7 @@ const StaticNetworkPages = (routes: string[] = []): PluginOption => {
     description:
       "A multichain crypto wallet Hold, buy, send, receive, and swap tokens. Manage your NFTs. Access web3 apps across multiple blockchains.",
   };
-  const networks = {
-    ethereum: {
-      name: "ethereum",
-      description: "hello ethereum",
-    },
-    polygon: {
-      name: "polygon",
-      description: "hello polygon",
-    },
-  };
+
   return {
     name,
     transformIndexHtml(html) {
@@ -37,22 +22,19 @@ const StaticNetworkPages = (routes: string[] = []): PluginOption => {
       return html;
     },
     closeBundle: () => {
-      const routes = Object.values(networks).map((net) => `${net.name}`);
+      const routes = networks;
       routes.forEach((p) => {
-        const finalDir = `${p}-wallet`;
+        const finalDir = `${p.path}-wallet`;
         const dir = pathResolve(outDir, subDir, finalDir);
         if (!existsSync(dir)) {
           mkdirSync(dir, { recursive: true });
         }
         const dst = pathJoin(outDir, subDir, finalDir, "index.html");
         let indexFile = readFileSync(src, "utf-8");
-        indexFile = indexFile.replaceAll(
-          MAIN_INFO.title,
-          networks[p as keyof typeof networks].name
-        );
+        indexFile = indexFile.replaceAll(MAIN_INFO.title, p.pageTitle);
         indexFile = indexFile.replaceAll(
           MAIN_INFO.description,
-          networks[p as keyof typeof networks].description
+          p.pageDescription
         );
         writeFileSync(dst, indexFile);
         console.log(`${name}: Saved ${src} to ${dst}`);

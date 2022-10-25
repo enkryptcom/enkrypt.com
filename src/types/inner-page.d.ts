@@ -1,6 +1,5 @@
 export interface InnerPage {
   path: string;
-  icon: string;
   title: string;
   blocks: InnerPageBlock[];
   pageTitle: string;

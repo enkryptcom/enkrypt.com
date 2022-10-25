@@ -1,9 +1,8 @@
-import { InnerPage } from "./types/inner-page";
+import { InnerPage } from "../types/inner-page";
 
 const networks: InnerPage[] = [
   {
     path: "polygon",
-    icon: require("@/assets/internal/polygon.network.svg"),
     title: "Polygon wallet",
     pageTitle: "Enkrypt: Polygon Wallet",
     pageDescription:
@@ -26,7 +25,6 @@ const networks: InnerPage[] = [
   },
   {
     path: "ethereum",
-    icon: require("@/assets/internal/polygon.network.svg"),
     title: "Ethereum wallet",
     pageTitle: "Enkrypt: Ethereum Wallet",
     pageDescription:

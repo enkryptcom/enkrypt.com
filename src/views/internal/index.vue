@@ -7,7 +7,7 @@
             <div class="content__header">
               <img
                 class="content__header-icon"
-                :src="content.icon"
+                :src="icons[content.path as keyof typeof icons]"
                 :alt="content.title"
               />
               <h1>{{ content.title }}</h1>
@@ -41,12 +41,12 @@
 import { computed } from "vue";
 import Downloads from "@/components/downloads/index.vue";
 import { useRoute } from "vue-router";
-import networks from "@/networks";
+import networks from "@/networks/networks";
+import icons from "@/networks/icons";
 
 var loaded = false;
 var content: {
   path: string;
-  icon: string;
   title: string;
   blocks: { title: string; paragraps: string[] }[];
 } | null = null;
@@ -183,6 +183,8 @@ const contentBlocksWithHash = computed(() => {
 }
 
 .content__header-icon {
+  max-width: 80px;
+  max-height: 80px;
   margin-right: 32px;
   .screen-xs({
     margin-bottom: 24px;
