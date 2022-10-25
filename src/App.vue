@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeMount, onMounted, WritableComputedRef } from "vue";
-import { useStore } from "vuex";
+import { onBeforeMount, onMounted } from "vue";
+import { useInternalPageStore } from "./store";
 import AppHeaderUniversal from "./components/app-header/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
 import { useRouter, useRoute } from "vue-router";
@@ -16,10 +16,10 @@ import { v4 as uuidv4 } from "uuid";
 
 const route = useRoute();
 const router = useRouter();
-const store = useStore();
+const store = useInternalPageStore();
 
 router.afterEach(() => {
-  store.dispatch("initInternal", route.name != "main");
+  store.setInternal(route.name != "main");
 });
 
 onBeforeMount(() => {
@@ -36,10 +36,6 @@ onMounted(() => {
     window.Intercom("show");
   }
 });
-
-var isInternal: WritableComputedRef<boolean> = computed(
-  () => store.getters.isInternalPage
-);
 </script>
 
 <style lang="less">

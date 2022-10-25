@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Main from "../views/main/index.vue";
 import Internal from "../views/internal/index.vue";
 
@@ -11,7 +11,7 @@ const routes = {
     name: "main",
   },
   internal: {
-    path: "/networks/:networkName",
+    path: "/networks/:networkName-wallet",
     components: {
       view: Internal,
     },
@@ -20,7 +20,7 @@ const routes = {
 };
 
 export default createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: Object.values(routes),
   scrollBehavior(to) {
     if (to.hash) {

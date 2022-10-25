@@ -7,7 +7,7 @@
         active: isOverview && !isChains,
         internal: isInternal,
       }"
-      to="#overview"
+      to="/#overview"
     >
       Overview
     </router-link>
@@ -18,14 +18,14 @@
         active: isChains && !isSecure,
         internal: isInternal,
       }"
-      to="#chains"
+      to="/#chains"
     >
       Supported chains
     </router-link>
     <router-link
       class="header__menu-item"
       :class="{ fixed: isFixed, active: isSecure, internal: isInternal }"
-      to="#security"
+      to="/#security"
     >
       Security
     </router-link>

@@ -40,7 +40,10 @@
   </div>
   <a class="mobile-menu__link" :class="{ fixed: isOpen }" @click="toggleMenu">
     <mobile-menu-close v-if="isOpen" />
-    <mobile-menu-open v-else :fill="isInternal ? '#684CFF' : 'white'" />
+    <mobile-menu-open
+      v-else
+      :fill="store.isInternalPage.value ? '#684CFF' : 'white'"
+    />
   </a>
 </template>
 
@@ -49,8 +52,8 @@ import MobileMenuOpen from "../../icons/common/mobile-menu-open.vue";
 import MobileMenuClose from "../../icons/common/mobile-menu-close.vue";
 import LogoColor from "../../icons/common/logo-color.vue";
 import { useRouter } from "vue-router";
-import { onMounted, ref, onUnmounted, computed } from "vue";
-import { useStore } from "vuex";
+import { onMounted, ref, onUnmounted } from "vue";
+import { useInternalPageStore } from "@/store";
 
 const router = useRouter();
 const isOpen = ref<boolean>(false);
@@ -58,8 +61,7 @@ const isOverview = ref<boolean>(false);
 const isChains = ref<boolean>(false);
 const isSecure = ref<boolean>(false);
 
-const store = useStore();
-const isInternal = computed(() => store.getters.isInternalPage);
+const store = useInternalPageStore();
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll);

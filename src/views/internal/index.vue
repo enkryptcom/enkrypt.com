@@ -13,14 +13,19 @@
               <h1>{{ content.title }}</h1>
             </div>
 
-            <template v-for="block in contentBlocksWithHash" :key="block.key">
+            <template
+              v-for="(block, idxm) in contentBlocksWithHash"
+              :key="idxm + 'cont'"
+            >
               <template v-if="block">
                 <h3>{{ block.title }}</h3>
+                <!-- eslint-disable vue/no-v-html -->
                 <p
-                  v-for="par in block.paragraps"
-                  :key="par.key"
+                  v-for="(par, idxp) in block.paragraps"
+                  :key="idxp + 'para'"
                   v-html="par.item"
                 ></p>
+                <!--eslint-enable-->
               </template>
             </template>
           </div>
@@ -34,7 +39,6 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import objectHash from "object-hash";
 import Downloads from "@/components/downloads/index.vue";
 import { useRoute } from "vue-router";
 import { innerPages } from "@/types/mock";
@@ -64,9 +68,7 @@ const contentBlocksWithHash = computed(() => {
       title: i.title,
       paragraps: i.paragraps.map((p: any) => ({
         item: p,
-        key: objectHash(p),
       })),
-      key: objectHash(i),
     }));
   } else return null;
 });
@@ -161,7 +163,7 @@ const contentBlocksWithHash = computed(() => {
     });
   }
 
-  ::v-deep a {
+  :deep(a) {
     color: @primary;
   }
 }

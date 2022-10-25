@@ -1,22 +1,11 @@
-import { createStore } from "vuex";
+import { defineStore } from "pinia";
+import { computed, ref } from "vue";
 
-export default createStore({
-  state: {
-    isInternalPage: false,
-  },
-  mutations: {
-    setInternal(state, val) {
-      state.isInternalPage = val;
-    },
-  },
-  actions: {
-    initInternal({ commit }, internal) {
-      commit("setInternal", internal);
-    },
-  },
-  getters: {
-    isInternalPage(state, getters) {
-      return state.isInternalPage;
-    },
-  },
+export const useInternalPageStore = defineStore("internalPages", () => {
+  const isPage = ref(false);
+  const isInternalPage = computed(() => isPage);
+  const setInternal = (val: boolean) => {
+    isPage.value = val;
+  };
+  return { isInternalPage, setInternal };
 });
