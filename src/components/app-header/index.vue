@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-12" :class="{ fixed: isFixed }">
-          <router-link to="#overview">
+          <router-link to="/#overview">
             <logo-color
               v-if="store.isInternalPage.value || isFixed"
               class="header__logo"
