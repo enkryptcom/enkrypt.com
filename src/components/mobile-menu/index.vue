@@ -10,7 +10,6 @@
               :class="{
                 active: isOverview && !isChains,
               }"
-              to="#overview"
               @click="goToAnchor('#overview')"
             >
               Overview
@@ -25,7 +24,6 @@
             <a
               class="mobile-menu__menu-item"
               :class="{ active: isSecure }"
-              to="#security"
               @click="goToAnchor('#security')"
             >
               Security
@@ -80,7 +78,7 @@ const toggleMenu = () => {
 
 const goToAnchor = (hash: string) => {
   toggleMenu();
-  router.push({ hash: hash });
+  router.push({ path: "/", hash });
 };
 
 function isInViewport(id: string) {
