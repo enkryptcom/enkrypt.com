@@ -3,50 +3,26 @@
     <div class="container">
       <div class="row justify-content-end">
         <div class="col-12" :class="{ fixed: isFixed }">
-          <router-link to="#overview">
-            <logo v-if="!isFixed" class="header__logo" />
-            <logo-color v-else class="header__logo" />
+          <router-link to="/#overview">
+            <logo-color
+              v-if="store.isInternalPage.value || isFixed"
+              class="header__logo"
+            />
+            <logo v-else class="header__logo" />
           </router-link>
-
-          <div class="header__menu">
-            <router-link
-              class="header__menu-item"
-              :class="{
-                fixed: isFixed,
-                active: isOverview && !isChains,
-              }"
-              to="#overview"
-            >
-              Overview
-            </router-link>
-            <router-link
-              class="header__menu-item"
-              :class="{ fixed: isFixed, active: isChains && !isSecure }"
-              to="#chains"
-            >
-              Supported chains
-            </router-link>
-            <router-link
-              class="header__menu-item"
-              :class="{ fixed: isFixed, active: isSecure }"
-              to="#security"
-            >
-              Security
-            </router-link>
-            <a
-              class="header__menu-item"
-              :class="{ fixed: isFixed }"
-              href="https://blog.enkrypt.com/"
-            >
-              Blog
-            </a>
-          </div>
+          <header-menu
+            :is-fixed="isFixed"
+            :is-chains="isChains"
+            :is-secure="isSecure"
+            :is-overview="isOverview"
+            :is-internal="store.isInternalPage.value"
+          ></header-menu>
 
           <a
             class="header__download"
             :href="getDownloadLink()"
             :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
-            :class="{ fixed: isFixed }"
+            :class="{ fixed: isFixed, internal: store.isInternalPage.value }"
             @click="
               trackEvent(TRACKING_EVENTS.btnDownloadNow, getBrowserStoreEvent())
             "
@@ -62,21 +38,25 @@
 </template>
 
 <script setup lang="ts">
-import Logo from "../../icons/common/logo-white.vue";
-import LogoColor from "../../icons/common/logo-color.vue";
+import Logo from "@/icons/common/logo-white.vue";
+import LogoColor from "@/icons/common/logo-color.vue";
+import HeaderMenu from "@/components/app-header/common/header__menu.vue";
 import { onMounted, ref, onUnmounted } from "vue";
 import {
   getBrowserStoreEvent,
   getDownloadLink,
   trackEvent,
 } from "../../utils/browser";
-import MobileMenu from "../mobile-menu/index.vue";
+import MobileMenu from "@/components/mobile-menu/index.vue";
 import { TRACKING_EVENTS } from "@/configs";
+import { useInternalPageStore } from "@/store";
 
 const isFixed = ref<boolean>(false);
 const isOverview = ref<boolean>(false);
 const isChains = ref<boolean>(false);
 const isSecure = ref<boolean>(false);
+
+const store = useInternalPageStore();
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll);
@@ -141,7 +121,7 @@ const onResize = () => {
 </script>
 
 <style lang="less" scoped>
-@import "../../assets/styles/theme.less";
+@import "@/assets/styles/theme.less";
 
 .header {
   height: 104px;
@@ -183,84 +163,8 @@ const onResize = () => {
     .screen-sm({
       width: 116px;
       height: 22px;
-      margin-left: -2px;
+      // margin-left: -2px;
     });
-  }
-
-  &__menu {
-    .screen-sm({
-      display: none;
-    });
-    &-item {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 19px;
-      text-align: center;
-      letter-spacing: 0.02em;
-      color: @white;
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 32px;
-      position: relative;
-      transition: opacity 300ms ease-in-out;
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      .screen-md({
-         margin-right: 20px;
-      });
-
-      &.fixed {
-        color: @primary;
-        transition: color 300ms ease-in-out;
-
-        &:hover {
-          color: @lighter;
-        }
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &.active {
-        &:before {
-          .pseudo();
-          width: 100%;
-          height: 2px;
-          background: @white;
-          border-radius: 3px;
-          left: 0;
-          bottom: -4px;
-          transition: opacity 300ms ease-in-out;
-        }
-
-        &.fixed {
-          transition: background 300ms ease-in-out;
-
-          &:before {
-            background: @primary;
-          }
-        }
-
-        &:hover {
-          &:before {
-            opacity: 0.7;
-          }
-        }
-
-        &.fixed {
-          &:hover {
-            &:before {
-              background: @lighter;
-            }
-          }
-        }
-      }
-    }
   }
 
   &__download {
@@ -300,6 +204,11 @@ const onResize = () => {
         background: @lighter;
         color: @white;
       }
+    }
+
+    &.internal {
+      background: @primary;
+      color: @white;
     }
   }
 }
