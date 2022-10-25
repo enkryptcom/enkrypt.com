@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Main from "../views/main/index.vue";
 import Internal from "../views/internal/index.vue";
 
@@ -20,7 +20,7 @@ const routes = {
 };
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: Object.values(routes),
   scrollBehavior(to) {
     if (to.hash) {
