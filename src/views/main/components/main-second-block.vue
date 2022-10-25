@@ -43,6 +43,7 @@ const networks = [
   "BNB Smart Chain",
   "Astar",
   "Shiden",
+  "OKX Chain",
 ];
 const text = ref<string>("");
 const isDeleting = ref<boolean>(false);
