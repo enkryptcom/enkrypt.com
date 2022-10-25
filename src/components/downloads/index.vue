@@ -166,7 +166,6 @@ import { trackEvent } from "@/utils/browser";
     flex-wrap: wrap;
 
     .screen-lg({
-      padding: 0 22% 0 22%;
       justify-content: space-evenly;
     });
 
@@ -201,6 +200,11 @@ import { trackEvent } from "@/utils/browser";
 
       .screen-lg({
         margin-bottom: 24px;
+        margin-top: 0;
+        width: calc(33% - 24px);
+      });
+      .screen-md({
+        width: auto;
       });
 
       .screen-sm({
@@ -218,9 +222,30 @@ import { trackEvent } from "@/utils/browser";
         margin-right: 0;
       }
 
-      &:nth-child(2) {
+      &:nth-child(4) {
+        margin-right: 0;
         .screen-lg({
-         margin-right: 0;
+         margin-right: 24px;
+        });
+      }
+
+      &:nth-child(3) {
+        .screen-lg({
+          margin-right: 0;
+        });
+        .screen-md({
+          width: auto;
+          margin-right: 24px;
+        });
+        .screen-xs({
+          width: 100%;
+          margin-right: 0;
+        });
+      }
+
+      &:nth-child(even) {
+        .screen-md({
+          margin-right: 0;
         });
       }
 
