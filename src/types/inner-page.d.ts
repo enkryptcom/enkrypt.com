@@ -1,5 +1,8 @@
+import { NetworkName } from "./networks";
+
 export interface InnerPage {
-  path: string;
+  path: NetworkName;
+  name: string;
   title: string;
   blocks: InnerPageBlock[];
   pageTitle: string;

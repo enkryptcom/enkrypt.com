@@ -31,20 +31,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-const networks = [
-  "Ethereum",
-  "Polkadot",
-  "Moonbeam",
-  "Acala",
-  "Kusama",
-  "Moonriver",
-  "Karura",
-  "Polygon",
-  "BNB Smart Chain",
-  "Astar",
-  "Shiden",
-  "OKX Chain",
-];
+import networkList from "@/networks/networks";
+const networks = Object.values(networkList).map((val) => val.name);
 const text = ref<string>("");
 const isDeleting = ref<boolean>(false);
 const loopNum = ref<number>(0);

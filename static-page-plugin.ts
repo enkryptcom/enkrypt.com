@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join as pathJoin, resolve as pathResolve } from "path";
 import { PluginOption } from "vite";
-import networks from "./src/networks/networks";
+import networkList from "./src/networks/networks";
 
 const StaticNetworkPages = (): PluginOption => {
   const name = "StaticNetworkPages";
@@ -22,7 +22,7 @@ const StaticNetworkPages = (): PluginOption => {
       return html;
     },
     closeBundle: () => {
-      const routes = networks;
+      const routes = Object.values(networkList);
       routes.forEach((p) => {
         const finalDir = `${p.path}-wallet`;
         const dir = pathResolve(outDir, subDir, finalDir);

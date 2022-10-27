@@ -7,7 +7,7 @@
             <div class="content__header">
               <img
                 class="content__header-icon"
-                :src="icons[content.path as keyof typeof icons]"
+                :src="icons[content.path as keyof typeof icons].pageIcon"
                 :alt="content.title"
               />
               <h1>{{ content.title }}</h1>
@@ -41,7 +41,7 @@
 import { computed } from "vue";
 import Downloads from "@/components/downloads/index.vue";
 import { useRoute } from "vue-router";
-import networks from "@/networks/networks";
+import networkList from "@/networks/networks";
 import icons from "@/networks/icons";
 
 var loaded = false;
@@ -51,7 +51,7 @@ var content: {
   blocks: { title: string; paragraps: string[] }[];
 } | null = null;
 const route = useRoute();
-
+const networks = Object.values(networkList);
 const path = route.params.networkName;
 if (path) {
   content = networks.filter((i) => i.path === path)[0];

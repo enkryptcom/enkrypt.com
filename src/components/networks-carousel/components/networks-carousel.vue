@@ -1,92 +1,35 @@
 <template>
   <div class="main-third__networks">
-    <div
+    <a
       v-for="(item, idx) in itemsArr"
       :key="idx"
-      class="main-third__networks-item"
-      :class="item.class"
+      :href="`/networks/${item.path}-wallet/`"
+      @click="scrollToTop"
     >
-      <component :is="item.image" /><span>{{ item.name }}</span>
-    </div>
+      <div class="main-third__networks-item" :class="item.class">
+        <component :is="item.image" /><span>{{ item.name }}</span>
+      </div>
+    </a>
   </div>
 </template>
 
 <script setup lang="ts">
-import Eth from "../../../icons/networks/eth.vue";
-import Polkadot from "../../../icons/networks/polkadot.vue";
-import Kusama from "../../../icons/networks/kusama.vue";
-import Polygon from "../../../icons/networks/polygon.vue";
-import Acala from "../../../icons/networks/acala.vue";
-import Moonbeam from "../../../icons/networks/moonbeam.vue";
-import Bnb from "../../../icons/networks/bnb.vue";
-import Karura from "../../../icons/networks/karura.vue";
-import Moonriver from "../../../icons/networks/moonriver.vue";
-import Astar from "../../../icons/networks/astar.vue";
-import Shiden from "../../../icons/networks/shiden.vue";
-import Okx from "../../../icons/networks/okx.vue";
+import { CarouselListItem, NetworkName } from "@/types/networks";
+import IconList from "@/networks/icons";
+import NetworkList from "@/networks/networks";
 
-const cList = {
-  eth: {
-    name: "Ethereum",
-    class: "eth",
-    image: Eth,
-  },
-  polygon: {
-    name: "Polygon",
-    class: "polygon",
-    image: Polygon,
-  },
-  acala: {
-    name: "Acala",
-    class: "acala",
-    image: Acala,
-  },
-  moonriver: {
-    name: "Moonriver",
-    class: "moonriver",
-    image: Moonriver,
-  },
-  astar: {
-    name: "Astar",
-    class: "astar",
-    image: Astar,
-  },
-  polkadot: {
-    name: "Polkadot",
-    class: "polkadot",
-    image: Polkadot,
-  },
-  shiden: {
-    name: "Shiden",
-    class: "shiden",
-    image: Shiden,
-  },
-  okx: {
-    name: "OKX Chain",
-    class: "okx",
-    image: Okx,
-  },
-  kusama: {
-    name: "Kusama",
-    class: "kusama",
-    image: Kusama,
-  },
-  moonbeam: {
-    name: "Moonbeam",
-    class: "moonbeam",
-    image: Moonbeam,
-  },
-  bnb: {
-    name: "BNB Smart chain",
-    class: "bnb",
-    image: Bnb,
-  },
-  karura: {
-    name: "Karura",
-    class: "karura",
-    image: Karura,
-  },
-};
+const cList: { [key in NetworkName]: CarouselListItem } = Object.keys(
+  IconList
+).reduce((prev, cur) => {
+  prev[cur as NetworkName] = {
+    name: NetworkList[cur as NetworkName].name,
+    class: cur as NetworkName,
+    image: IconList[cur as NetworkName].carouselIcon,
+    path: NetworkList[cur as NetworkName].path,
+  };
+  return prev;
+}, {} as { [key in NetworkName]: CarouselListItem });
+
 const shuffleArray = (array: any[]): any[] => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -95,6 +38,9 @@ const shuffleArray = (array: any[]): any[] => {
   return array;
 };
 const itemsArr = shuffleArray(Object.values(cList));
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
 </script>
 
 <style lang="less" scoped>
@@ -108,6 +54,9 @@ const itemsArr = shuffleArray(Object.values(cList));
     align-items: flex-start;
     flex-wrap: wrap;
     font-size: 0;
+    a:link {
+      text-decoration: none;
+    }
 
     &-item {
       padding: 8px 16px 8px 8px;
@@ -149,7 +98,7 @@ const itemsArr = shuffleArray(Object.values(cList));
             });
       }
 
-      &.eth {
+      &.ethereum {
         background: @eth;
       }
 
@@ -192,7 +141,7 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.shiden {
         background-color: @shiden;
       }
-      &.okx {
+      &.okc {
         background-color: @okx;
       }
     }
