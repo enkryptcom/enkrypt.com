@@ -4,7 +4,6 @@
       v-for="(item, idx) in itemsArr"
       :key="idx"
       :href="`/networks/${item.path}-wallet/`"
-      @click="scrollToTop"
     >
       <div class="main-third__networks-item" :class="item.class">
         <component :is="item.image" /><span>{{ item.name }}</span>
@@ -38,9 +37,6 @@ const shuffleArray = (array: any[]): any[] => {
   return array;
 };
 const itemsArr = shuffleArray(Object.values(cList));
-const scrollToTop = () => {
-  window.scrollTo(0, 0);
-};
 </script>
 
 <style lang="less" scoped>
