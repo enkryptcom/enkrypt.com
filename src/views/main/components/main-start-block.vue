@@ -22,23 +22,23 @@
           <img
             class="main-start__pic"
             src="../../../assets/pic/pic1.jpeg"
-            alt=""
+            alt="Enkrypt extension preview"
             @load="onImgLoad"
           />
           <img
             class="main-start__pic"
             src="../../../assets/pic/pic2.jpeg"
-            alt=""
+            alt="Enkrypt extension preview"
           />
           <img
             class="main-start__pic"
             src="../../../assets/pic/pic3.jpeg"
-            alt=""
+            alt="Enkrypt extension preview"
           />
           <img
             class="main-start__pic"
             src="../../../assets/pic/pic4.jpeg"
-            alt=""
+            alt="Enkrypt extension preview"
           />
         </div>
       </div>
