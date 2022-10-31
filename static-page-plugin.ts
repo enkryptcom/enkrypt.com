@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join as pathJoin, resolve as pathResolve } from "path";
+import Sitemap from "sitemap-ts";
 import { PluginOption } from "vite";
 import networkList from "./src/networks/networks";
 
@@ -32,11 +33,16 @@ const StaticNetworkPages = (): PluginOption => {
         const dst = pathJoin(outDir, subDir, finalDir, "index.html");
         let indexFile = readFileSync(src, "utf-8");
         indexFile = indexFile.replaceAll(MAIN_INFO.title, p.pageTitle);
+        indexFile = indexFile.replaceAll(MAIN_INFO.title, p.pageTitle);
         indexFile = indexFile.replaceAll(
           MAIN_INFO.description,
           p.pageDescription
         );
         writeFileSync(dst, indexFile);
+        Sitemap({
+          hostname: "https://www.enkrypt.com/",
+          changefreq: "weekly",
+        });
         console.log(`${name}: Saved ${src} to ${dst}`);
       });
     },
