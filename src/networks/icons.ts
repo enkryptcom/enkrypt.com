@@ -11,6 +11,8 @@ import Moonriver from "@/icons/networks/moonriver.vue";
 import Astar from "@/icons/networks/astar.vue";
 import Shiden from "@/icons/networks/shiden.vue";
 import Okx from "@/icons/networks/okx.vue";
+import Canto from "@/icons/networks/canto.vue";
+import Bifrost from "@/icons/networks/bifrost.vue";
 
 const icons: {
   [key in NetworkName]: {
@@ -65,6 +67,14 @@ const icons: {
   [NetworkName.okc]: {
     pageIcon: require("./images/okc.svg"),
     carouselIcon: Okx,
+  },
+  [NetworkName.canto]: {
+    pageIcon: require("./images/canto.svg"),
+    carouselIcon: Canto,
+  },
+  [NetworkName.bifrost]: {
+    pageIcon: require("./images/bifrost.svg"),
+    carouselIcon: Bifrost,
   },
 };
 

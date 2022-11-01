@@ -11,6 +11,8 @@ export enum NetworkName {
   moonbeam = "moonbeam",
   bnb = "bnb",
   karura = "karura",
+  bifrost = "bifrost",
+  canto = "canto",
 }
 
 export interface CarouselListItem {

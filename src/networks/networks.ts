@@ -283,6 +283,52 @@ const networks: { [key in NetworkName]: InnerPage } = {
       },
     ],
   },
+  [NetworkName.canto]: {
+    path: NetworkName.canto,
+    name: "Canto",
+    title: "Discover DeFi with Canto on Enkrypt",
+    pageTitle: "Enkrypt: Canto Wallet",
+    pageDescription:
+      "Enkrypt is your all-in-one Canto wallet. Delve directly into DeFi with Canto on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is your all-in-one Canto wallet. Delve directly into DeFi with Canto on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Canto?",
+        paragraps: [
+          "Canto is more than just a Layer-1 (L1) blockchain protocol. Focused on delivering the promise of decentralized finance (DeFi), Canto is also a post-traditional financial movement maintained by a collective of chain-native developers. Canto offers staking, lending, token governance, liquidity pools (LPs), bridges, swaps, and more - enabling accessibility, transparency, and freedom for new systems. ",
+          '<a href="https://canto.io/" target="_blank" rel="nofollow">https://canto.io/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.bifrost]: {
+    path: NetworkName.bifrost,
+    name: "Bifrost",
+    title: "Manage staked assets with Bifrost on Enkrypt",
+    pageTitle: "Enkrypt: Bifrost Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Bifrost support. Access cross-chain liquidity for staking with Bifrost on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Bifrost support. Access cross-chain liquidity for staking with Bifrost on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Bifrost?",
+        paragraps: [
+          "Bifrost is a web3 derivatives protocol that provides decentralized cross-chain liquidity for staking your crypto assets. Built on the modular Polkadot ecosystem, Bifrost allows you to unlock and manage staked liquidity in order to earn yield.  Bifrost’s vTokens are fully liquid, moving freely across parachains and EVM/WASM compatible environments thanks to the XCM portal. Lend, borrow, or get creative with your previously illiquid staked tokens. Based on Substrate. ",
+          '<a href="https://bifrost.finance/" target="_blank" rel="nofollow">https://bifrost.finance/</a>',
+        ],
+      },
+    ],
+  },
 };
 
 export default networks;

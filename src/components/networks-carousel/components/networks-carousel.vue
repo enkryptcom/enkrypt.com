@@ -140,6 +140,12 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.okc {
         background-color: @okx;
       }
+      &.bifrost {
+        background-color: @bifrost;
+      }
+      &.canto {
+        background-color: @canto;
+      }
     }
   }
 }
