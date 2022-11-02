@@ -20,7 +20,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
         title: "What is Ethereum?",
         paragraps: [
           "In 2012, at age 17, Vitalik Buterin was introduced to Bitcoin. By the time he was 20, he had created Ethereum, which quickly became a flourishing ecosystem of cryptocurrency enthusiasts. Ethereum is a censorship resistant and programmable blockchain-based smart contract platform, allowing users to build and deploy decentralized applications (dApps) on its network. Ethereum continues to evolve and is the home of NFTs, DeFi, and ERC 20 tokens.",
-          "Ethereum aims to be the world's first decentralized super computer, introducing a more private internet, and banking for everyone on a peer to peer network. $ETH is Ethereum’s native token.",
+          "Ethereum aims to be the world's first decentralized super computer, introducing a more private internet, and banking for everyone on a peer to peer network. $ETH is Ethereum's native token.",
           '<a href="https://ethereum.org/" target="_blank" rel="nofollow">https://ethereum.org</a>',
         ],
       },
@@ -67,7 +67,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Kusama?",
         paragraps: [
-          'Kusama is the canary or "sister network" to Polkadot. Although Kusama Network acts as the Dotsama testnet, the term doesn\'t quite cover the level of testing projects conducted before launching as a parachain. It’s built using nominated proof-of-stake (NPoS) consensus mechanism, which is similar to regular proof-of-stake (PoS), but considered a more democratic method. Kusama’s motto is, "Expect Chaos", and tells you basically everything you need to know about the Kusama community.',
+          'Kusama is the canary or "sister network" to Polkadot. Although Kusama Network acts as the Dotsama testnet, the term doesn\'t quite cover the level of testing projects conducted before launching as a parachain. It\'s built using nominated proof-of-stake (NPoS) consensus mechanism, which is similar to regular proof-of-stake (PoS), but considered a more democratic method. Kusama\'s motto is, "Expect Chaos", and tells you basically everything you need to know about the Kusama community.',
           "The Kusama community is developing the future of web3 fast. $KSM is Kusama Network's native token.",
           '<a href="https://kusama.network/" target="_blank" rel="nofollow">https://kusama.network/</a>',
         ],
@@ -91,7 +91,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is BNB?",
         paragraps: [
-          "The BNB Smartchain, previously known as Binance Smart Chain (BSC), is a blockchain that runs parallel with Binance Chain. Originally a fork of Ethereum, the BNB Smartchain allows native cross-chain communication between EVM-compatible blockchains and the Binance Chain. To achieve this, Binance uses Proof-of-Staked-Authourity (PoSA). BNB Smartchain takes advantage of Ethereum developer tools and the vast Binance ecosystem to attract decentralized finance (DeFi) developers looking for a cheaper platform. $BNB is Binance’s native token.",
+          "The BNB Smartchain, previously known as Binance Smart Chain (BSC), is a blockchain that runs parallel with Binance Chain. Originally a fork of Ethereum, the BNB Smartchain allows native cross-chain communication between EVM-compatible blockchains and the Binance Chain. To achieve this, Binance uses Proof-of-Staked-Authourity (PoSA). BNB Smartchain takes advantage of Ethereum developer tools and the vast Binance ecosystem to attract decentralized finance (DeFi) developers looking for a cheaper platform. $BNB is Binance's native token.",
           '<a href="https://www.binance.com/en/bnb" target="_blank" rel="nofollow">https://www.binance.com/en/bnb</a>',
         ],
       },
@@ -137,8 +137,8 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Moonbeam?",
         paragraps: [
-          "Moonbeam is an Ethereum-compatible (EVM) smart contract platform built on Polkadot. This Ethereum/Polkadot compatibility makes it easy for developers to migrate existing Solidity smart contracts over to Dotsama, introducing natively interoperable dApps to the ecosystem. Upon launching in January of 2022, Moonbeam became the first fully operational parachain on Polkadot. Moonbeam’s mission is to make it easy for multi-chain projects to enter into the Polkadot ecosystem.",
-          "The Moonbeam Foundation hosted a crowdloan for the Moonbeam network in November 2021.  $GLMR is Moonbeam’s native token.",
+          "Moonbeam is an Ethereum-compatible (EVM) smart contract platform built on Polkadot. This Ethereum/Polkadot compatibility makes it easy for developers to migrate existing Solidity smart contracts over to Dotsama, introducing natively interoperable dApps to the ecosystem. Upon launching in January of 2022, Moonbeam became the first fully operational parachain on Polkadot. Moonbeam's mission is to make it easy for multi-chain projects to enter into the Polkadot ecosystem.",
+          "The Moonbeam Foundation hosted a crowdloan for the Moonbeam network in November 2021.  $GLMR is Moonbeam's native token.",
           '<a href="https://moonbeam.network/" target="_blank" rel="nofollow">https://moonbeam.network/</a>',
         ],
       },
@@ -161,7 +161,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Moonriver?",
         paragraps: [
-          'Moonriver is the community-led canary or "cousin network" to Moonbeam, built on Kusama. Similar to Moonbeam, Moonriver is an Ethereum-compatible smart contract platform. This compatibility allows Ethereum developers to easily deploy existing Solidity smart contracts to Kusama, helping create an ecosystem of interoperable dApps. $MOVR is Moonriver’s native token and a majority of this token is held by the Moonbeam community.',
+          'Moonriver is the community-led canary or "cousin network" to Moonbeam, built on Kusama. Similar to Moonbeam, Moonriver is an Ethereum-compatible smart contract platform. This compatibility allows Ethereum developers to easily deploy existing Solidity smart contracts to Kusama, helping create an ecosystem of interoperable dApps. $MOVR is Moonriver\'s native token and a majority of this token is held by the Moonbeam community.',
           '<a href="https://moonbeam.network/networks/moonriver/" target="_blank" rel="nofollow">https://moonbeam.network/networks/moonriver/</a>',
         ],
       },
@@ -173,19 +173,19 @@ const networks: { [key in NetworkName]: InnerPage } = {
     title: "Acala: the DeFi Hub of Polkadot on Enkrypt",
     pageTitle: "Enkrypt: Acala Wallet",
     pageDescription:
-      "Enkrypt is a multi-chain wallet solution designed as an alternative to Polkadot js. It currently has native wallet support for Acala and it’s DeFi ecosystem. Stake AUSD and earn using Enkrypt.",
+      "Enkrypt is a multi-chain wallet solution designed as an alternative to Polkadot js. It currently has native wallet support for Acala and it's DeFi ecosystem. Stake AUSD and earn using Enkrypt.",
     blocks: [
       {
         title: "About Enkrypt",
         paragraps: [
-          "Enkrypt is a multi-chain wallet solution designed as an alternative to Polkadot js. It currently has native wallet support for Acala and it’s DeFi ecosystem. Stake AUSD and earn using Enkrypt.",
+          "Enkrypt is a multi-chain wallet solution designed as an alternative to Polkadot js. It currently has native wallet support for Acala and it's DeFi ecosystem. Stake AUSD and earn using Enkrypt.",
         ],
       },
       {
         title: "What is Acala?",
         paragraps: [
-          "Acala is a decentralized finance (DeFi) platform built on the Polkadot network. Acala allows users to mint and stake liquidity using aUSD, the parachain’s stablecoin, via smart contracts that power Acala’s decentralized applications (dApps). It functions as a building block for DeFi in Dotsama.",
-          "Acala received its parachain slot via Polkadot crowdloan. Acala’s goal is to allow developers to leverage the aUSD ecosystem while enjoying the best of Ethereum and the full power of Substrate. $ACA is Acala’s native token.",
+          "Acala is a decentralized finance (DeFi) platform built on the Polkadot network. Acala allows users to mint and stake liquidity using aUSD, the parachain's stablecoin, via smart contracts that power Acala's decentralized applications (dApps). It functions as a building block for DeFi in Dotsama.",
+          "Acala received its parachain slot via Polkadot crowdloan. Acala's goal is to allow developers to leverage the aUSD ecosystem while enjoying the best of Ethereum and the full power of Substrate. $ACA is Acala's native token.",
           '<a href="https://acala.network/" target="_blank" rel="nofollow">https://acala.network/</a>',
         ],
       },
@@ -208,7 +208,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Karura?",
         paragraps: [
-          'Karura is the canary or "sister network" to Acala. Similar to Acala, Karura aims to be the all-in-one decentralized finance (DeFi) hub of Kusama. Karura allows users to mint and swap aUSD, the parachain’s stablecoin that powers Karura’s decentralized applications (dApps). Created by the Acala Network, Karura has won four Web3 Foundation grants and founded the Substrate Developer Academy. $KAR is Karura’s native token.',
+          "Karura is the canary or \"sister network\" to Acala. Similar to Acala, Karura aims to be the all-in-one decentralized finance (DeFi) hub of Kusama. Karura allows users to mint and swap aUSD, the parachain's stablecoin that powers Karura's decentralized applications (dApps). Created by the Acala Network, Karura has won four Web3 Foundation grants and founded the Substrate Developer Academy. $KAR is Karura's native token.",
           '<a href="https://apps.karura.network/" target="_blank" rel="nofollow">https://apps.karura.network/</a>',
         ],
       },
@@ -220,12 +220,12 @@ const networks: { [key in NetworkName]: InnerPage } = {
     title: "Build-To-Earn with Astar using Enkrypt",
     pageTitle: "Enkrypt: Astar Wallet",
     pageDescription:
-      "Built as an alternative to Polkadot js, Enkrypt is an Astar wallet. Enkrypt has complete native wallet support for Astar and it’s build-to-earn ecosystem. Start building on Astar using Enkrypt!",
+      "Built as an alternative to Polkadot js, Enkrypt is an Astar wallet. Enkrypt has complete native wallet support for Astar and it's build-to-earn ecosystem. Start building on Astar using Enkrypt!",
     blocks: [
       {
         title: "About Enkrypt",
         paragraps: [
-          "Built as an alternative to Polkadot js, Enkrypt is an Astar wallet. Enkrypt has complete native wallet support for Astar and it’s build-to-earn ecosystem. Start building on Astar using Enkrypt!",
+          "Built as an alternative to Polkadot js, Enkrypt is an Astar wallet. Enkrypt has complete native wallet support for Astar and it's build-to-earn ecosystem. Start building on Astar using Enkrypt!",
         ],
       },
       {
@@ -254,7 +254,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Shiden?",
         paragraps: [
-          'Shiden is the canary or "sister network" to Astar, built on the Kusama Network. A multi-chain smart contract dApp hub supporting multiple blockchains and virtual machines, new features always go to Shiden first and are thoroughly tested before being implemented onto the Astar mainnet. $SDN is Shiden’s native token.',
+          'Shiden is the canary or "sister network" to Astar, built on the Kusama Network. A multi-chain smart contract dApp hub supporting multiple blockchains and virtual machines, new features always go to Shiden first and are thoroughly tested before being implemented onto the Astar mainnet. $SDN is Shiden\'s native token.',
           '<a href="https://shiden.astar.network/" target="_blank" rel="nofollow">https://shiden.astar.network/</a>',
         ],
       },
@@ -277,7 +277,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is OKC?",
         paragraps: [
-          "OKC, previously known as OKExChain, is an EVM-compatible blockchain built on Cosmos with a focus on interoperability (IBC). It is open-source, decentralized, and smart contract-enabled. Built for the next generation of decentralized apps (dApps), decentralized finance (DeFi) protocols, NFTs, and metaverse applications. Backed by OKX, one of the largest crypto exchanges, OKC is optimized for trading crypto currencies. $OKT is the network’s native token.",
+          "OKC, previously known as OKExChain, is an EVM-compatible blockchain built on Cosmos with a focus on interoperability (IBC). It is open-source, decentralized, and smart contract-enabled. Built for the next generation of decentralized apps (dApps), decentralized finance (DeFi) protocols, NFTs, and metaverse applications. Backed by OKX, one of the largest crypto exchanges, OKC is optimized for trading crypto currencies. $OKT is the network's native token.",
           '<a href="https://www.okx.com/" target="_blank" rel="nofollow">https://www.okx.com/</a>',
         ],
       },
@@ -323,8 +323,31 @@ const networks: { [key in NetworkName]: InnerPage } = {
       {
         title: "What is Bifrost?",
         paragraps: [
-          "Bifrost is a web3 derivatives protocol that provides decentralized cross-chain liquidity for staking your crypto assets. Built on the modular Polkadot ecosystem, Bifrost allows you to unlock and manage staked liquidity in order to earn yield.  Bifrost’s vTokens are fully liquid, moving freely across parachains and EVM/WASM compatible environments thanks to the XCM portal. Lend, borrow, or get creative with your previously illiquid staked tokens. Based on Substrate. ",
+          "Bifrost is a web3 derivatives protocol that provides decentralized cross-chain liquidity for staking your crypto assets. Built on the modular Polkadot ecosystem, Bifrost allows you to unlock and manage staked liquidity in order to earn yield.  Bifrost's vTokens are fully liquid, moving freely across parachains and EVM/WASM compatible environments thanks to the XCM portal. Lend, borrow, or get creative with your previously illiquid staked tokens. Based on Substrate. ",
           '<a href="https://bifrost.finance/" target="_blank" rel="nofollow">https://bifrost.finance/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.optimism]: {
+    path: NetworkName.optimism,
+    name: "Optimism",
+    title: "Optimism: an L2 solution on Enkrypt",
+    pageTitle: "Enkrypt: Optimism Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain wallet with native support for the Optimism ecosystem. Enjoy the Ethereum experience at a fraction of the cost with Optimism on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain wallet with native support for the Optimism ecosystem. Enjoy the Ethereum experience at a fraction of the cost with Optimism on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Optimism?",
+        paragraps: [
+          "Formerly known as the non-profit Plasma Group, Optimism is a low-cost and lightning-fast L2 (Layer-2) blockchain scaling solution built on Ethereum. Optimism processes transactions on Layer-2, then posts them back to Ethereum in batches. This process is has been coined “Optimistic Rollup”, and it works 10x faster than the Ethereum blockchain, at a fraction of the cost. Built by developers, for developers - Optimism's EVM-equivalent architecture helps to scale your Ethereum dApps (decentralized apps). $OP is Optimism's native token.",
+          '<a href="https://www.optimism.io/" target="_blank" rel="nofollow">https://www.optimism.io/</a>',
         ],
       },
     ],

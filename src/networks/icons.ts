@@ -13,6 +13,7 @@ import Shiden from "@/icons/networks/shiden.vue";
 import Okx from "@/icons/networks/okx.vue";
 import Canto from "@/icons/networks/canto.vue";
 import Bifrost from "@/icons/networks/bifrost.vue";
+import Optimism from "@/icons/networks/optimism.vue";
 
 const icons: {
   [key in NetworkName]: {
@@ -75,6 +76,10 @@ const icons: {
   [NetworkName.bifrost]: {
     pageIcon: require("./images/bifrost.svg"),
     carouselIcon: Bifrost,
+  },
+  [NetworkName.optimism]: {
+    pageIcon: require("./images/optimism.svg"),
+    carouselIcon: Optimism,
   },
 };
 

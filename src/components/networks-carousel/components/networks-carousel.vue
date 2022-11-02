@@ -146,6 +146,9 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.canto {
         background-color: @canto;
       }
+      &.optimism {
+        background-color: @optimism;
+      }
     }
   }
 }
