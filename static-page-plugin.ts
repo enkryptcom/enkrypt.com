@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join as pathJoin, resolve as pathResolve } from "path";
-import Sitemap from "sitemap-ts";
+import { streamToPromise, SitemapStream } from "sitemap";
 import { PluginOption } from "vite";
 import networkList from "./src/networks/networks";
 
@@ -24,6 +24,14 @@ const StaticNetworkPages = (): PluginOption => {
     },
     closeBundle: () => {
       const routes = Object.values(networkList);
+      const sitemap = new SitemapStream({
+        hostname: "https://www.enkrypt.com",
+      });
+      sitemap.write({
+        url: ``,
+        changefreq: "weekly",
+        priority: 1.0,
+      });
       routes.forEach((p) => {
         const finalDir = `${p.path}-wallet`;
         const dir = pathResolve(outDir, subDir, finalDir);
@@ -39,12 +47,17 @@ const StaticNetworkPages = (): PluginOption => {
           p.pageDescription
         );
         writeFileSync(dst, indexFile);
-        Sitemap({
-          hostname: "https://www.enkrypt.com/",
+        sitemap.write({
+          url: `/networks/${p.path}-wallet/`,
           changefreq: "weekly",
+          priority: 1.0,
         });
         console.log(`${name}: Saved ${src} to ${dst}`);
       });
+      sitemap.end();
+      streamToPromise(sitemap).then((buffer) =>
+        writeFileSync(pathResolve(outDir, "sitemap.xml"), buffer)
+      );
     },
   };
 };
