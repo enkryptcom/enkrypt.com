@@ -9,10 +9,6 @@
 </template>
 
 <script setup lang="ts">
-// import NetworksCarouselFirstLine from "./components/networks-carousel-first-line.vue";
-// import NetworksCarouselSecondLine from "./components/networks-carousel-second-line.vue";
-// import NetworksCarouselThirdLine from "./components/networks-carousel-third-line.vue";
-// import NetworksCarouselFourthLine from "./components/networks-carousel-fourth-line.vue";
 import NetworksCarousel from "./components/networks-carousel.vue";
 
 import Carousel from "../carousel/index.vue";

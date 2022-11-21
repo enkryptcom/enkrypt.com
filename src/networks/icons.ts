@@ -14,6 +14,7 @@ import Okx from "@/icons/networks/okx.vue";
 import Canto from "@/icons/networks/canto.vue";
 import Bifrost from "@/icons/networks/bifrost.vue";
 import Optimism from "@/icons/networks/optimism.vue";
+import Bitcoin from "@/icons/networks/bitcoin.vue";
 
 const icons: {
   [key in NetworkName]: {
@@ -80,6 +81,10 @@ const icons: {
   [NetworkName.optimism]: {
     pageIcon: require("./images/optimism.svg"),
     carouselIcon: Optimism,
+  },
+  [NetworkName.bitcoin]: {
+    pageIcon: require("./images/bitcoin.svg"),
+    carouselIcon: Bitcoin,
   },
 };
 

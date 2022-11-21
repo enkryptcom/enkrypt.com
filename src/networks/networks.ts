@@ -352,6 +352,29 @@ const networks: { [key in NetworkName]: InnerPage } = {
       },
     ],
   },
+  [NetworkName.bitcoin]: {
+    path: NetworkName.bitcoin,
+    name: "Bitcoin",
+    title: "Bitcoin made easy with Enkrypt",
+    pageTitle: "Enkrypt: Bitcoin Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension with native wallet support for Bitcoin. Start stacking those satoshis with Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension with native wallet support for Bitcoin. Start stacking those satoshis with Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Bitcoin?",
+        paragraps: [
+          "Created by the mysterious developer(s) known as Satoshi Nakamoto, Bitcoin is a decentralized digital currency and store-of-value. Also known as a digital ledger, Bitcoin was originally intended as an electronic payment system based on cryptographic proof instead of trust. Bitcoin was the first successful cryptocurrency to flourish - being money and a form of payment outside the control of any one person, entity, bank or government. Simply put, Bitcoin is permissionless, trustless, digital gold. Bitcoin’s native token is $BTC.",
+          '<a href="https://bitcoin.org/en/" target="_blank" rel="nofollow">https://bitcoin.org/en/</a>',
+        ],
+      },
+    ],
+  },
 };
 
 export default networks;
