@@ -1,20 +1,4 @@
 import { NetworkName } from "@/types/networks";
-import Eth from "@/icons/networks/eth.vue";
-import Polkadot from "@/icons/networks/polkadot.vue";
-import Kusama from "@/icons/networks/kusama.vue";
-import Polygon from "@/icons/networks/polygon.vue";
-import Acala from "@/icons/networks/acala.vue";
-import Moonbeam from "@/icons/networks/moonbeam.vue";
-import Bnb from "@/icons/networks/bnb.vue";
-import Karura from "@/icons/networks/karura.vue";
-import Moonriver from "@/icons/networks/moonriver.vue";
-import Astar from "@/icons/networks/astar.vue";
-import Shiden from "@/icons/networks/shiden.vue";
-import Okx from "@/icons/networks/okx.vue";
-import Canto from "@/icons/networks/canto.vue";
-import Bifrost from "@/icons/networks/bifrost.vue";
-import Optimism from "@/icons/networks/optimism.vue";
-import Bitcoin from "@/icons/networks/bitcoin.vue";
 
 const icons: {
   [key in NetworkName]: {
@@ -24,67 +8,67 @@ const icons: {
 } = {
   [NetworkName.ethereum]: {
     pageIcon: require("./images/ethereum.svg"),
-    carouselIcon: Eth,
+    carouselIcon: require("@/icons/networks/eth.svg"),
   },
   [NetworkName.polkadot]: {
     pageIcon: require("./images/polkadot.svg"),
-    carouselIcon: Polkadot,
+    carouselIcon: require("@/icons/networks/polkadot.svg"),
   },
   [NetworkName.kusama]: {
     pageIcon: require("./images/kusama.svg"),
-    carouselIcon: Kusama,
+    carouselIcon: require("@/icons/networks/kusama.svg"),
   },
   [NetworkName.polygon]: {
     pageIcon: require("./images/polygon.svg"),
-    carouselIcon: Polygon,
+    carouselIcon: require("@/icons/networks/polygon.svg"),
   },
   [NetworkName.acala]: {
     pageIcon: require("./images/acala.svg"),
-    carouselIcon: Acala,
+    carouselIcon: require("@/icons/networks/acala.svg"),
   },
   [NetworkName.moonbeam]: {
     pageIcon: require("./images/moonbeam.png"),
-    carouselIcon: Moonbeam,
+    carouselIcon: require("@/icons/networks/moonbeam.svg"),
   },
   [NetworkName.bnb]: {
     pageIcon: require("./images/bnb.svg"),
-    carouselIcon: Bnb,
+    carouselIcon: require("@/icons/networks/bnb.svg"),
   },
   [NetworkName.karura]: {
     pageIcon: require("./images/karura.svg"),
-    carouselIcon: Karura,
+    carouselIcon: require("@/icons/networks/karura.svg"),
   },
   [NetworkName.moonriver]: {
     pageIcon: require("./images/moonriver.png"),
-    carouselIcon: Moonriver,
+    carouselIcon: require("@/icons/networks/moonriver.svg"),
   },
   [NetworkName.astar]: {
     pageIcon: require("./images/astar.svg"),
-    carouselIcon: Astar,
+    carouselIcon: require("@/icons/networks/astar.svg"),
   },
   [NetworkName.shiden]: {
     pageIcon: require("./images/shiden.svg"),
-    carouselIcon: Shiden,
+    carouselIcon: require("@/icons/networks/shiden.svg"),
   },
   [NetworkName.okc]: {
     pageIcon: require("./images/okc.svg"),
-    carouselIcon: Okx,
+    carouselIcon: require("@/icons/networks/okx.svg"),
   },
   [NetworkName.canto]: {
     pageIcon: require("./images/canto.svg"),
-    carouselIcon: Canto,
+    carouselIcon: require("@/icons/networks/canto.svg"),
   },
   [NetworkName.bifrost]: {
     pageIcon: require("./images/bifrost.svg"),
-    carouselIcon: Bifrost,
+    carouselIcon: require("@/icons/networks/bifrost.svg"),
   },
   [NetworkName.optimism]: {
     pageIcon: require("./images/optimism.svg"),
-    carouselIcon: Optimism,
+    carouselIcon: require("@/icons/networks/optimism.svg"),
   },
   [NetworkName.bitcoin]: {
     pageIcon: require("./images/bitcoin.svg"),
-    carouselIcon: Bitcoin,
+    carouselIcon: require("@/icons/networks/bitcoin.svg"),
   },
 };
 

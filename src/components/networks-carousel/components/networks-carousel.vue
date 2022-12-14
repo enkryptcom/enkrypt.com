@@ -6,7 +6,7 @@
       :href="`/networks/${item.path}-wallet/`"
     >
       <div class="main-third__networks-item" :class="item.class">
-        <component :is="item.image" /><span>{{ item.name }}</span>
+        <img :src="item.image" /><span>{{ item.name }}</span>
       </div>
     </a>
   </div>
@@ -78,7 +78,7 @@ const itemsArr = shuffleArray(Object.values(cList));
           margin-right: 16px;
         });
 
-      svg {
+      img {
         width: 36px;
         height: 36px;
         margin-right: 8px;

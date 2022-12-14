@@ -1,4 +1,4 @@
-<template>
+
   <svg
     width="36"
     height="36"
@@ -72,4 +72,4 @@
       fill="#BBA5E1"
     />
   </svg>
-</template>
+

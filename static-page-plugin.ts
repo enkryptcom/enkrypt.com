@@ -10,7 +10,7 @@ const StaticNetworkPages = (): PluginOption => {
   const subDir = "networks";
   const src = pathJoin(outDir, "index.html");
   const MAIN_INFO = {
-    title: "Enkrypt: Ethereum, Polkadot and Canto Wallet",
+    title: "Enkrypt: Ethereum, Polkadot and Bitcoin Wallet",
     description:
       "A multichain crypto wallet Hold, buy, send, receive, and swap tokens. Manage your NFTs. Access web3 apps across multiple blockchains.",
   };
