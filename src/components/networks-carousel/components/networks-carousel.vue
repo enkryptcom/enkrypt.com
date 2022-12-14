@@ -6,7 +6,9 @@
       :href="`/networks/${item.path}-wallet/`"
     >
       <div class="main-third__networks-item" :class="item.class">
-        <img :src="item.image" /><span>{{ item.name }}</span>
+        <img :src="item.image" :alt="item.name + ' logo'" /><span>{{
+          item.name
+        }}</span>
       </div>
     </a>
   </div>
