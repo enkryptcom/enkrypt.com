@@ -15,6 +15,7 @@ export enum NetworkName {
   canto = "canto",
   optimism = "optimism",
   bitcoin = "bitcoin",
+  edgeware = "edgeware",
 }
 
 export interface CarouselListItem {

@@ -154,6 +154,9 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.bitcoin {
         background-color: @bitcoin;
       }
+      &.edgeware {
+        background-color: @optimism;
+      }
     }
   }
 }

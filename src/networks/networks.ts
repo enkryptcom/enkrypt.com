@@ -375,6 +375,29 @@ const networks: { [key in NetworkName]: InnerPage } = {
       },
     ],
   },
+  [NetworkName.edgeware]: {
+    path: NetworkName.edgeware,
+    name: "Edgeware",
+    title: "Deploy DAOs with Edgeware on Enkrypt",
+    pageTitle: "Enkrypt: Edgeware Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Edgeware support. Fund, manage, and build decentralized communities with Edgeware on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Edgeware support. Fund, manage, and build decentralized communities with Edgeware on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Edgeware?",
+        paragraps: [
+          "Edgeware is a smart-contract blockchain platform for building high-performance decentralized applications (DApps) and autonomous organizations (DAOs) using the Substrate framework and Polkadot ($DOT) network, with community governance and token holder voting. It offers scalability and interoperability features to developers and entrepreneurs for building and launching decentralized businesses and communities efficiently.",
+          '<a href="https://bifrost.finance/" target="_blank" rel="nofollow">https://www.edgeware.io/</a>',
+        ],
+      },
+    ],
+  },
 };
 
 export default networks;
