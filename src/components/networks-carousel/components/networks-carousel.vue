@@ -157,6 +157,9 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.edgeware {
         background-color: @optimism;
       }
+      &.rootstock {
+        background-color: @rootstock;
+      }
     }
   }
 }

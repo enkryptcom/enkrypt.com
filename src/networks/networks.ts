@@ -398,6 +398,29 @@ const networks: { [key in NetworkName]: InnerPage } = {
       },
     ],
   },
+  [NetworkName.rootstock]: {
+    path: NetworkName.rootstock,
+    name: "Rootstock",
+    title: "Rootstock: connecting Bitcoin to smart contracts",
+    pageTitle: "Enkrypt: Rootstock Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native support for Rootstock. Seamlessly transfer BTC on or off the RSK network in order to utilize smart contract capability with Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native support for Rootstock. Seamlessly transfer BTC on or off the RSK network in order to utilize smart contract capability with Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Rootstock?",
+        paragraps: [
+          "Rootstock (RSK) connects the Bitcoin (BTC) blockchain to smart contracts. With RSK's sidechain technology platform, users can move BTC onto the RSK blockchain and convert it into smart Bitcoin (RBTC). Featuring a secure 2-way peg, RSK allows for easy transfer of bitcoins in and out of the RSK network. There is no currency issuance - all RBTCs are derived from the BTC on the Bitcoin blockchain. Experience the power of smart contracts on the Bitcoin network with Rootstock (RSK).",
+          '<a href="https://rootstock.io/" target="_blank" rel="nofollow">https://rootstock.io/</a>',
+        ],
+      },
+    ],
+  },
 };
 
 export default networks;

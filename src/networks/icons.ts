@@ -74,6 +74,10 @@ const icons: {
     pageIcon: require("./images/edgeware-large.svg"),
     carouselIcon: require("@/icons/networks/edgeware.svg"),
   },
+  [NetworkName.rootstock]: {
+    pageIcon: require("./images/rootstock-large.svg"),
+    carouselIcon: require("@/icons/networks/rootstock.svg"),
+  },
 };
 
 export default icons;
