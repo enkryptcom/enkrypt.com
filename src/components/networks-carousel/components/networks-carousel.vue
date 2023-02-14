@@ -160,6 +160,9 @@ const itemsArr = shuffleArray(Object.values(cList));
       &.rootstock {
         background-color: @rootstock;
       }
+      &.zksync {
+        background-color: @zksync;
+      }
     }
   }
 }

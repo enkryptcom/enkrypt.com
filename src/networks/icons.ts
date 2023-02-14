@@ -78,6 +78,10 @@ const icons: {
     pageIcon: require("./images/rootstock-large.svg"),
     carouselIcon: require("@/icons/networks/rootstock.svg"),
   },
+  [NetworkName.zksync]: {
+    pageIcon: require("./images/zksync-large.svg"),
+    carouselIcon: require("@/icons/networks/zksync.svg"),
+  },
 };
 
 export default icons;

@@ -17,6 +17,7 @@ export enum NetworkName {
   bitcoin = "bitcoin",
   edgeware = "edgeware",
   rootstock = "rootstock",
+  zksync = "zksync",
 }
 
 export interface CarouselListItem {

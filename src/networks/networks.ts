@@ -421,6 +421,29 @@ const networks: { [key in NetworkName]: InnerPage } = {
       },
     ],
   },
+  [NetworkName.zksync]: {
+    path: NetworkName.zksync,
+    name: "zkSync",
+    title: "Scale Ethereum with zkSync zk rollups",
+    pageTitle: "Enkrypt: zkSync Wallet",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native support for zkSync. Build and deploy on zkSync with Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native support for zkSync. Build and deploy on zkSync with Enkrypt.",
+        ],
+      },
+      {
+        title: "What is zkSync?",
+        paragraps: [
+          "The Virtual Machine for EVM-Friendly ZK Rollup Development. Build EVM-Friendly ZK Rollups with Ease. Port existing projects or come up with new concepts with zkSync.",
+          '<a href="https://zksync.io/" target="_blank" rel="nofollow">https://zksync.io/</a>',
+        ],
+      },
+    ],
+  },
 };
 
 export default networks;
