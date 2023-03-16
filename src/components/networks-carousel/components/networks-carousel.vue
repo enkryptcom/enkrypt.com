@@ -5,7 +5,10 @@
       :key="idx"
       :href="`/networks/${item.path}-wallet/`"
     >
-      <div class="main-third__networks-item" :class="item.class">
+      <div
+        class="main-third__networks-item"
+        :style="`background: ${item.color};`"
+      >
         <img :src="item.image" :alt="item.name + ' logo'" /><span>{{
           item.name
         }}</span>
@@ -24,7 +27,7 @@ const cList: { [key in NetworkName]: CarouselListItem } = Object.keys(
 ).reduce((prev, cur) => {
   prev[cur as NetworkName] = {
     name: NetworkList[cur as NetworkName].name,
-    class: cur as NetworkName,
+    color: NetworkList[cur as NetworkName].color,
     image: IconList[cur as NetworkName].carouselIcon,
     path: NetworkList[cur as NetworkName].path,
   };
@@ -84,7 +87,7 @@ const itemsArr = shuffleArray(Object.values(cList));
         width: 36px;
         height: 36px;
         margin-right: 8px;
-
+        border-radius: 50%;
         .screen-lg({
               width: 32px;
               height: 32px;
@@ -94,74 +97,6 @@ const itemsArr = shuffleArray(Object.values(cList));
               width: 28px;
               height: 28px;
             });
-      }
-
-      &.ethereum {
-        background: @eth;
-      }
-
-      &.polkadot {
-        background-color: @polkadot;
-      }
-
-      &.kusama {
-        background-color: @kusama;
-      }
-
-      &.polygon {
-        background-color: @polygon;
-      }
-
-      &.acala {
-        background-color: @acala;
-      }
-
-      &.moonbeam {
-        background-color: @moonbeam;
-      }
-
-      &.bnb {
-        background-color: @bnb;
-      }
-
-      &.karura {
-        background: @karura;
-      }
-
-      &.moonriver {
-        background-color: @moonriver;
-      }
-
-      &.astar {
-        background: @astar;
-      }
-
-      &.shiden {
-        background-color: @shiden;
-      }
-      &.okc {
-        background-color: @okx;
-      }
-      &.bifrost {
-        background-color: @bifrost;
-      }
-      &.canto {
-        background-color: @canto;
-      }
-      &.optimism {
-        background-color: @optimism;
-      }
-      &.bitcoin {
-        background-color: @bitcoin;
-      }
-      &.edgeware {
-        background-color: @optimism;
-      }
-      &.rootstock {
-        background-color: @rootstock;
-      }
-      &.zksync {
-        background-color: @zksync;
       }
     }
   }

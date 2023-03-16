@@ -5,6 +5,8 @@ const networks: { [key in NetworkName]: InnerPage } = {
   [NetworkName.ethereum]: {
     path: NetworkName.ethereum,
     name: "Ethereum",
+    color:
+      "conic-gradient(from 186.32deg at 112.5% -13.75%, #C549FF -284.63deg, #704BFF 0deg, #C549FF 75.37deg, #704BFF 360deg)",
     title: "Enkrypt: Your portal to Ethereum",
     pageTitle: "Enkrypt: Ethereum Wallet",
     pageDescription:
@@ -30,6 +32,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     path: NetworkName.polkadot,
     name: "Polkadot",
     title: "Enkrypt is your entryway into Polkadot",
+    color: "#E6007A",
     pageTitle: "Enkrypt: Polkadot Wallet",
     pageDescription:
       "Enkrypt is a Polkadot wallet built from the ground-up as an alternative to Polkadot js. Focused on the multi-chain future, Enkrypt has native wallet support for Polkadot, the Dotsama ecosystem, and much more.",
@@ -54,6 +57,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     path: NetworkName.kusama,
     name: "Kusama",
     title: "Control the chaos with Kusama on Enkrypt",
+    color: "#515151",
     pageTitle: "Enkrypt: Kusama Wallet",
     pageDescription:
       "Enkrypt is a multi-chain browser extension with native wallet support for Kusama. Enkrypt makes it possible to go anywhere in Dotsama with a few clicks. Expect chaos.",
@@ -79,6 +83,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "BNB Smart Chain",
     title: "Enkrypt: Your one-stop shop for the BNB Smartchain",
     pageTitle: "Enkrypt: BNB Wallet",
+    color: "#F0B90B",
     pageDescription:
       "Enkrypt is a BNB Smartchain wallet with native support for the BNB ecosystem. Get started on the BNB Smartchain with Enkrypt.",
     blocks: [
@@ -102,6 +107,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Polygon",
     title: "Explore Polygon with Enkrypt",
     pageTitle: "Enkrypt: Polygon Wallet",
+    color: "#7B3FE4",
     pageDescription:
       "Enkrypt is a Polygon wallet with native Polygon support. Utilize any Polygon dApp with Enkrypt.",
     blocks: [
@@ -125,6 +131,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Moonbeam",
     title: "Go cross-chain with Moonbeam on Enkrypt",
     pageTitle: "Enkrypt: Moonbeam Wallet",
+    color: "#53CBC9",
     pageDescription:
       "Enkrypt is a Moonbeam wallet with native Moonbeam support and full EVM compatibility. Go anywhere on Moonbeam you want with Enkrypt.",
     blocks: [
@@ -149,6 +156,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Moonriver",
     title: "Enkrypt: an EVM-compatible Moonriver wallet",
     pageTitle: "Enkrypt: Moonriver Wallet",
+    color: "#F2B705",
     pageDescription:
       "Enkrypt is a multi-chain web3 wallet with native Moonriver support. Compatible with all EVM chains, you can now browse the Moonriver ecosystem easier than ever before with Enkrypt.",
     blocks: [
@@ -172,6 +180,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Acala",
     title: "Acala: the DeFi Hub of Polkadot on Enkrypt",
     pageTitle: "Enkrypt: Acala Wallet",
+    color: "#E40C5B",
     pageDescription:
       "Enkrypt is a multi-chain wallet solution designed as an alternative to Polkadot js. It currently has native wallet support for Acala and it's DeFi ecosystem. Stake AUSD and earn using Enkrypt.",
     blocks: [
@@ -196,6 +205,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Karura",
     title: "Karura: the Kusama DeFi hub on Enkrypt",
     pageTitle: "Enkrypt: Karura Wallet",
+    color: "linear-gradient(330.21deg, #E40C5B -26.31%, #FF4C3B 88.17%)",
     pageDescription:
       "Enkrypt is a web3 wallet with native Karura support. Created as an alternative to Polkadot js, use Enkrypt for all of your Karura Network errands.",
     blocks: [
@@ -219,6 +229,8 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Astar",
     title: "Build-To-Earn with Astar using Enkrypt",
     pageTitle: "Enkrypt: Astar Wallet",
+    color:
+      "linear-gradient(47.58deg, #713AC2 -6.97%, #0070EB 57.92%, #0297FB 95.03%)",
     pageDescription:
       "Built as an alternative to Polkadot js, Enkrypt is an Astar wallet. Enkrypt has complete native wallet support for Astar and it's build-to-earn ecosystem. Start building on Astar using Enkrypt!",
     blocks: [
@@ -242,6 +254,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Shiden",
     title: "Shiden Network on Enkrypt, the multi-chain dApps hub",
     pageTitle: "Enkrypt: Shiden Wallet",
+    color: "#5928B1",
     pageDescription:
       "Enkrypt is a multi-chain wallet with native wallet support for Shiden. Traverse through the vast Shiden ecosystem with Enkrypt.",
     blocks: [
@@ -265,6 +278,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "OKX Chain",
     title: "Enkrypt: the open-source OKC wallet",
     pageTitle: "Enkrypt: OKC Wallet",
+    color: "#000000",
     pageDescription:
       "Enkrypt is a multi-chain wallet with native support for OKC. Trade until your hearts content with Enkrypt on OKC.",
     blocks: [
@@ -288,6 +302,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Canto",
     title: "Discover DeFi with Canto on Enkrypt",
     pageTitle: "Enkrypt: Canto Wallet",
+    color: "#000000",
     pageDescription:
       "Enkrypt is your all-in-one Canto wallet. Delve directly into DeFi with Canto on Enkrypt.",
     blocks: [
@@ -311,6 +326,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Bifrost",
     title: "Manage staked assets with Bifrost on Enkrypt",
     pageTitle: "Enkrypt: Bifrost Wallet",
+    color: "#8a6cc4",
     pageDescription:
       "Enkrypt is a multi-chain browser extension wallet with native Bifrost support. Access cross-chain liquidity for staking with Bifrost on Enkrypt.",
     blocks: [
@@ -334,6 +350,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Optimism",
     title: "Optimism: an L2 solution on Enkrypt",
     pageTitle: "Enkrypt: Optimism Wallet",
+    color: "#E40C5B",
     pageDescription:
       "Enkrypt is a multi-chain wallet with native support for the Optimism ecosystem. Enjoy the Ethereum experience at a fraction of the cost with Optimism on Enkrypt.",
     blocks: [
@@ -357,6 +374,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Bitcoin",
     title: "Bitcoin made easy with Enkrypt",
     pageTitle: "Enkrypt: Bitcoin Wallet",
+    color: "#F7931A",
     pageDescription:
       "Enkrypt is a multi-chain browser extension with native wallet support for Bitcoin. Start stacking those satoshis with Enkrypt.",
     blocks: [
@@ -380,6 +398,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Edgeware",
     title: "Deploy DAOs with Edgeware on Enkrypt",
     pageTitle: "Enkrypt: Edgeware Wallet",
+    color: "#E40C5B",
     pageDescription:
       "Enkrypt is a multi-chain browser extension wallet with native Edgeware support. Fund, manage, and build decentralized communities with Edgeware on Enkrypt.",
     blocks: [
@@ -403,6 +422,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "Rootstock",
     title: "Rootstock: connecting Bitcoin to smart contracts",
     pageTitle: "Enkrypt: Rootstock Wallet",
+    color: "#2ba7ff",
     pageDescription:
       "Enkrypt is a multi-chain browser extension wallet with native support for Rootstock. Seamlessly transfer BTC on or off the RSK network in order to utilize smart contract capability with Enkrypt.",
     blocks: [
@@ -426,6 +446,7 @@ const networks: { [key in NetworkName]: InnerPage } = {
     name: "zkSync",
     title: "Scale Ethereum with zkSync zk rollups",
     pageTitle: "Enkrypt: zkSync Wallet",
+    color: "#60a4c8",
     pageDescription:
       "Enkrypt is a multi-chain browser extension wallet with native support for zkSync. Build and deploy on zkSync with Enkrypt.",
     blocks: [
@@ -440,6 +461,246 @@ const networks: { [key in NetworkName]: InnerPage } = {
         paragraps: [
           "The Virtual Machine for EVM-Friendly ZK Rollup Development. Build EVM-Friendly ZK Rollups with Ease. Port existing projects or come up with new concepts with zkSync.",
           '<a href="https://zksync.io/" target="_blank" rel="nofollow">https://zksync.io/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skBlockbrawlers]: {
+    path: NetworkName.skBlockbrawlers,
+    name: "Block Brawlers",
+    title: "Play-to-Earn with Block Brawlers on Enkrypt",
+    pageTitle: "Enkrypt: Block Brawlers Wallet",
+    color: "#7B999C",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Block Brawlers support via SKALE. Play, compete and earn with Block Brawlers on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Block Brawlers support via SKALE. Play, compete and earn with Block Brawlers on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Block Brawlers?",
+        paragraps: [
+          "Engage in Brawler Battles and compete against other players in the arena. Choose your three best Brawlers and strategically lead them into combat, where your choices impact the outcome. Earn $BRAWL tokens for victories, and use combat experience to level up your Brawlers and improve your chances of winning.",
+          '<a href="https://blockbrawlers.com/" target="_blank" rel="nofollow">https://blockbrawlers.com/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skCalypso]: {
+    path: NetworkName.skCalypso,
+    name: "Calypso",
+    title: "Bring your vision to life on Calypso with Enkrypt",
+    pageTitle: "Enkrypt: Calypso Wallet",
+    color: "#D095B5",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Calypso support via SKALE. Launch and NFT project on Calypso with Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Calypso support via SKALE. Launch and NFT project on Calypso with Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Calypso Hub?",
+        paragraps: [
+          "Calypso NFT Hub offers a solution for artists, developers, influencers, and DAOs to realize their vision. Benefit from Zero gas fees, On-Chain Storage, and instant finality, empowering you with the necessary tools to successfully launch your NFT Project. Take advantage of Calypso and bring your ideas to life.",
+          '<a href="https://www.calypsohub.network/" target="_blank" rel="nofollow">https://www.calypsohub.network/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skChaos]: {
+    path: NetworkName.skChaos,
+    name: "Chaos",
+    title: "Test SKALE contracts with Chaos Chain on Enkrypt",
+    pageTitle: "Enkrypt: SKALE Chaos Wallet",
+    color: "#070707",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Chaos support via SKALE. Test your smart contracts using SKALE's Chaos Chain.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Chaos support via SKALE. Test your smart contracts using SKALE's Chaos Chain.",
+        ],
+      },
+      {
+        title: "What is SKALE Chaos Chain?",
+        paragraps: [
+          "Test your contracts on SKALE Chaos Chain for fast and zero-cost test transactions. Consider your architecture and needs when deciding which contracts to keep on Ethereum and which to serve on SKALE. Optimize your end-user experience by placing more user-facing transactions on SKALE and reserving transactions requiring security for Ethereum. Deploy your test contracts on SKALE Chaos Chain.",
+          '<a href="https://skale.space/" target="_blank" rel="nofollow">https://skale.space/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skCryptoBlades]: {
+    path: NetworkName.skCryptoBlades,
+    name: "Crypto Blades",
+    title: "Own your in-game assets with CryptoBlades on Enkrypt",
+    pageTitle: "Enkrypt: CryptoBlades Wallet",
+    color: "#BD8A4C",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native CryptoBlades support via SKALE. Train your character, collect unique armor and participate in battles on CryptoBlades using Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native CryptoBlades support via SKALE. Train your character, collect unique armor and participate in battles on CryptoBlades using Enkrypt.",
+        ],
+      },
+      {
+        title: "What is CryptoBlades?",
+        paragraps: [
+          "Experience CryptoBlades, a web-based NFT role-playing (RPG) game by Riveted Games. Fight enemies and engage in raids to earn $SKILL tokens, which can be used to hire characters, forge unique weapons, and increase overall power. Trade characters and weapons on an open marketplace, and earn additional $SKILL rewards by staking your earnings.",
+          '<a href="https://www.cryptoblades.io/" target="_blank" rel="nofollow">https://www.cryptoblades.io/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skCryptoColosseum]: {
+    path: NetworkName.skCryptoColosseum,
+    name: "Crypto Colosseum",
+    title: "Play-to-own with Crypto Colosseum on Enkrypt",
+    pageTitle: "Enkrypt: Crypto Colosseum Wallet",
+    color: "#A34B19",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Crypto Colosseum support via SKALE. Uncover treasure and build up your kingdom in Crypto Colosseum using Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Crypto Colosseum support via SKALE. Uncover treasure and build up your kingdom in Crypto Colosseum using Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Crypto Colosseum?",
+        paragraps: [
+          "Immerse yourself in Crypto Colosseum, a play-to-earn NFT battle strategy game set in Crypto Rome. Experience real-time 3D battles with audience influence, as the crowd can alter the outcome of each battle. Casual players can search for coins and treasures, while others can equip gladiators, build items, and even own their own Colosseum.",
+          '<a href="https://cryptocolosseum.com/" target="_blank" rel="nofollow">https://cryptocolosseum.com/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skEuropa]: {
+    path: NetworkName.skEuropa,
+    name: "Europa",
+    title: "Use Enkrypt with Europa: the DeFi hub on SKALE",
+    pageTitle: "Enkrypt: Europa Wallet",
+    color: "#00BAFF",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Europa support via SKALE. See what SKALE DeFi has to offer with Europa on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Europa support via SKALE. See what SKALE DeFi has to offer with Europa on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Europa?",
+        paragraps: [
+          "Explore Europa, the SKALE Chain that hosts multiple liquidity-related decentralized apps (dApps) and services. Its mission is to establish a hub for liquidity and ETH Mainnet Bridge aggregation for users and other dApps on SKALE. With a focus on optimizing token mapping standards and bridging for interchain messaging, Europa aims to lead the way in this emerging field.",
+          '<a href="https://skale.space/" target="_blank" rel="nofollow">https://skale.space/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skExorde]: {
+    path: NetworkName.skExorde,
+    name: "Exorde",
+    title: "Leverage decentralized data with Exorde on Enkrypt",
+    pageTitle: "Enkrypt: Exorde Wallet",
+    color: "#FC6B00",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Exorde support via SKALE. Enjoy uncensored, unmanipulated, and unsuppressed analytics with Exorde on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Exorde support via SKALE. Enjoy uncensored, unmanipulated, and unsuppressed analytics with Exorde on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Exorde?",
+        paragraps: [
+          "Discover Exorde, the innovative protocol that leverages decentralized community to collect and extract global sentiment from social networks. Its decentralized approach enables reliable data collection from social networks locked by location, proxies, or different networks. Exorde's publicly verified and peer-processed data offers a wide range of use cases, including market predictions, reputation, and trend analysis.",
+          '<a href="https://exorde.network/" target="_blank" rel="nofollow">https://exorde.network/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skNebula]: {
+    path: NetworkName.skNebula,
+    name: "Nebula",
+    title: "Nebula Gaming Hub on Enkrypt - where gaming meets blockchain",
+    pageTitle: "Enkrypt: Nebula Gaming Wallet",
+    color: "#1D1835",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Nebula support via SKALE. Trade in-game assets in a decentralized manner using Nebula Gaming Hub on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Nebula support via SKALE. Trade in-game assets in a decentralized manner using Nebula Gaming Hub on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Nebula?",
+        paragraps: [
+          "Nebula Gaming Hub is a decentralized platform that harnesses SKALE Network's scalability, zero-gas fee, and security features to offer a unique gaming experience. Game developers can easily create and launch their games on SKALE Network, providing players with a seamless experience. Enjoy decentralized gaming with Nebula Gaming Hub.",
+          '<a href="https://nebulachain.io/" target="_blank" rel="nofollow">https://nebulachain.io/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skRezor]: {
+    path: NetworkName.skRezor,
+    name: "Razor",
+    title: "Truly decentralized oracles are here with Razor Network on Enkrypt",
+    pageTitle: "Enkrypt: Razor Network Wallet",
+    color: "#40429B",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Razor Network support via SKALE. Experience the robust and economically secure Razor Network using Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Razor Network support via SKALE. Experience the robust and economically secure Razor Network using Enkrypt.",
+        ],
+      },
+      {
+        title: "What is Razor Network?",
+        paragraps: [
+          "Razor Network is a decentralized platform on SKALE that uses validators to provide external data to a blockchain. The core of Razor Network comprises smart contracts that can run on any Ethereum-compatible blockchain, relying on the underlying blockchain for properties such as security and censorship resistance. Razor Network's goal is to provide a secure and decentralized way to verify and provide data to blockchains, crucial for building reliable economies on blockchain that rely heavily on external data.",
+          '<a href="https://razor.network/" target="_blank" rel="nofollow">https://razor.network/</a>',
+        ],
+      },
+    ],
+  },
+  [NetworkName.skTitan]: {
+    path: NetworkName.skTitan,
+    name: "Titan",
+    title: "Cultivate SKALE community with Titan on Enkrypt",
+    pageTitle: "Enkrypt: SKALE Titan Wallet",
+    color: "#0F0C0A",
+    pageDescription:
+      "Enkrypt is a multi-chain browser extension wallet with native Titan support via SKALE. Make your name known in the SKALE community with Titan on Enkrypt.",
+    blocks: [
+      {
+        title: "About Enkrypt",
+        paragraps: [
+          "Enkrypt is a multi-chain browser extension wallet with native Titan support via SKALE. Make your name known in the SKALE community with Titan on Enkrypt.",
+        ],
+      },
+      {
+        title: "What is SKALE Titan?",
+        paragraps: [
+          "Deploy your contracts on SKALE Titan Community Hub for quick transactions within the SKALE community. Enhance your user experience by deploying more end-user facing transactions on SKALE Titan and keeping transactions that require security on a separate chain. Get started on Titan Community Hub with Enkrypt.",
+          '<a href="https://skale.space/" target="_blank" rel="nofollow">https://skale.space/</a>',
         ],
       },
     ],

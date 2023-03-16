@@ -82,6 +82,46 @@ const icons: {
     pageIcon: require("./images/zksync-large.svg"),
     carouselIcon: require("@/icons/networks/zksync.svg"),
   },
+  [NetworkName.skBlockbrawlers]: {
+    pageIcon: require("./images/blockbrawlers-large.png"),
+    carouselIcon: require("./images/blockbrawlers-large.png"),
+  },
+  [NetworkName.skCalypso]: {
+    pageIcon: require("./images/calypso-large.png"),
+    carouselIcon: require("./images/calypso-large.png"),
+  },
+  [NetworkName.skChaos]: {
+    pageIcon: require("./images/skale-large.png"),
+    carouselIcon: require("./images/skale-large.png"),
+  },
+  [NetworkName.skCryptoBlades]: {
+    pageIcon: require("./images/skale-large.png"),
+    carouselIcon: require("./images/skale-large.png"),
+  },
+  [NetworkName.skCryptoColosseum]: {
+    pageIcon: require("./images/skale-large.png"),
+    carouselIcon: require("./images/skale-large.png"),
+  },
+  [NetworkName.skEuropa]: {
+    pageIcon: require("./images/europa-large.png"),
+    carouselIcon: require("./images/europa-large.png"),
+  },
+  [NetworkName.skExorde]: {
+    pageIcon: require("./images/exorde-large.png"),
+    carouselIcon: require("./images/exorde-large.png"),
+  },
+  [NetworkName.skNebula]: {
+    pageIcon: require("./images/nebula-large.png"),
+    carouselIcon: require("./images/nebula-large.png"),
+  },
+  [NetworkName.skRezor]: {
+    pageIcon: require("./images/razor-large.png"),
+    carouselIcon: require("./images/razor-large.png"),
+  },
+  [NetworkName.skTitan]: {
+    pageIcon: require("./images/razor-large.png"),
+    carouselIcon: require("./images/razor-large.png"),
+  },
 };
 
 export default icons;

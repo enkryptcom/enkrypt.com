@@ -18,11 +18,21 @@ export enum NetworkName {
   edgeware = "edgeware",
   rootstock = "rootstock",
   zksync = "zksync",
+  skBlockbrawlers = "sk-block-brawlers",
+  skCalypso = "sk-calypso",
+  skChaos = "sk-chaos",
+  skCryptoBlades = "sk-crypto-blades",
+  skCryptoColosseum = "sk-crypto-colosseum",
+  skEuropa = "sk-europa",
+  skExorde = "sk-exorde",
+  skNebula = "sk-nebula",
+  skRezor = "sk-rezor",
+  skTitan = "sk-titan",
 }
 
 export interface CarouselListItem {
   name: string;
-  class: NetworkName;
   image: any;
   path: string;
+  color: string;
 }

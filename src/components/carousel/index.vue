@@ -65,7 +65,4 @@ export default defineComponent({
   width: max-content;
   min-width: 200%;
 }
-.vifnslb-bar {
-  width: 50%;
-}
 </style>

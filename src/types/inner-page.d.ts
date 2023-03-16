@@ -2,6 +2,7 @@ import { NetworkName } from "./networks";
 
 export interface InnerPage {
   path: NetworkName;
+  color: string;
   name: string;
   title: string;
   blocks: InnerPageBlock[];
