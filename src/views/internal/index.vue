@@ -20,11 +20,7 @@
               <template v-if="block">
                 <h3>{{ block.title }}</h3>
                 <!-- eslint-disable vue/no-v-html -->
-                <p
-                  v-for="(par, idxp) in block.paragraps"
-                  :key="idxp + 'para'"
-                  v-html="par.item"
-                ></p>
+                <p v-html="block.paragraph"></p>
                 <!--eslint-enable-->
               </template>
             </template>
@@ -43,13 +39,14 @@ import Downloads from "@/components/downloads/index.vue";
 import { useRoute } from "vue-router";
 import networkList from "@/networks/networks";
 import icons from "@/networks/icons";
+import { marked } from "marked";
 
 //console.log(JSON.stringify(icons));
 var loaded = false;
 var content: {
   path: string;
   title: string;
-  blocks: { title: string; paragraps: string[] }[];
+  blocks: { title: string; paragraph: string }[];
 } | null = null;
 const route = useRoute();
 const networks = Object.values(networkList);
@@ -60,11 +57,9 @@ if (path) {
 }
 const contentBlocksWithHash = computed(() => {
   if (content && content.blocks) {
-    return content.blocks.map((i: { title: string; paragraps: any[] }) => ({
+    return content.blocks.map((i: { title: string; paragraph: string }) => ({
       title: i.title,
-      paragraps: i.paragraps.map((p: any) => ({
-        item: p,
-      })),
+      paragraph: marked.parse(i.paragraph),
     }));
   } else return null;
 });

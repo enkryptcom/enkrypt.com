@@ -12,6 +12,7 @@
     "publish": "git push origin `git subtree split --prefix dist main`:gh-pages --force"
   },
   "dependencies": {
+    "marked": "^4.3.0",
     "pinia": "^2.0.23",
     "sitemap": "^7.1.1",
     "uuid": "^8.3.2",
@@ -19,6 +20,8 @@
     "vue-router": "^4.1.3"
   },
   "devDependencies": {
+    "@types/marked": "^4.0.8",
+    "@types/node-fetch": "^2.6.3",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
@@ -38,6 +41,7 @@
     "less": "^4.1.3",
     "less-loader": "^11.0.0",
     "lint-staged": "^13.0.3",
+    "node-fetch": "^2.6.9",
     "prettier": "^2.7.1",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
