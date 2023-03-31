@@ -40,6 +40,7 @@ export interface StrapiNetworkType {
   networkInfo: string;
   aboutEnkryptTitle: string;
   networkInfoTitle: string;
+  mainTitle: string;
   icon: StrapiIconType;
 }
 

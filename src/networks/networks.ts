@@ -33,7 +33,7 @@ networksJSON.data.forEach((item) => {
     pageDescription: item.attributes.pageDescription,
     pageTitle: item.attributes.pageTitle,
     path: item.attributes.path as NetworkName,
-    title: item.attributes.pageTitle,
+    title: item.attributes.mainTitle,
     blocks: [
       {
         title: item.attributes.aboutEnkryptTitle,
