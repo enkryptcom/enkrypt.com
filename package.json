@@ -2,14 +2,15 @@
   "name": "enkrypt.com",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && cp dist/index.html dist/404.html",
+    "dev": "yarn download:data && vite",
+    "build": "yarn download:data && vue-tsc --noEmit && vite build && cp dist/index.html dist/404.html",
     "preserve": "vite build",
     "serve": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint --ext .ts,.vue src && stylelint **/*.vue",
     "prepare": "husky install",
-    "publish": "git push origin `git subtree split --prefix dist main`:gh-pages --force"
+    "publish": "git push origin `git subtree split --prefix dist main`:gh-pages --force",
+    "download:data": "node download-strapi-data.js"
   },
   "dependencies": {
     "marked": "^4.3.0",

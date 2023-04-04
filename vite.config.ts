@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import requireTransform from "vite-plugin-require-transform";
 import { StaticNetworkPages } from "./static-page-plugin";
-import { StrapiData } from "./download-strapi-data";
 import viteImagemin from "vite-plugin-imagemin";
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +9,6 @@ export default defineConfig({
     global: {},
   },
   plugins: [
-    StrapiData(),
     vue(),
     requireTransform({}),
     StaticNetworkPages(),
