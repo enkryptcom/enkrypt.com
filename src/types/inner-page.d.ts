@@ -12,5 +12,5 @@ export interface InnerPage {
 
 interface InnerPageBlock {
   title: string;
-  paragraps: string[];
+  paragraph: string;
 }
