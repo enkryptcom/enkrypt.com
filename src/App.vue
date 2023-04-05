@@ -15,11 +15,12 @@ import AppFooter from "./components/app-footer/index.vue";
 import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./views/modal/index.vue";
+import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 
 const route = useRoute();
 const router = useRouter();
 const store = useInternalPageStore();
-var isHideRaffleModal = ref<boolean>(false);
+const isHideRaffleModal = ref<boolean>(false);
 
 router.afterEach(() => {
   store.setInternal(route.name != "main");
@@ -43,7 +44,12 @@ onMounted(() => {
   if (ref === "enkrypt_help") {
     window.Intercom("show");
   }
-  isHideRaffleModal.value = localStorage.getItem("isHideRaffleModal") == "Y";
+  const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
+  if (raffleInfo) {
+    const jRaffleInfo: RaffleInfoType = JSON.parse(raffleInfo);
+    if (jRaffleInfo.timestamp > new Date().getTime() - 2 * 24 * 60 * 60 * 1000)
+      isHideRaffleModal.value = true;
+  }
   if (!isHideRaffleModal.value) {
     document.body.classList.add("fixed");
   } else {

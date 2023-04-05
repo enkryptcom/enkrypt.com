@@ -23,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+import { LocalStorageKeys, RaffleInfoType } from "@/types/raffle-types";
 import CloseIcon from "../../icons/common/close-icon.vue";
 
 const emit = defineEmits<{
@@ -30,7 +31,13 @@ const emit = defineEmits<{
 }>();
 
 const close = () => {
-  localStorage.setItem("isHideRaffleModal", "Y");
+  const jRaffleInfo: RaffleInfoType = {
+    timestamp: new Date().getTime(),
+  };
+  localStorage.setItem(
+    LocalStorageKeys.RAFFLE_POPUP,
+    JSON.stringify(jRaffleInfo)
+  );
   emit("close");
 };
 </script>
