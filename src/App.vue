@@ -47,7 +47,7 @@ onMounted(() => {
   const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
   if (raffleInfo) {
     const jRaffleInfo: RaffleInfoType = JSON.parse(raffleInfo);
-    if (jRaffleInfo.timestamp > new Date().getTime() - 2 * 24 * 60 * 60 * 1000)
+    if (jRaffleInfo.timestamp > new Date().getTime() - 3 * 24 * 60 * 60 * 1000)
       isHideRaffleModal.value = true;
   }
   if (!isHideRaffleModal.value) {
