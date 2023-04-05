@@ -31,6 +31,12 @@
             <a class="mobile-menu__menu-item" href="https://blog.enkrypt.com/">
               Blog
             </a>
+            <a
+              class="mobile-menu__menu-item"
+              href="https://raffle.enkrypt.com/"
+            >
+              Raffle
+            </a>
           </div>
         </div>
       </div>

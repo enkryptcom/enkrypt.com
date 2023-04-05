@@ -20,7 +20,7 @@ import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 const route = useRoute();
 const router = useRouter();
 const store = useInternalPageStore();
-const isHideRaffleModal = ref<boolean>(false);
+const isHideRaffleModal = ref<boolean>(true);
 
 router.afterEach(() => {
   store.setInternal(route.name != "main");
@@ -28,7 +28,6 @@ router.afterEach(() => {
 
 const close = () => {
   isHideRaffleModal.value = true;
-  document.body.classList.remove("fixed");
 };
 
 onBeforeMount(() => {
@@ -45,17 +44,17 @@ onMounted(() => {
     window.Intercom("show");
   }
   const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
+  let hideRaffle = false;
   if (raffleInfo) {
     const jRaffleInfo: RaffleInfoType = JSON.parse(raffleInfo);
     if (jRaffleInfo.timestamp > new Date().getTime() - 3 * 24 * 60 * 60 * 1000)
-      isHideRaffleModal.value = true;
+      hideRaffle = true;
   }
-  if (searchURL.pathname.includes("/networks/")) isHideRaffleModal.value = true;
-  if (!isHideRaffleModal.value) {
-    document.body.classList.add("fixed");
-  } else {
-    document.body.classList.remove("fixed");
-  }
+  if (searchURL.pathname.includes("/networks/")) hideRaffle = true;
+
+  setTimeout(() => {
+    isHideRaffleModal.value = hideRaffle;
+  }, 3000);
 });
 </script>
 
