@@ -50,6 +50,7 @@ onMounted(() => {
     if (jRaffleInfo.timestamp > new Date().getTime() - 3 * 24 * 60 * 60 * 1000)
       isHideRaffleModal.value = true;
   }
+  if (searchURL.pathname.includes("/networks/")) isHideRaffleModal.value = true;
   if (!isHideRaffleModal.value) {
     document.body.classList.add("fixed");
   } else {
