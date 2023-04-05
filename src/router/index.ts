@@ -17,6 +17,7 @@ const routes = {
     },
     name: "internal",
   },
+  catchAll: { path: "/:catchAll(.*)", redirect: { name: "main" } },
 };
 
 export default createRouter({
