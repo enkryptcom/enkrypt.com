@@ -22,6 +22,13 @@ import { CarouselListItem, NetworkName } from "@/types/networks";
 import IconList from "@/networks/icons";
 import NetworkList from "@/networks/networks";
 
+const props = defineProps({
+  line: {
+    type: Number,
+    default: 1,
+  },
+});
+const maxLines = 3;
 const cList: { [key in NetworkName]: CarouselListItem } = Object.keys(
   IconList
 ).reduce((prev, cur) => {
@@ -41,7 +48,11 @@ const shuffleArray = (array: any[]): any[] => {
   }
   return array;
 };
-const itemsArr = shuffleArray(Object.values(cList));
+const items = Object.values(cList);
+const startPos = (items.length / maxLines) * (props.line % maxLines);
+const itemsArr = shuffleArray(
+  items.slice(startPos, startPos + items.length / maxLines)
+);
 </script>
 
 <style lang="less" scoped>

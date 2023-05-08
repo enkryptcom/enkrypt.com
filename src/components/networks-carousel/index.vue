@@ -1,10 +1,6 @@
 <template>
   <carousel :duration="duration" :direction="direction">
-    <networks-carousel v-if="line == 1" />
-    <networks-carousel v-if="line == 2" />
-    <networks-carousel v-if="line == 3" />
-    <networks-carousel v-if="line == 4" />
-    <networks-carousel v-if="line == 5" />
+    <networks-carousel :line="line" />
   </carousel>
 </template>
 
