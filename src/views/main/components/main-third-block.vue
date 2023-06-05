@@ -24,10 +24,8 @@
           <p class="main-third__info">
             Are you a contributor to a specific chain that you would like
             Enkrypt to support?
-            <a
-              target="_blanck"
-              href="https://mewwallet.typeform.com/enkrypt-inquiry"
-              >Get&nbsp;in&nbsp;touch!</a
+            <a target="_blank" href="https://github.com/enkryptcom/enKrypt"
+              >Submit a PR</a
             >
           </p>
         </div>
