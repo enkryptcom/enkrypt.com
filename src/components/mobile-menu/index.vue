@@ -33,6 +33,12 @@
             </a>
             <a
               class="mobile-menu__menu-item"
+              href="https://myetherwallet.gitbook.io/enkrypt-documentation/"
+            >
+              Docs
+            </a>
+            <a
+              class="mobile-menu__menu-item"
               href="https://raffle.enkrypt.com/"
             >
               Raffle

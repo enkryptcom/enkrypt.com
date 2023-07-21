@@ -39,6 +39,13 @@
     <a
       class="header__menu-item"
       :class="{ fixed: isFixed, internal: isInternal }"
+      href="https://myetherwallet.gitbook.io/enkrypt-documentation/"
+    >
+      Docs
+    </a>
+    <a
+      class="header__menu-item"
+      :class="{ fixed: isFixed, internal: isInternal }"
       href="https://raffle.enkrypt.com/"
     >
       Raffle
