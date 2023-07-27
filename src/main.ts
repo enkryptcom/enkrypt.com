@@ -9,8 +9,6 @@ declare global {
   }
 }
 
-window.Intercom = window.Intercom || {};
-
 const app = createApp(App);
 const pinia = createPinia();
 

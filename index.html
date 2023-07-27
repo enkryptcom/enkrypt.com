@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="preload" as="image" href="/src/assets/img/gradient@2x.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>##TITLE##</title>
-    <meta name="description" content="##DESCRIPTION##">
-    <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="##TITLE##">
-    <meta itemprop="description" content="##DESCRIPTION##">
-    <meta itemprop="image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://www.enkrypt.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="##TITLE##">
-    <meta property="og:description" content="##DESCRIPTION##">
-    <meta property="og:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="##TITLE##">
-    <meta name="twitter:description" content="##DESCRIPTION##">
-    <meta name="twitter:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-    <script defer> (function () {
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preload" as="image" href="/src/assets/img/gradient@2x.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>##TITLE##</title>
+  <meta name="description" content="##DESCRIPTION##">
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="##TITLE##">
+  <meta itemprop="description" content="##DESCRIPTION##">
+  <meta itemprop="image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.enkrypt.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="##TITLE##">
+  <meta property="og:description" content="##DESCRIPTION##">
+  <meta property="og:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="##TITLE##">
+  <meta name="twitter:description" content="##DESCRIPTION##">
+  <meta name="twitter:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
+  <script>
+    window.addEventListener("load", () => {
+      const loadIntercom = () => {
         var w = window;
         var ic = w.Intercom;
         if (typeof ic === "function") {
@@ -54,25 +57,31 @@
             w.addEventListener('load', l, false);
           }
         }
-      })(); </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <!-- Matomo -->
-    <script defer>
-      var _paq = window._paq = window._paq || [];
-      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="https://myetherwallet.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
+      };
+      const loadMatomo = () => {
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        var u = "https://myetherwallet.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
         _paq.push(['setSiteId', '9']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.defer=true; g.src='//cdn.matomo.cloud/myetherwallet.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <!-- End Matomo Code -->
-  </body>
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.defer = true;
+        g.src = '//cdn.matomo.cloud/myetherwallet.matomo.cloud/matomo.js';
+        s.parentNode.insertBefore(g, s);
+      }
+      loadIntercom()
+      loadMatomo()
+    });
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

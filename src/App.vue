@@ -31,11 +31,16 @@ const close = () => {
 };
 
 onBeforeMount(() => {
-  window.Intercom("boot", {
-    app_id: "ja20qe25",
-    user_id: uuidv4(),
-    api_base: "https://api-iam.intercom.io",
-  });
+  const checkAndSetIntercom = setInterval(() => {
+    if (window.Intercom) {
+      window.Intercom("boot", {
+        app_id: "ja20qe25",
+        user_id: uuidv4(),
+        api_base: "https://api-iam.intercom.io",
+      });
+      clearInterval(checkAndSetIntercom);
+    }
+  }, 1000);
 });
 onMounted(() => {
   const searchURL = new URL(window.location.href);
