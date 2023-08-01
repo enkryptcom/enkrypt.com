@@ -15,7 +15,7 @@ import AppFooter from "./components/app-footer/index.vue";
 import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./views/modal/index.vue";
-import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
+// import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 
 const route = useRoute();
 const router = useRouter();
@@ -48,18 +48,18 @@ onMounted(() => {
   if (ref === "enkrypt_help") {
     window.Intercom("show");
   }
-  const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
-  let hideRaffle = false;
-  if (raffleInfo) {
-    const jRaffleInfo: RaffleInfoType = JSON.parse(raffleInfo);
-    if (jRaffleInfo.timestamp > new Date().getTime() - 3 * 24 * 60 * 60 * 1000)
-      hideRaffle = true;
-  }
-  if (searchURL.pathname.includes("/networks/")) hideRaffle = true;
+  // const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
+  // let hideRaffle = false;
+  // if (raffleInfo) {
+  //   const jRaffleInfo: RaffleInfoType = JSON.parse(raffleInfo);
+  //   if (jRaffleInfo.timestamp > new Date().getTime() - 3 * 24 * 60 * 60 * 1000)
+  //     hideRaffle = true;
+  // }
+  // if (searchURL.pathname.includes("/networks/")) hideRaffle = true;
 
-  setTimeout(() => {
-    isHideRaffleModal.value = hideRaffle;
-  }, 3000);
+  // setTimeout(() => {
+  //   isHideRaffleModal.value = hideRaffle;
+  // }, 3000);
 });
 </script>
 
