@@ -23,9 +23,7 @@
             :href="getDownloadLink()"
             :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
             :class="{ fixed: isFixed, internal: store.isInternalPage.value }"
-            @click="
-              trackEvent(TRACKING_EVENTS.btnDownloadNow, getBrowserStoreEvent())
-            "
+            @click="trackDownloadClick(detect())"
           >
             Download
           </a>
@@ -42,14 +40,10 @@ import Logo from "@/icons/common/logo-white.vue";
 import LogoColor from "@/icons/common/logo-color.vue";
 import HeaderMenu from "@/components/app-header/common/header__menu.vue";
 import { onMounted, ref, onUnmounted } from "vue";
-import {
-  getBrowserStoreEvent,
-  getDownloadLink,
-  trackEvent,
-} from "../../utils/browser";
+import { detect, getDownloadLink } from "../../utils/browser";
 import MobileMenu from "@/components/mobile-menu/index.vue";
-import { TRACKING_EVENTS } from "@/configs";
 import { useInternalPageStore } from "@/store";
+import { trackDownloadClick } from "@/utils/metrics";
 
 const isFixed = ref<boolean>(false);
 const isOverview = ref<boolean>(false);

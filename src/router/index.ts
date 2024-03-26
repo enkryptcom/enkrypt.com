@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Main from "../views/main/index.vue";
+import { trackPageVisit } from "@/utils/metrics";
 
 const routes = {
   intro: {
@@ -19,7 +20,7 @@ const routes = {
   catchAll: { path: "/:catchAll(.*)", redirect: { name: "main" } },
 };
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes: Object.values(routes),
   scrollBehavior(to) {
@@ -32,5 +33,8 @@ export default createRouter({
     }
   },
 });
-
+router.beforeEach((to) => {
+  trackPageVisit(to.path);
+});
+export default router;
 export { routes };

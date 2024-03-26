@@ -49,12 +49,7 @@
               class="main-start__download-button"
               :href="getDownloadLink()"
               :target="getDownloadLink().includes('http') ? '_blank' : '_top'"
-              @click="
-                trackEvent(
-                  TRACKING_EVENTS.btnDownloadNow,
-                  getBrowserStoreEvent()
-                )
-              "
+              @click="trackDownloadClick(detect())"
             >
               Download now
             </a>
@@ -65,37 +60,37 @@
               <a
                 :href="EXTENSION_LINKS.chrome"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.chrome)"
+                @click="trackDownloadClick(BROWSER_NAMES.chrome)"
                 ><chrome
               /></a>
               <a
                 :href="EXTENSION_LINKS.firefox"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.firefox)"
+                @click="trackDownloadClick(BROWSER_NAMES.firefox)"
                 ><firefox
               /></a>
               <a
                 :href="EXTENSION_LINKS.brave"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.brave)"
+                @click="trackDownloadClick(BROWSER_NAMES.brave)"
                 ><brave
               /></a>
               <a
                 :href="EXTENSION_LINKS.edge"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.edge)"
+                @click="trackDownloadClick(BROWSER_NAMES.edge)"
                 ><edge
               /></a>
               <a
                 :href="EXTENSION_LINKS.opera"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.opera)"
+                @click="trackDownloadClick(BROWSER_NAMES.opera)"
                 ><opera
               /></a>
               <a
                 :href="EXTENSION_LINKS.safari"
                 target="_blank"
-                @click="trackEvent(TRACKING_EVENTS.safari)"
+                @click="trackDownloadClick(BROWSER_NAMES.safari)"
                 ><safari
               /></a>
             </div>
@@ -114,12 +109,9 @@ import Edge from "../../../icons/browser/edge-icon.vue";
 import Opera from "../../../icons/browser/opera-icon.vue";
 import Safari from "../../../icons/browser/safari-icon.vue";
 import { onMounted, ref, watch, onUnmounted } from "vue";
-import {
-  getDownloadLink,
-  trackEvent,
-  getBrowserStoreEvent,
-} from "../../../utils/browser";
-import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
+import { getDownloadLink, detect } from "../../../utils/browser";
+import { BROWSER_NAMES, EXTENSION_LINKS } from "@/configs";
+import { trackDownloadClick } from "@/utils/metrics";
 
 const slider = ref(null);
 const height = ref<number>(528);

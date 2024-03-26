@@ -13,6 +13,7 @@
     "download:data": "node download-strapi-data.js"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.6.0",
     "marked": "^4.3.0",
     "pinia": "^2.0.23",
     "sitemap": "^7.1.1",

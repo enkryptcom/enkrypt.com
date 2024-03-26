@@ -16,7 +16,7 @@
               :href="EXTENSION_LINKS.chrome"
               target="_blank"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.chrome)"
+              @click="trackDownloadClick(BROWSER_NAMES.chrome)"
             >
               <chrome-icon />
               <div class="main-seventh__downloads-item-info">
@@ -27,7 +27,7 @@
             <a
               :href="EXTENSION_LINKS.firefox"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.firefox)"
+              @click="trackDownloadClick(BROWSER_NAMES.firefox)"
             >
               <firefox-icon />
               <div class="main-seventh__downloads-item-info">
@@ -39,7 +39,7 @@
               :href="EXTENSION_LINKS.brave"
               target="_blank"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.brave)"
+              @click="trackDownloadClick(BROWSER_NAMES.brave)"
             >
               <brave-icon />
               <div class="main-seventh__downloads-item-info">
@@ -50,7 +50,7 @@
             <a
               :href="EXTENSION_LINKS.edge"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.edge)"
+              @click="trackDownloadClick(BROWSER_NAMES.edge)"
             >
               <edge-icon />
               <div class="main-seventh__downloads-item-info">
@@ -61,7 +61,7 @@
             <a
               :href="EXTENSION_LINKS.opera"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.opera)"
+              @click="trackDownloadClick(BROWSER_NAMES.opera)"
             >
               <opera-icon />
               <div class="main-seventh__downloads-item-info">
@@ -72,7 +72,7 @@
             <a
               :href="EXTENSION_LINKS.safari"
               class="main-seventh__downloads-item"
-              @click="trackEvent(TRACKING_EVENTS.opera)"
+              @click="trackDownloadClick(BROWSER_NAMES.safari)"
             >
               <safari-icon />
               <div class="main-seventh__downloads-item-info">
@@ -94,8 +94,8 @@ import BraveIcon from "@/icons/browser/brave-big.vue";
 import EdgeIcon from "@/icons/browser/edge-big.vue";
 import OperaIcon from "@/icons/browser/opera-big.vue";
 import SafariIcon from "@/icons/browser/safari-big.vue";
-import { EXTENSION_LINKS, TRACKING_EVENTS } from "@/configs";
-import { trackEvent } from "@/utils/browser";
+import { BROWSER_NAMES, EXTENSION_LINKS } from "@/configs";
+import { trackDownloadClick } from "@/utils/metrics";
 </script>
 
 <style lang="less" scoped>

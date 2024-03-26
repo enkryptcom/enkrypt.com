@@ -16,14 +16,5 @@ const EXTENSION_LINKS = {
   opera: "https://addons.opera.com/en/extensions/details/enkrypt/",
   safari: "https://apps.apple.com/app/enkrypt-web3-wallet/id1640164309",
 };
-const TRACKING_EVENTS = {
-  btnDownloadNow: ["trackEvent", "downloadNowButton", "click"],
-  chrome: ["trackEvent", "navigateToChromeStore", "click"],
-  firefox: ["trackEvent", "navigateToFirefoxStore", "click"],
-  brave: ["trackEvent", "navigateToBraveStore", "click"],
-  edge: ["trackEvent", "navigateToEdgeStore", "click"],
-  opera: ["trackEvent", "navigateToOperaStore", "click"],
-  safari: ["trackEvent", "navigateToAppleStore", "click"],
-};
 
-export { EXTENSION_LINKS, BROWSER_NAMES, TRACKING_EVENTS };
+export { EXTENSION_LINKS, BROWSER_NAMES };
