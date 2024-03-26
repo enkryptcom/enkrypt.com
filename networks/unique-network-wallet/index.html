@@ -1,89 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="preload" as="image" href="/assets/gradient@2x.9dc509f6.jpg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enkrypt: Unique Wallet</title>
-  <meta name="description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt.">
-  <!-- Google / Search Engine Tags -->
-  <meta itemprop="name" content="Enkrypt: Unique Wallet">
-  <meta itemprop="description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt.">
-  <meta itemprop="image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://www.enkrypt.com">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Enkrypt: Unique Wallet">
-  <meta property="og:description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt.">
-  <meta property="og:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Enkrypt: Unique Wallet">
-  <meta name="twitter:description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt.">
-  <meta name="twitter:image" content="https://www.enkrypt.com/images/enkrypt_promo.png">
-  <script>
-    window.addEventListener("load", () => {
-      const loadIntercom = () => {
-        var w = window;
-        var ic = w.Intercom;
-        if (typeof ic === "function") {
-          ic('reattach_activator');
-          ic('update', w.intercomSettings);
-        } else {
-          var d = document;
-          var i = function () {
-            i.c(arguments);
-          };
-          i.q = [];
-          i.c = function (args) {
-            i.q.push(args);
-          };
-          w.Intercom = i;
-          var l = function () {
-            var s = d.createElement('script');
-            s.type = 'text/javascript';
-            s.defer = true;
-            s.src = 'https://widget.intercom.io/widget/ja20qe25';
-            var x = d.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-          };
-          if (document.readyState === 'complete') {
-            l();
-          } else if (w.attachEvent) {
-            w.attachEvent('onload', l);
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preload" as="image" href="/assets/gradient@2x.9dc509f6.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enkrypt: Unique Wallet</title>
+    <meta name="description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt." />
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Enkrypt: Unique Wallet" />
+    <meta itemprop="description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt." />
+    <meta
+      itemprop="image"
+      content="https://www.enkrypt.com/images/enkrypt_promo.png"
+    />
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://www.enkrypt.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Enkrypt: Unique Wallet" />
+    <meta property="og:description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt." />
+    <meta
+      property="og:image"
+      content="https://www.enkrypt.com/images/enkrypt_promo.png"
+    />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Enkrypt: Unique Wallet" />
+    <meta name="twitter:description" content="Enkrypt is a multichain browser extension and Unique Wallet. Explore the cutting-edge of Polkadot NFTs with UNQ tokens on Enkrypt." />
+    <meta
+      name="twitter:image"
+      content="https://www.enkrypt.com/images/enkrypt_promo.png"
+    />
+    <script>
+      window.addEventListener("load", () => {
+        const loadIntercom = () => {
+          var w = window;
+          var ic = w.Intercom;
+          if (typeof ic === "function") {
+            ic("reattach_activator");
+            ic("update", w.intercomSettings);
           } else {
-            w.addEventListener('load', l, false);
+            var d = document;
+            var i = function () {
+              i.c(arguments);
+            };
+            i.q = [];
+            i.c = function (args) {
+              i.q.push(args);
+            };
+            w.Intercom = i;
+            var l = function () {
+              var s = d.createElement("script");
+              s.type = "text/javascript";
+              s.defer = true;
+              s.src = "https://widget.intercom.io/widget/ja20qe25";
+              var x = d.getElementsByTagName("script")[0];
+              x.parentNode.insertBefore(s, x);
+            };
+            if (document.readyState === "complete") {
+              l();
+            } else if (w.attachEvent) {
+              w.attachEvent("onload", l);
+            } else {
+              w.addEventListener("load", l, false);
+            }
           }
-        }
-      };
-      const loadMatomo = () => {
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        var u = "https://myetherwallet.matomo.cloud/";
-        _paq.push(['setTrackerUrl', u + 'matomo.php']);
-        _paq.push(['setSiteId', '9']);
-        var d = document,
-          g = d.createElement('script'),
-          s = d.getElementsByTagName('script')[0];
-        g.defer = true;
-        g.src = '//cdn.matomo.cloud/myetherwallet.matomo.cloud/matomo.js';
-        s.parentNode.insertBefore(g, s);
-      }
-      loadIntercom()
-      loadMatomo()
-    });
-  </script>
-  <script type="module" crossorigin src="/assets/index.559f8da2.js"></script>
-  <link rel="stylesheet" href="/assets/index.04154449.css">
-</head>
+        };
+        loadIntercom();
+      });
+    </script>
+    <script type="module" crossorigin src="/assets/index.7478c913.js"></script>
+    <link rel="stylesheet" href="/assets/index.9585ee1f.css">
+  </head>
 
-<body>
-  <div id="app"></div>
-  
-</body>
-
+  <body>
+    <div id="app"></div>
+    
+  </body>
 </html>
