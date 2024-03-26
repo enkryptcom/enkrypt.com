@@ -1,0 +1,578 @@
+diff --git a/lib/esm/g-scope.d.ts b/lib/esm/g-scope.d.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..ca83b627422a0a8c63f882bcae13591dab0c976c
+--- /dev/null
++++ b/lib/esm/g-scope.d.ts
+@@ -0,0 +1,2 @@
++export declare const getGlobalScope: () => typeof globalThis | undefined;
++//# sourceMappingURL=g-scope.d.ts.map
+diff --git a/lib/esm/g-scope.d.ts.map b/lib/esm/g-scope.d.ts.map
+new file mode 100644
+index 0000000000000000000000000000000000000000..f66c1a253bd914b4382968df1dfa7a6d5ecb7e8d
+--- /dev/null
++++ b/lib/esm/g-scope.d.ts.map
+@@ -0,0 +1 @@
++{"version":3,"file":"global-scope.d.ts","sourceRoot":"","sources":["../../src/global-scope.ts"],"names":[],"mappings":"AAGA,eAAO,MAAM,cAAc,QAAO,iBAAiB,GAAG,SAcrD,CAAC"}
+\ No newline at end of file
+diff --git a/lib/esm/g-scope.js b/lib/esm/g-scope.js
+new file mode 100644
+index 0000000000000000000000000000000000000000..89200f046534cc0c1812e29a1935f9b92efb040d
+--- /dev/null
++++ b/lib/esm/g-scope.js
+@@ -0,0 +1,18 @@
++/* eslint-disable no-restricted-globals */
++/* Only file allowed to access to globalThis, window, self */
++export var getGlobalScope = function () {
++  if (typeof globalThis !== "undefined") {
++    return globalThis;
++  }
++  if (typeof window !== "undefined") {
++    return window;
++  }
++  if (typeof self !== "undefined") {
++    return self;
++  }
++  if (typeof global !== "undefined") {
++    return global;
++  }
++  return undefined;
++};
++//# sourceMappingURL=g-scope.js.map
+diff --git a/lib/esm/g-scope.js.map b/lib/esm/g-scope.js.map
+new file mode 100644
+index 0000000000000000000000000000000000000000..89ba3aca43bd11bcce1088d8bcf3f478a4f5df59
+--- /dev/null
++++ b/lib/esm/g-scope.js.map
+@@ -0,0 +1 @@
++{"version":3,"file":"global-scope.js","sourceRoot":"","sources":["../../src/global-scope.ts"],"names":[],"mappings":"AAAA,0CAA0C;AAC1C,6DAA6D;AAE7D,MAAM,CAAC,IAAM,cAAc,GAAG;IAC5B,IAAI,OAAO,UAAU,KAAK,WAAW,EAAE;QACrC,OAAO,UAAU,CAAC;KACnB;IACD,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,MAAM,CAAC;KACf;IACD,IAAI,OAAO,IAAI,KAAK,WAAW,EAAE;QAC/B,OAAO,IAAI,CAAC;KACb;IACD,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,MAAM,CAAC;KACf;IACD,OAAO,SAAS,CAAC;AACnB,CAAC,CAAC","sourcesContent":["/* eslint-disable no-restricted-globals */\n/* Only file allowed to access to globalThis, window, self */\n\nexport const getGlobalScope = (): typeof globalThis | undefined => {\n  if (typeof globalThis !== 'undefined') {\n    return globalThis;\n  }\n  if (typeof window !== 'undefined') {\n    return window;\n  }\n  if (typeof self !== 'undefined') {\n    return self;\n  }\n  if (typeof global !== 'undefined') {\n    return global;\n  }\n  return undefined;\n};\n"]}
+\ No newline at end of file
+diff --git a/lib/esm/global-scope.d.ts b/lib/esm/global-scope.d.ts
+deleted file mode 100644
+index 703d542cbc6bb6eaeb4a007e63cb47da7c7b7ef8..0000000000000000000000000000000000000000
+--- a/lib/esm/global-scope.d.ts
++++ /dev/null
+@@ -1,2 +0,0 @@
+-export declare const getGlobalScope: () => typeof globalThis | undefined;
+-//# sourceMappingURL=global-scope.d.ts.map
+\ No newline at end of file
+diff --git a/lib/esm/global-scope.d.ts.map b/lib/esm/global-scope.d.ts.map
+deleted file mode 100644
+index f66c1a253bd914b4382968df1dfa7a6d5ecb7e8d..0000000000000000000000000000000000000000
+--- a/lib/esm/global-scope.d.ts.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"global-scope.d.ts","sourceRoot":"","sources":["../../src/global-scope.ts"],"names":[],"mappings":"AAGA,eAAO,MAAM,cAAc,QAAO,iBAAiB,GAAG,SAcrD,CAAC"}
+\ No newline at end of file
+diff --git a/lib/esm/global-scope.js b/lib/esm/global-scope.js
+deleted file mode 100644
+index b29b0cec23fc2f02731e996a0eeb89ff0cbea667..0000000000000000000000000000000000000000
+--- a/lib/esm/global-scope.js
++++ /dev/null
+@@ -1,18 +0,0 @@
+-/* eslint-disable no-restricted-globals */
+-/* Only file allowed to access to globalThis, window, self */
+-export var getGlobalScope = function () {
+-    if (typeof globalThis !== 'undefined') {
+-        return globalThis;
+-    }
+-    if (typeof window !== 'undefined') {
+-        return window;
+-    }
+-    if (typeof self !== 'undefined') {
+-        return self;
+-    }
+-    if (typeof global !== 'undefined') {
+-        return global;
+-    }
+-    return undefined;
+-};
+-//# sourceMappingURL=global-scope.js.map
+\ No newline at end of file
+diff --git a/lib/esm/global-scope.js.map b/lib/esm/global-scope.js.map
+deleted file mode 100644
+index 89ba3aca43bd11bcce1088d8bcf3f478a4f5df59..0000000000000000000000000000000000000000
+--- a/lib/esm/global-scope.js.map
++++ /dev/null
+@@ -1 +0,0 @@
+-{"version":3,"file":"global-scope.js","sourceRoot":"","sources":["../../src/global-scope.ts"],"names":[],"mappings":"AAAA,0CAA0C;AAC1C,6DAA6D;AAE7D,MAAM,CAAC,IAAM,cAAc,GAAG;IAC5B,IAAI,OAAO,UAAU,KAAK,WAAW,EAAE;QACrC,OAAO,UAAU,CAAC;KACnB;IACD,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,MAAM,CAAC;KACf;IACD,IAAI,OAAO,IAAI,KAAK,WAAW,EAAE;QAC/B,OAAO,IAAI,CAAC;KACb;IACD,IAAI,OAAO,MAAM,KAAK,WAAW,EAAE;QACjC,OAAO,MAAM,CAAC;KACf;IACD,OAAO,SAAS,CAAC;AACnB,CAAC,CAAC","sourcesContent":["/* eslint-disable no-restricted-globals */\n/* Only file allowed to access to globalThis, window, self */\n\nexport const getGlobalScope = (): typeof globalThis | undefined => {\n  if (typeof globalThis !== 'undefined') {\n    return globalThis;\n  }\n  if (typeof window !== 'undefined') {\n    return window;\n  }\n  if (typeof self !== 'undefined') {\n    return self;\n  }\n  if (typeof global !== 'undefined') {\n    return global;\n  }\n  return undefined;\n};\n"]}
+\ No newline at end of file
+diff --git a/lib/esm/index.d.ts b/lib/esm/index.d.ts
+index b24d17a3339f020bd6341c5243ef74cd417be419..8ce347ab3aafd6a320b9088bbdf10ccfd55a01af 100644
+--- a/lib/esm/index.d.ts
++++ b/lib/esm/index.d.ts
+@@ -1,14 +1,26 @@
+-export { CampaignParser } from './attribution/campaign-parser';
+-export { CampaignTracker } from './attribution/campaign-tracker';
+-export { getQueryParams } from './query-params';
+-export { isNewSession } from './session';
+-export { getCookieName, getOldCookieName } from './cookie-name';
+-export { CookieStorage } from './storage/cookie';
+-export { FetchTransport } from './transports/fetch';
+-export { getAnalyticsConnector, setConnectorDeviceId, setConnectorUserId } from './analytics-connector';
+-export { IdentityEventSender } from './plugins/identity';
+-export { getLanguage } from './language';
+-export { BASE_CAMPAIGN } from './attribution/constants';
+-export { getGlobalScope } from './global-scope';
+-export { getPageViewTrackingConfig, getAttributionTrackingConfig, isAttributionTrackingEnabled, isFileDownloadTrackingEnabled, isFormInteractionTrackingEnabled, isPageViewTrackingEnabled, isSessionTrackingEnabled, } from './default-tracking';
++export { CampaignParser } from "./attribution/campaign-parser";
++export { CampaignTracker } from "./attribution/campaign-tracker";
++export { getQueryParams } from "./query-params";
++export { isNewSession } from "./session";
++export { getCookieName, getOldCookieName } from "./cookie-name";
++export { CookieStorage } from "./storage/cookie";
++export { FetchTransport } from "./transports/fetch";
++export {
++  getAnalyticsConnector,
++  setConnectorDeviceId,
++  setConnectorUserId,
++} from "./analytics-connector";
++export { IdentityEventSender } from "./plugins/identity";
++export { getLanguage } from "./language";
++export { BASE_CAMPAIGN } from "./attribution/constants";
++export { getGlobalScope } from "./g-scope";
++export {
++  getPageViewTrackingConfig,
++  getAttributionTrackingConfig,
++  isAttributionTrackingEnabled,
++  isFileDownloadTrackingEnabled,
++  isFormInteractionTrackingEnabled,
++  isPageViewTrackingEnabled,
++  isSessionTrackingEnabled,
++} from "./default-tracking";
+ //# sourceMappingURL=index.d.ts.map
+diff --git a/lib/esm/index.js b/lib/esm/index.js
+index f1be28c3e4057a97d84618dd39257de7288bc869..ffda62531eb16698971355d56c932e33faf27609 100644
+--- a/lib/esm/index.js
++++ b/lib/esm/index.js
+@@ -1,14 +1,26 @@
+-export { CampaignParser } from './attribution/campaign-parser';
+-export { CampaignTracker } from './attribution/campaign-tracker';
+-export { getQueryParams } from './query-params';
+-export { isNewSession } from './session';
+-export { getCookieName, getOldCookieName } from './cookie-name';
+-export { CookieStorage } from './storage/cookie';
+-export { FetchTransport } from './transports/fetch';
+-export { getAnalyticsConnector, setConnectorDeviceId, setConnectorUserId } from './analytics-connector';
+-export { IdentityEventSender } from './plugins/identity';
+-export { getLanguage } from './language';
+-export { BASE_CAMPAIGN } from './attribution/constants';
+-export { getGlobalScope } from './global-scope';
+-export { getPageViewTrackingConfig, getAttributionTrackingConfig, isAttributionTrackingEnabled, isFileDownloadTrackingEnabled, isFormInteractionTrackingEnabled, isPageViewTrackingEnabled, isSessionTrackingEnabled, } from './default-tracking';
++export { CampaignParser } from "./attribution/campaign-parser";
++export { CampaignTracker } from "./attribution/campaign-tracker";
++export { getQueryParams } from "./query-params";
++export { isNewSession } from "./session";
++export { getCookieName, getOldCookieName } from "./cookie-name";
++export { CookieStorage } from "./storage/cookie";
++export { FetchTransport } from "./transports/fetch";
++export {
++  getAnalyticsConnector,
++  setConnectorDeviceId,
++  setConnectorUserId,
++} from "./analytics-connector";
++export { IdentityEventSender } from "./plugins/identity";
++export { getLanguage } from "./language";
++export { BASE_CAMPAIGN } from "./attribution/constants";
++export { getGlobalScope } from "./g-scope";
++export {
++  getPageViewTrackingConfig,
++  getAttributionTrackingConfig,
++  isAttributionTrackingEnabled,
++  isFileDownloadTrackingEnabled,
++  isFormInteractionTrackingEnabled,
++  isPageViewTrackingEnabled,
++  isSessionTrackingEnabled,
++} from "./default-tracking";
+ //# sourceMappingURL=index.js.map
+diff --git a/lib/esm/query-params.js b/lib/esm/query-params.js
+index 2faca414399f243b3cf8888caa12e8ded5291cb4..b5aa700d5619c6e74cb5bc3bbc3fc46cce18456e 100644
+--- a/lib/esm/query-params.js
++++ b/lib/esm/query-params.js
+@@ -1,31 +1,42 @@
+-import { getGlobalScope } from './global-scope';
++import { getGlobalScope } from "./g-scope";
+ export var getQueryParams = function () {
+-    var _a;
+-    var globalScope = getGlobalScope();
+-    /* istanbul ignore if */
+-    if (!((_a = globalScope === null || globalScope === void 0 ? void 0 : globalScope.location) === null || _a === void 0 ? void 0 : _a.search)) {
+-        return {};
++  var _a;
++  var globalScope = getGlobalScope();
++  /* istanbul ignore if */
++  if (
++    !((_a =
++      globalScope === null || globalScope === void 0
++        ? void 0
++        : globalScope.location) === null || _a === void 0
++      ? void 0
++      : _a.search)
++  ) {
++    return {};
++  }
++  var pairs = globalScope.location.search
++    .substring(1)
++    .split("&")
++    .filter(Boolean);
++  var params = pairs.reduce(function (acc, curr) {
++    var query = curr.split("=", 2);
++    var key = tryDecodeURIComponent(query[0]);
++    var value = tryDecodeURIComponent(query[1]);
++    if (!value) {
++      return acc;
+     }
+-    var pairs = globalScope.location.search.substring(1).split('&').filter(Boolean);
+-    var params = pairs.reduce(function (acc, curr) {
+-        var query = curr.split('=', 2);
+-        var key = tryDecodeURIComponent(query[0]);
+-        var value = tryDecodeURIComponent(query[1]);
+-        if (!value) {
+-            return acc;
+-        }
+-        acc[key] = value;
+-        return acc;
+-    }, {});
+-    return params;
++    acc[key] = value;
++    return acc;
++  }, {});
++  return params;
+ };
+ export var tryDecodeURIComponent = function (value) {
+-    if (value === void 0) { value = ''; }
+-    try {
+-        return decodeURIComponent(value);
+-    }
+-    catch (_a) {
+-        return '';
+-    }
++  if (value === void 0) {
++    value = "";
++  }
++  try {
++    return decodeURIComponent(value);
++  } catch (_a) {
++    return "";
++  }
+ };
+ //# sourceMappingURL=query-params.js.map
+diff --git a/lib/esm/storage/cookie.js b/lib/esm/storage/cookie.js
+index fc5d98f15c228973ce22d3d9b2aadf5b548999fb..c0c28eaa2ba01079a6c6a0ac205d4555d996a601 100644
+--- a/lib/esm/storage/cookie.js
++++ b/lib/esm/storage/cookie.js
+@@ -1,150 +1,170 @@
+ import { __assign, __awaiter, __generator } from "tslib";
+-import { getGlobalScope } from '../global-scope';
++import { getGlobalScope } from "../g-scope";
+ var CookieStorage = /** @class */ (function () {
+-    function CookieStorage(options) {
+-        this.options = __assign({}, options);
+-    }
+-    CookieStorage.prototype.isEnabled = function () {
+-        return __awaiter(this, void 0, void 0, function () {
+-            var testStrorage, testKey, value, _a;
+-            return __generator(this, function (_b) {
+-                switch (_b.label) {
+-                    case 0:
+-                        /* istanbul ignore if */
+-                        if (!getGlobalScope()) {
+-                            return [2 /*return*/, false];
+-                        }
+-                        CookieStorage.testValue = String(Date.now());
+-                        testStrorage = new CookieStorage(this.options);
+-                        testKey = 'AMP_TEST';
+-                        _b.label = 1;
+-                    case 1:
+-                        _b.trys.push([1, 4, 5, 7]);
+-                        return [4 /*yield*/, testStrorage.set(testKey, CookieStorage.testValue)];
+-                    case 2:
+-                        _b.sent();
+-                        return [4 /*yield*/, testStrorage.get(testKey)];
+-                    case 3:
+-                        value = _b.sent();
+-                        return [2 /*return*/, value === CookieStorage.testValue];
+-                    case 4:
+-                        _a = _b.sent();
+-                        /* istanbul ignore next */
+-                        return [2 /*return*/, false];
+-                    case 5: return [4 /*yield*/, testStrorage.remove(testKey)];
+-                    case 6:
+-                        _b.sent();
+-                        return [7 /*endfinally*/];
+-                    case 7: return [2 /*return*/];
+-                }
+-            });
++  function CookieStorage(options) {
++    this.options = __assign({}, options);
++  }
++  CookieStorage.prototype.isEnabled = function () {
++    return __awaiter(this, void 0, void 0, function () {
++      var testStrorage, testKey, value, _a;
++      return __generator(this, function (_b) {
++        switch (_b.label) {
++          case 0:
++            /* istanbul ignore if */
++            if (!getGlobalScope()) {
++              return [2 /*return*/, false];
++            }
++            CookieStorage.testValue = String(Date.now());
++            testStrorage = new CookieStorage(this.options);
++            testKey = "AMP_TEST";
++            _b.label = 1;
++          case 1:
++            _b.trys.push([1, 4, 5, 7]);
++            return [
++              4 /*yield*/,
++              testStrorage.set(testKey, CookieStorage.testValue),
++            ];
++          case 2:
++            _b.sent();
++            return [4 /*yield*/, testStrorage.get(testKey)];
++          case 3:
++            value = _b.sent();
++            return [2 /*return*/, value === CookieStorage.testValue];
++          case 4:
++            _a = _b.sent();
++            /* istanbul ignore next */
++            return [2 /*return*/, false];
++          case 5:
++            return [4 /*yield*/, testStrorage.remove(testKey)];
++          case 6:
++            _b.sent();
++            return [7 /*endfinally*/];
++          case 7:
++            return [2 /*return*/];
++        }
++      });
++    });
++  };
++  CookieStorage.prototype.get = function (key) {
++    return __awaiter(this, void 0, void 0, function () {
++      var value;
++      return __generator(this, function (_a) {
++        switch (_a.label) {
++          case 0:
++            return [4 /*yield*/, this.getRaw(key)];
++          case 1:
++            value = _a.sent();
++            if (!value) {
++              return [2 /*return*/, undefined];
++            }
++            try {
++              try {
++                value = decodeURIComponent(atob(value));
++              } catch (_b) {
++                // value not encoded
++              }
++              // eslint-disable-next-line @typescript-eslint/no-unsafe-return
++              return [2 /*return*/, JSON.parse(value)];
++            } catch (_c) {
++              /* istanbul ignore next */
++              return [2 /*return*/, undefined];
++            }
++            return [2 /*return*/];
++        }
++      });
++    });
++  };
++  CookieStorage.prototype.getRaw = function (key) {
++    var _a, _b;
++    return __awaiter(this, void 0, void 0, function () {
++      var globalScope, cookie, match;
++      return __generator(this, function (_c) {
++        globalScope = getGlobalScope();
++        cookie =
++          (_b =
++            (_a =
++              globalScope === null || globalScope === void 0
++                ? void 0
++                : globalScope.document) === null || _a === void 0
++              ? void 0
++              : _a.cookie.split("; ")) !== null && _b !== void 0
++            ? _b
++            : [];
++        match = cookie.find(function (c) {
++          return c.indexOf(key + "=") === 0;
+         });
+-    };
+-    CookieStorage.prototype.get = function (key) {
+-        return __awaiter(this, void 0, void 0, function () {
+-            var value;
+-            return __generator(this, function (_a) {
+-                switch (_a.label) {
+-                    case 0: return [4 /*yield*/, this.getRaw(key)];
+-                    case 1:
+-                        value = _a.sent();
+-                        if (!value) {
+-                            return [2 /*return*/, undefined];
+-                        }
+-                        try {
+-                            try {
+-                                value = decodeURIComponent(atob(value));
+-                            }
+-                            catch (_b) {
+-                                // value not encoded
+-                            }
+-                            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+-                            return [2 /*return*/, JSON.parse(value)];
+-                        }
+-                        catch (_c) {
+-                            /* istanbul ignore next */
+-                            return [2 /*return*/, undefined];
+-                        }
+-                        return [2 /*return*/];
+-                }
+-            });
+-        });
+-    };
+-    CookieStorage.prototype.getRaw = function (key) {
+-        var _a, _b;
+-        return __awaiter(this, void 0, void 0, function () {
+-            var globalScope, cookie, match;
+-            return __generator(this, function (_c) {
+-                globalScope = getGlobalScope();
+-                cookie = (_b = (_a = globalScope === null || globalScope === void 0 ? void 0 : globalScope.document) === null || _a === void 0 ? void 0 : _a.cookie.split('; ')) !== null && _b !== void 0 ? _b : [];
+-                match = cookie.find(function (c) { return c.indexOf(key + '=') === 0; });
+-                if (!match) {
+-                    return [2 /*return*/, undefined];
+-                }
+-                return [2 /*return*/, match.substring(key.length + 1)];
+-            });
+-        });
+-    };
+-    CookieStorage.prototype.set = function (key, value) {
+-        var _a;
+-        return __awaiter(this, void 0, void 0, function () {
+-            var expirationDays, expires, expireDate, date, str, globalScope;
+-            return __generator(this, function (_b) {
+-                try {
+-                    expirationDays = (_a = this.options.expirationDays) !== null && _a !== void 0 ? _a : 0;
+-                    expires = value !== null ? expirationDays : -1;
+-                    expireDate = undefined;
+-                    if (expires) {
+-                        date = new Date();
+-                        date.setTime(date.getTime() + expires * 24 * 60 * 60 * 1000);
+-                        expireDate = date;
+-                    }
+-                    str = "".concat(key, "=").concat(btoa(encodeURIComponent(JSON.stringify(value))));
+-                    if (expireDate) {
+-                        str += "; expires=".concat(expireDate.toUTCString());
+-                    }
+-                    str += '; path=/';
+-                    if (this.options.domain) {
+-                        str += "; domain=".concat(this.options.domain);
+-                    }
+-                    if (this.options.secure) {
+-                        str += '; Secure';
+-                    }
+-                    if (this.options.sameSite) {
+-                        str += "; SameSite=".concat(this.options.sameSite);
+-                    }
+-                    globalScope = getGlobalScope();
+-                    if (globalScope) {
+-                        globalScope.document.cookie = str;
+-                    }
+-                }
+-                catch (_c) {
+-                    //
+-                }
+-                return [2 /*return*/];
+-            });
+-        });
+-    };
+-    CookieStorage.prototype.remove = function (key) {
+-        return __awaiter(this, void 0, void 0, function () {
+-            return __generator(this, function (_a) {
+-                switch (_a.label) {
+-                    case 0: return [4 /*yield*/, this.set(key, null)];
+-                    case 1:
+-                        _a.sent();
+-                        return [2 /*return*/];
+-                }
+-            });
+-        });
+-    };
+-    CookieStorage.prototype.reset = function () {
+-        return __awaiter(this, void 0, void 0, function () {
+-            return __generator(this, function (_a) {
+-                return [2 /*return*/];
+-            });
+-        });
+-    };
+-    return CookieStorage;
+-}());
++        if (!match) {
++          return [2 /*return*/, undefined];
++        }
++        return [2 /*return*/, match.substring(key.length + 1)];
++      });
++    });
++  };
++  CookieStorage.prototype.set = function (key, value) {
++    var _a;
++    return __awaiter(this, void 0, void 0, function () {
++      var expirationDays, expires, expireDate, date, str, globalScope;
++      return __generator(this, function (_b) {
++        try {
++          expirationDays =
++            (_a = this.options.expirationDays) !== null && _a !== void 0
++              ? _a
++              : 0;
++          expires = value !== null ? expirationDays : -1;
++          expireDate = undefined;
++          if (expires) {
++            date = new Date();
++            date.setTime(date.getTime() + expires * 24 * 60 * 60 * 1000);
++            expireDate = date;
++          }
++          str = ""
++            .concat(key, "=")
++            .concat(btoa(encodeURIComponent(JSON.stringify(value))));
++          if (expireDate) {
++            str += "; expires=".concat(expireDate.toUTCString());
++          }
++          str += "; path=/";
++          if (this.options.domain) {
++            str += "; domain=".concat(this.options.domain);
++          }
++          if (this.options.secure) {
++            str += "; Secure";
++          }
++          if (this.options.sameSite) {
++            str += "; SameSite=".concat(this.options.sameSite);
++          }
++          globalScope = getGlobalScope();
++          if (globalScope) {
++            globalScope.document.cookie = str;
++          }
++        } catch (_c) {
++          //
++        }
++        return [2 /*return*/];
++      });
++    });
++  };
++  CookieStorage.prototype.remove = function (key) {
++    return __awaiter(this, void 0, void 0, function () {
++      return __generator(this, function (_a) {
++        switch (_a.label) {
++          case 0:
++            return [4 /*yield*/, this.set(key, null)];
++          case 1:
++            _a.sent();
++            return [2 /*return*/];
++        }
++      });
++    });
++  };
++  CookieStorage.prototype.reset = function () {
++    return __awaiter(this, void 0, void 0, function () {
++      return __generator(this, function (_a) {
++        return [2 /*return*/];
++      });
++    });
++  };
++  return CookieStorage;
++})();
+ export { CookieStorage };
+ //# sourceMappingURL=cookie.js.map

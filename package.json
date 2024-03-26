@@ -13,7 +13,7 @@
     "download:data": "node download-strapi-data.js"
   },
   "dependencies": {
-    "@amplitude/analytics-browser": "^2.6.0",
+    "@amplitude/analytics-browser": "2.6.0",
     "marked": "^4.3.0",
     "pinia": "^2.0.23",
     "sitemap": "^7.1.1",
@@ -53,5 +53,9 @@
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-require-transform": "^1.0.3",
     "vue-tsc": "^0.33.9"
+  },
+  "packageManager": "yarn@4.1.1",
+  "resolutions": {
+    "@amplitude/analytics-client-common@npm:^2.1.2": "patch:@amplitude/analytics-client-common@npm%3A2.1.2#~/.yarn/patches/@amplitude-analytics-client-common-npm-2.1.2-d8c654521f.patch"
   }
 }
