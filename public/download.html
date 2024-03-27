@@ -1,6 +1,7 @@
 <html>
   <head>
     <script type="text/javascript">
+      const activityUrl = "https://download.mewwallet.dev/record";
       const EXTENSION_LINKS = {
         chrome:
           "https://chrome.google.com/webstore/detail/enkrypt/kkpllkodjeloidieedojogacfhpaihoh",
@@ -35,11 +36,20 @@
           return "";
         }
       };
+      const doTheRedirect = (url, platform) => {
+        if (!fetch) document.location.href = url;
+        else
+          fetch(
+            `${activityUrl}?platform=enkrypt-${platform}&utm=generic`
+          ).finally(() => {
+            document.location.href = url;
+          });
+      };
       const browser = detect();
       if (browser !== "") {
-        document.location.href = EXTENSION_LINKS[browser];
+        doTheRedirect(EXTENSION_LINKS[browser], browser);
       } else {
-        document.location.href = EXTENSION_LINKS.chrome;
+        doTheRedirect(EXTENSION_LINKS[browser], BROWSER_NAMES.chrome);
       }
     </script>
   </head>
