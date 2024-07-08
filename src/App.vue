@@ -5,22 +5,32 @@
   </main>
   <app-footer />
   <modal v-if="!isHideRaffleModal" @close="close" />
+  <app-modal
+    v-if="!isHideSubscriptionModal || subscriptionStore.isShowSelectModal"
+    @close="closeSubscriptionModal"
+  >
+    <subscription @submit="submitEmail" @unsubscribe="unsubscribe" />
+  </app-modal>
 </template>
 
 <script setup lang="ts">
 import { onBeforeMount, onMounted, ref } from "vue";
-import { useInternalPageStore } from "./store";
+import { useInternalPageStore, useSubscriptionStore } from "./store";
 import AppHeaderUniversal from "./components/app-header/index.vue";
 import AppFooter from "./components/app-footer/index.vue";
+import AppModal from "./components/app-modal/index.vue";
 import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./views/modal/index.vue";
+import Subscription from "./views/subscription/index.vue";
 // import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 
 const route = useRoute();
 const router = useRouter();
 const store = useInternalPageStore();
+const subscriptionStore = useSubscriptionStore();
 const isHideRaffleModal = ref<boolean>(true);
+const isHideSubscriptionModal = ref<boolean>(true);
 
 router.afterEach(() => {
   store.setInternal(route.name != "main");
@@ -28,6 +38,11 @@ router.afterEach(() => {
 
 const close = () => {
   isHideRaffleModal.value = true;
+};
+
+const closeSubscriptionModal = () => {
+  isHideSubscriptionModal.value = true;
+  subscriptionStore.setShowSelectModal(false);
 };
 
 onBeforeMount(() => {
@@ -48,6 +63,11 @@ onMounted(() => {
   if (ref === "enkrypt_help") {
     window.Intercom("show");
   }
+
+  setTimeout(() => {
+    isHideSubscriptionModal.value = false;
+  }, 1000);
+
   // const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
   // let hideRaffle = false;
   // if (raffleInfo) {
@@ -61,6 +81,15 @@ onMounted(() => {
   //   isHideRaffleModal.value = hideRaffle;
   // }, 3000);
 });
+
+const submitEmail = () => {
+  console.log("submitEmail");
+};
+
+const unsubscribe = () => {
+  isHideSubscriptionModal.value = true;
+  console.log("unsubscribe");
+};
 </script>
 
 <style lang="less">

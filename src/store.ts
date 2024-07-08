@@ -9,3 +9,11 @@ export const useInternalPageStore = defineStore("internalPages", () => {
   };
   return { isInternalPage, setInternal };
 });
+
+export const useSubscriptionStore = defineStore("subscription", () => {
+  const isShowSelectModal = ref(false);
+  const setShowSelectModal = (val: boolean) => {
+    isShowSelectModal.value = val;
+  };
+  return { isShowSelectModal, setShowSelectModal };
+});
