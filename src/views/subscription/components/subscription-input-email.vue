@@ -137,6 +137,12 @@ const unsubscribe = () => {
       line-height: 56px;
       border-radius: 44px;
       margin: 0 0 8px 0;
+      transition: opacity 300ms ease-in-out;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     &-label {

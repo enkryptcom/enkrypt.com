@@ -157,6 +157,12 @@ const submit = () => {
       color: @black;
       font-weight: 700;
       color: @white;
+      transition: opacity 300ms ease-in-out;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
 
       .screen-xs({
         width: 136px;

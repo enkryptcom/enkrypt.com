@@ -67,6 +67,12 @@ import LearnIconPrimary from "@/icons/common/learn-icon-primary.vue";
         line-height: 56px;
         border-radius: 44px;
         margin-left: 16px;
+        transition: opacity 300ms ease-in-out;
+        opacity: 1;
+
+        &:hover {
+          opacity: 0.7;
+        }
 
         .screen-xs({
             margin: 16px 0 0 0;
