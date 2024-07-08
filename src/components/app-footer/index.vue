@@ -63,20 +63,23 @@ import Discord from "../../icons/social/discord.vue";
 @import "../../assets/styles/theme.less";
 
 .footer {
-  padding: 0 0 124px 0;
+  padding: 115px 0 150px 0;
   width: 100%;
 
   .screen-lg({
-    padding: 0 0 143px 0;
+    padding: 115px 0 150px 0;
+  });
+
+  .screen-md({
+    padding: 115px 0 150px 0;
   });
 
   .screen-sm({
-    padding: 0 0 93px 0;
+    padding: 80px 0 80px 0;
   });
 
   .screen-xs({
-    padding: 0 0 80px 0;
-
+    padding: 80px 0 80px 0;
   });
 
   .col-8 {
