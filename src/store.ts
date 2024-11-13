@@ -18,12 +18,14 @@ export const useSubscriptionStore = defineStore("email-subscription", () => {
     `${storageKey}-lastSubPopup`,
     undefined
   );
-  const canShowSubscribePopup = ref(
-    lastSubPopupTime.value === undefined
-      ? true
-      : currTime - (lastSubPopupTime.value || 0) > 7 * 24 * 60 * 60 * 1000 * 2
-  );
-  console.log("canShowSubscribePopup", canShowSubscribePopup.value);
+  const canShowSubscribePopup = ref(false);
+  setTimeout(() => {
+    canShowSubscribePopup.value =
+      lastSubPopupTime.value === undefined
+        ? true
+        : currTime - (lastSubPopupTime.value || 0) >
+          7 * 24 * 60 * 60 * 1000 * 2;
+  }, 10000);
 
   const isShowSelectModal = ref(false);
 

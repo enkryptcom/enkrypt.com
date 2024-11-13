@@ -9,14 +9,15 @@
     </p>
     <p class="subscription__finish-label">What's next:</p>
     <div class="subscription__finish-buttons">
-      <a href="#">Create a wallet</a>
-      <a href="#">Buy crypto</a>
+      <a :href="getDownloadLink()">Download Enkrypt</a>
+      <a href="https://ccswap.myetherwallet.com/" target="_blank">Buy crypto</a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import LearnIconPrimary from "@/icons/common/learn-icon-primary.vue";
+import { getDownloadLink } from "@/utils/browser";
 </script>
 
 <style lang="less" scoped>
