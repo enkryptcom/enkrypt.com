@@ -21,8 +21,8 @@ export const useSubscriptionStore = defineStore("email-subscription", () => {
   const canShowSubscribePopup = ref(
     lastSubPopupTime.value === undefined
       ? true
-      : currTime - (lastSubPopupTime.value || 0) > 3 * 1000
-  ); // 7 * 24 * 60 * 60 * 1000 * 2;
+      : currTime - (lastSubPopupTime.value || 0) > 7 * 24 * 60 * 60 * 1000 * 2
+  );
   console.log("canShowSubscribePopup", canShowSubscribePopup.value);
 
   const isShowSelectModal = ref(false);
