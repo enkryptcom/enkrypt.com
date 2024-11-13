@@ -10,7 +10,11 @@
     <p class="subscription__finish-label">What's next:</p>
     <div class="subscription__finish-buttons">
       <a :href="getDownloadLink()">Download Enkrypt</a>
-      <a href="https://ccswap.myetherwallet.com/" target="_blank">Buy crypto</a>
+      <a
+        href="https://ccswap.myetherwallet.com/?platform=enkrypt"
+        target="_blank"
+        >Buy crypto</a
+      >
     </div>
   </div>
 </template>
