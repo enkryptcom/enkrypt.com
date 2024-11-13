@@ -41,4 +41,22 @@ const trackDownloadClick = (browser: string) => {
   metrics.track("download_click", { browser });
 };
 
-export { trackDownloadClick, trackPageVisit };
+const trackEmailSubscriptionOpen = (path: string) => {
+  metrics.track("email_sub_open", { path });
+};
+
+const trackEmailSubscriptionSubmitted = (path: string) => {
+  metrics.track("email_sub_submitted", { path });
+};
+
+const trackEmailSubscriptionClosed = (path: string) => {
+  metrics.track("email_sub_closed", { path });
+};
+
+export {
+  trackDownloadClick,
+  trackPageVisit,
+  trackEmailSubscriptionOpen,
+  trackEmailSubscriptionSubmitted,
+  trackEmailSubscriptionClosed,
+};

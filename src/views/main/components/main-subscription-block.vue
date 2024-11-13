@@ -15,23 +15,23 @@
         <div class="col-10">
           <div
             class="main-subscription__input-wrap"
-            :class="{ error: isError }"
+            :class="{ error: isError && email !== '' }"
           >
             <input
+              v-model="email"
               type="email"
               placeholder="Enter your email"
-              value=""
+              required
               class="main-subscription__input"
             />
-            <a
-              href="javascript:void(0)"
-              class="main-subscription__input-button"
-              @click="submit()"
-            >
+            <a class="main-subscription__input-button" @click="submit()">
               Sign me up!
             </a>
-            <div v-if="isError" class="main-subscription__input-error">
-              Error message
+            <div
+              v-if="isError && email !== ''"
+              class="main-subscription__input-error"
+            >
+              Please enter a valid email
             </div>
           </div>
         </div>
@@ -41,16 +41,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import LearnIcon from "@/icons/common/learn-icon.vue";
 import { useSubscriptionStore } from "@/store";
 
 const store = useSubscriptionStore();
-
-const isError = ref<boolean>(false);
-
+const email = ref<string>("");
+const isError = computed(() => {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value);
+});
 const submit = () => {
-  store.setShowSelectModal(true);
+  if (!isError.value) {
+    store.setUserEmail(email.value);
+    store.setShowSelectModal(true);
+    email.value = "";
+  }
 };
 </script>
 

@@ -1,13 +1,13 @@
 <template>
   <div class="subscription__finish">
     <learn-icon-primary />
-    <h2 class="subscription__finish-title">Welcome to the MEW Universe!</h2>
+    <h2 class="subscription__finish-title">Welcome to the MEW Universe!</h2>
     <p class="subscription__finish-desc">
-      We’re excited to have you here onchain with us. Keep an eye on your inbox
-      for the latest crypto news, trending tokens, security tips and more!
-      Get ahead — and stay ahead — in the MEW Universe.
+      We're excited to have you here onchain with us. Keep an eye on your inbox
+      for the latest crypto news, trending tokens, security tips and more! Get
+      ahead — and stay ahead — in the MEW Universe.
     </p>
-    <p class="subscription__finish-label">What’s next:</p>
+    <p class="subscription__finish-label">What's next:</p>
     <div class="subscription__finish-buttons">
       <a href="#">Create a wallet</a>
       <a href="#">Buy crypto</a>

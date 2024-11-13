@@ -5,48 +5,53 @@
     <p class="subscription__input-desc">
       Level up your skills with security tips, industry insights, news and more!
     </p>
-    <div class="subscription__input-wrap" :class="{ error: isError }">
-      <input type="email" placeholder="Enter your email" value="" />
-    </div>
-    <div v-if="isError" class="subscription__input-error">Error message</div>
-    <a
-      href="javascript:void(0)"
-      class="subscription__input-submit"
-      @click="submit()"
+    <div
+      class="subscription__input-wrap"
+      :class="{ error: isError && email !== '' }"
     >
-      Sign me up!
-    </a>
+      <input
+        v-model="email"
+        type="email"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <div v-if="isError && email !== ''" class="subscription__input-error">
+      Please enter a valid email
+    </div>
+    <a class="subscription__input-submit" @click="submit()"> Sign me up! </a>
     <p class="subscription__input-label">
       We respect your privacy. Unsubscribe at any time.
     </p>
-    <a
-      href="javascript:void(0)"
-      class="subscription__input-unsubscribe"
-      @click="unsubscribe()"
-    >
+    <a href="#" class="subscription__input-unsubscribe" @click="unsubscribe()">
       No thanks,<br />I already know everything about crypto.
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import LearnIconPrimary from "@/icons/common/learn-icon-primary.vue";
 
-const isError = ref<boolean>(false);
+const email = ref<string>("");
 
 const emit = defineEmits<{
-  (e: "submit"): void;
-  (e: "unsubscribe"): void;
+  (e: "setEmail", email: string): void;
+  (e: "close"): void;
 }>();
 
 const submit = () => {
-  emit("submit");
+  if (!isError.value) {
+    emit("setEmail", email.value);
+  }
 };
 
 const unsubscribe = () => {
-  emit("unsubscribe");
+  emit("close");
 };
+const isError = computed(() => {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value);
+});
 </script>
 
 <style lang="less" scoped>

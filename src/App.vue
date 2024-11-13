@@ -6,10 +6,17 @@
   <app-footer />
   <modal v-if="!isHideRaffleModal" @close="close" />
   <app-modal
-    v-if="!isHideSubscriptionModal || subscriptionStore.isShowSelectModal"
-    @close="closeSubscriptionModal"
+    v-if="
+      subscriptionStore.canShowSubscribePopup ||
+      subscriptionStore.isShowSelectModal
+    "
+    @close="close"
   >
-    <subscription @submit="submitEmail" @unsubscribe="unsubscribe" />
+    <subscription
+      @set-email="setEmail"
+      @close="close"
+      @submit="submitSubscription"
+    />
   </app-modal>
 </template>
 
@@ -23,6 +30,10 @@ import { useRouter, useRoute } from "vue-router";
 import { v4 as uuidv4 } from "uuid";
 import Modal from "./views/modal/index.vue";
 import Subscription from "./views/subscription/index.vue";
+import {
+  trackEmailSubscriptionClosed,
+  trackEmailSubscriptionSubmitted,
+} from "./utils/metrics";
 // import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 
 const route = useRoute();
@@ -30,7 +41,6 @@ const router = useRouter();
 const store = useInternalPageStore();
 const subscriptionStore = useSubscriptionStore();
 const isHideRaffleModal = ref<boolean>(true);
-const isHideSubscriptionModal = ref<boolean>(true);
 
 router.afterEach(() => {
   store.setInternal(route.name != "main");
@@ -38,11 +48,8 @@ router.afterEach(() => {
 
 const close = () => {
   isHideRaffleModal.value = true;
-};
-
-const closeSubscriptionModal = () => {
-  isHideSubscriptionModal.value = true;
-  subscriptionStore.setShowSelectModal(false);
+  subscriptionStore.closePopup();
+  trackEmailSubscriptionClosed(location.pathname);
 };
 
 onBeforeMount(() => {
@@ -63,11 +70,6 @@ onMounted(() => {
   if (ref === "enkrypt_help") {
     window.Intercom("show");
   }
-
-  setTimeout(() => {
-    isHideSubscriptionModal.value = false;
-  }, 1000);
-
   // const raffleInfo = localStorage.getItem(LocalStorageKeys.RAFFLE_POPUP);
   // let hideRaffle = false;
   // if (raffleInfo) {
@@ -81,14 +83,36 @@ onMounted(() => {
   //   isHideRaffleModal.value = hideRaffle;
   // }, 3000);
 });
-
-const submitEmail = () => {
-  console.log("submitEmail");
+const setEmail = (email: string) => {
+  subscriptionStore.setUserEmail(email);
 };
 
-const unsubscribe = () => {
-  isHideSubscriptionModal.value = true;
-  console.log("unsubscribe");
+const submitSubscription = (values: string[]) => {
+  subscriptionStore.setUserValues(values);
+  submitEmail();
+};
+const submitEmail = async () => {
+  const _url = `https://mainnet.mewwallet.dev/email-web`;
+  const response = await fetch(_url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      email: subscriptionStore.userEmail,
+      fields: { platform: "enkrypt-landing" },
+      groups: subscriptionStore.userValues,
+      product: "ENKRYPT_LANDING",
+    }),
+  });
+  if (!response.ok) {
+    console.error(`Response status: ${response.status}`);
+  } else {
+    trackEmailSubscriptionSubmitted(location.pathname);
+  }
+  subscriptionStore.setUserEmail("");
+  subscriptionStore.setUserValues([]);
 };
 </script>
 

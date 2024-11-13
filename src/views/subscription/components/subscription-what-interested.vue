@@ -25,8 +25,17 @@
 
     <a
       href="javascript:void(0)"
+      class="subscription__interested-option"
+      :class="{ active: isProductUpdates }"
+      @click="toggleProductUpdates"
+    >
+      <span>Product Updates.</span>
+    </a>
+
+    <a
+      href="javascript:void(0)"
       class="subscription__interested-submit"
-      @click="finish()"
+      @click="submit()"
     >
       Finish
     </a>
@@ -37,15 +46,26 @@
 import { ref } from "vue";
 import LearnIconPrimary from "@/icons/common/learn-icon-primary.vue";
 
-const isCryptoKnowledge = ref<boolean>(false);
-const isTrendingTokens = ref<boolean>(false);
+const isCryptoKnowledge = ref<boolean>(true);
+const isTrendingTokens = ref<boolean>(true);
+const isProductUpdates = ref<boolean>(false);
 
 const emit = defineEmits<{
-  (e: "finish"): void;
+  (e: "submit", values: string[]): void;
 }>();
 
-const finish = () => {
-  emit("finish");
+const submit = () => {
+  const values: string[] = [];
+  if (isCryptoKnowledge.value) {
+    values.push("CRYPTO_KB");
+  }
+  if (isTrendingTokens.value) {
+    values.push("MARKET");
+  }
+  if (isProductUpdates.value) {
+    values.push("PRODUCT_UPDATES");
+  }
+  emit("submit", values);
 };
 
 const toggleCryptoKnowledge = () => {
@@ -54,6 +74,10 @@ const toggleCryptoKnowledge = () => {
 
 const toggleTrendingTokens = () => {
   isTrendingTokens.value = !isTrendingTokens.value;
+};
+
+const toggleProductUpdates = () => {
+  isProductUpdates.value = !isProductUpdates.value;
 };
 </script>
 

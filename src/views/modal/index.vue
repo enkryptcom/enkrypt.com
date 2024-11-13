@@ -10,7 +10,7 @@
         <img src="../../assets/pic/raffle-img.png" alt="" />
       </div>
       <div class="modal__content">
-        <h2>Win $250 in ETH every week</h2>
+        <h2>Win $250 in ETH every week</h2>
         <p>
           Mint tickets with <b>Enkrypt</b> every day, invite friends to earn
           more tickets.

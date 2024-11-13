@@ -1,12 +1,12 @@
 <template>
   <subscription-input-email
     v-if="state == SubscriptionModalState.enter"
-    @submit="submit"
-    @unsubscribe="unsubscribe"
+    @set-email="setEmail"
+    @close="emit('close')"
   />
   <subscription-what-interested
     v-if="state == SubscriptionModalState.select"
-    @finish="finish"
+    @submit="submit"
   />
   <subscription-finish v-if="state == SubscriptionModalState.finish" />
 </template>
@@ -18,32 +18,32 @@ import { SubscriptionModalState } from "@/types/subscription";
 import SubscriptionInputEmail from "./components/subscription-input-email.vue";
 import SubscriptionWhatInterested from "./components/subscription-what-interested.vue";
 import SubscriptionFinish from "./components/subscription-finish.vue";
+import { trackEmailSubscriptionOpen } from "@/utils/metrics";
 
 const state = ref<SubscriptionModalState>(SubscriptionModalState.enter);
 const store = useSubscriptionStore();
 
 const emit = defineEmits<{
-  (e: "submit"): void;
-  (e: "unsubscribe"): void;
+  (e: "submit", values: string[]): void;
+  (e: "close"): void;
+  (e: "setEmail", email: string): void;
 }>();
 
-const submit = () => {
+const setEmail = (email: string) => {
   state.value = SubscriptionModalState.select;
-  emit("submit");
+  emit("setEmail", email);
 };
 
-const unsubscribe = () => {
-  emit("unsubscribe");
-};
-
-const finish = () => {
+const submit = (values: string[]) => {
   state.value = SubscriptionModalState.finish;
+  emit("submit", values);
 };
 
 onMounted(() => {
   state.value = store.isShowSelectModal
     ? SubscriptionModalState.select
     : SubscriptionModalState.enter;
+  trackEmailSubscriptionOpen(location.pathname);
 });
 
 onUnmounted(() => {
