@@ -3,3 +3,9 @@ export enum SubscriptionModalState {
   select,
   finish,
 }
+
+export enum SubscriptionOptions {
+  CRYPTO_KB = "CRYPTO_KB",
+  MARKET = "MARKET",
+  PRODUCT_UPDATES = "PRODUCT_UPDATES",
+}

@@ -45,25 +45,26 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import LearnIconPrimary from "@/icons/common/learn-icon-primary.vue";
+import { SubscriptionOptions } from "@/types/subscription";
 
 const isCryptoKnowledge = ref<boolean>(true);
 const isTrendingTokens = ref<boolean>(true);
 const isProductUpdates = ref<boolean>(false);
 
 const emit = defineEmits<{
-  (e: "submit", values: string[]): void;
+  (e: "submit", values: SubscriptionOptions[]): void;
 }>();
 
 const submit = () => {
-  const values: string[] = [];
+  const values: SubscriptionOptions[] = [];
   if (isCryptoKnowledge.value) {
-    values.push("CRYPTO_KB");
+    values.push(SubscriptionOptions.CRYPTO_KB);
   }
   if (isTrendingTokens.value) {
-    values.push("MARKET");
+    values.push(SubscriptionOptions.MARKET);
   }
   if (isProductUpdates.value) {
-    values.push("PRODUCT_UPDATES");
+    values.push(SubscriptionOptions.PRODUCT_UPDATES);
   }
   emit("submit", values);
 };

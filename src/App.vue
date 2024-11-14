@@ -34,6 +34,7 @@ import {
   trackEmailSubscriptionClosed,
   trackEmailSubscriptionSubmitted,
 } from "./utils/metrics";
+import { SubscriptionOptions } from "./types/subscription";
 // import { LocalStorageKeys, RaffleInfoType } from "./types/raffle-types";
 
 const route = useRoute();
@@ -87,7 +88,7 @@ const setEmail = (email: string) => {
   subscriptionStore.setUserEmail(email);
 };
 
-const submitSubscription = (values: string[]) => {
+const submitSubscription = (values: SubscriptionOptions[]) => {
   subscriptionStore.setUserValues(values);
   submitEmail();
 };
@@ -109,7 +110,10 @@ const submitEmail = async () => {
   if (!response.ok) {
     console.error(`Response status: ${response.status}`);
   } else {
-    trackEmailSubscriptionSubmitted(location.pathname);
+    trackEmailSubscriptionSubmitted(
+      location.pathname,
+      subscriptionStore.userValues
+    );
   }
   subscriptionStore.setUserEmail("");
   subscriptionStore.setUserValues([]);

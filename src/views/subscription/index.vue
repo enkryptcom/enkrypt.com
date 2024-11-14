@@ -14,7 +14,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import { useSubscriptionStore } from "@/store";
-import { SubscriptionModalState } from "@/types/subscription";
+import {
+  SubscriptionModalState,
+  SubscriptionOptions,
+} from "@/types/subscription";
 import SubscriptionInputEmail from "./components/subscription-input-email.vue";
 import SubscriptionWhatInterested from "./components/subscription-what-interested.vue";
 import SubscriptionFinish from "./components/subscription-finish.vue";
@@ -24,7 +27,7 @@ const state = ref<SubscriptionModalState>(SubscriptionModalState.enter);
 const store = useSubscriptionStore();
 
 const emit = defineEmits<{
-  (e: "submit", values: string[]): void;
+  (e: "submit", values: SubscriptionOptions[]): void;
   (e: "close"): void;
   (e: "setEmail", email: string): void;
 }>();
@@ -34,7 +37,7 @@ const setEmail = (email: string) => {
   emit("setEmail", email);
 };
 
-const submit = (values: string[]) => {
+const submit = (values: SubscriptionOptions[]) => {
   state.value = SubscriptionModalState.finish;
   emit("submit", values);
 };

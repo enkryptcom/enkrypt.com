@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { useLocalStorage } from "@vueuse/core";
 import { computed, ref } from "vue";
+import { SubscriptionOptions } from "./types/subscription";
 
 export const useInternalPageStore = defineStore("internalPages", () => {
   const isPage = ref(false);
@@ -40,12 +41,12 @@ export const useSubscriptionStore = defineStore("email-subscription", () => {
   };
 
   const userEmail = ref("");
-  const userValues = ref<string[]>([]);
+  const userValues = ref<SubscriptionOptions[]>([]);
 
   const setUserEmail = (val: string) => {
     userEmail.value = val;
   };
-  const setUserValues = (val: string[]) => {
+  const setUserValues = (val: SubscriptionOptions[]) => {
     userValues.value = val;
   };
 
