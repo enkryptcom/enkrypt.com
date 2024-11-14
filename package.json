@@ -54,6 +54,9 @@
     "vite-plugin-require-transform": "^1.0.3",
     "vue-tsc": "^0.33.9"
   },
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "packageManager": "yarn@4.1.1",
   "resolutions": {
     "@amplitude/analytics-client-common@npm:^2.1.2": "patch:@amplitude/analytics-client-common@npm%3A2.1.2#~/.yarn/patches/@amplitude-analytics-client-common-npm-2.1.2-d8c654521f.patch"
