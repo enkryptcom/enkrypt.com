@@ -2136,6 +2136,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/web-bluetooth@npm:^0.0.20":
+  version: 0.0.20
+  resolution: "@types/web-bluetooth@npm:0.0.20"
+  checksum: 10c0/3a49bd9396506af8f1b047db087aeeea9fe4301b7fad4fe06ae0f6e00d331138caae878fd09e6410658b70b4aaf10e4b191c41c1a5ff72211fe58da290c7d003
+  languageName: node
+  linkType: hard
+
 "@types/webpack-env@npm:^1.15.2":
   version: 1.18.0
   resolution: "@types/webpack-env@npm:1.18.0"
@@ -2925,6 +2932,34 @@ __metadata:
   version: 1.3.0
   resolution: "@vue/web-component-wrapper@npm:1.3.0"
   checksum: 10c0/258259f60f4709f1c0372daef8c5a88d9d5e6869304e1390e142c95353c4eadfc1f0422991400cfa1fbcfc5affd4cf69cce7359f98a47d559561dda284421d23
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:^11.2.0":
+  version: 11.2.0
+  resolution: "@vueuse/core@npm:11.2.0"
+  dependencies:
+    "@types/web-bluetooth": "npm:^0.0.20"
+    "@vueuse/metadata": "npm:11.2.0"
+    "@vueuse/shared": "npm:11.2.0"
+    vue-demi: "npm:>=0.14.10"
+  checksum: 10c0/d4ac9abef8680a521c160c387922fa98e7cb2f7cbc43d647a0c9eaa654bb72581b4e53fe8452ce8520b2a600b657c252ac87d09eafd4736ed0ae1a3c9c91c8e1
+  languageName: node
+  linkType: hard
+
+"@vueuse/metadata@npm:11.2.0":
+  version: 11.2.0
+  resolution: "@vueuse/metadata@npm:11.2.0"
+  checksum: 10c0/a6f6b734d7237e9e80d005f3cd566141153cf2f59011c57396517a5d448857ecda792c910cde0401f7d524f0f693608616af30fd0f70e867a25f9b0d768a8fb4
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:11.2.0":
+  version: 11.2.0
+  resolution: "@vueuse/shared@npm:11.2.0"
+  dependencies:
+    vue-demi: "npm:>=0.14.10"
+  checksum: 10c0/24c8b4ffb7e1d253f67cb19736926707b5c1b18901b1cd71c075f22495c3382b845253185d2c8986b4a86a17bf637dac01317d68a044cc712621221d278f23ff
   languageName: node
   linkType: hard
 
@@ -5123,6 +5158,7 @@ __metadata:
     "@vue/cli-service": "npm:~5.0.8"
     "@vue/eslint-config-prettier": "npm:^7.0.0"
     "@vue/eslint-config-typescript": "npm:^11.0.0"
+    "@vueuse/core": "npm:^11.2.0"
     eslint: "npm:^8.20.0"
     eslint-config-prettier: "npm:^8.5.0"
     eslint-plugin-prettier: "npm:^4.2.1"
@@ -12398,6 +12434,22 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 10c0/8f1a38e41e3dd0a4821c87231c664dcc00e6dbf5eecd3de397b7ddb6ae01f173aed5385c55a3c3239be36145742f1a5be407662fc67f9c4515ea691dd0ac93e1
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:>=0.14.10":
+  version: 0.14.10
+  resolution: "vue-demi@npm:0.14.10"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 10c0/a9ed8712fa36d01bc13c39757f95f30cebf42d557b99e94bff86d8660c81f2911b41220f7affc023d1ffcc19e13999e4a83019991e264787cca2c616e83aea48
   languageName: node
   linkType: hard
 

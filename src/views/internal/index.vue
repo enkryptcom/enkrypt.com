@@ -41,7 +41,6 @@ import networkList from "@/networks/networks";
 import icons from "@/networks/icons";
 import { marked } from "marked";
 
-//console.log(JSON.stringify(icons));
 var loaded = false;
 var content: {
   path: string;

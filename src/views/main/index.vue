@@ -7,6 +7,7 @@
   <main-sixth-block></main-sixth-block>
   <main-seventh-block></main-seventh-block>
   <main-eighth-block></main-eighth-block>
+  <main-subscription-block></main-subscription-block>
 </template>
 
 <script setup lang="ts">
@@ -17,6 +18,7 @@ import MainFourthBlock from "./components/main-fourth-block.vue";
 import MainFifthBlock from "./components/main-fifth-block.vue";
 import MainSixthBlock from "./components/main-sixth-block.vue";
 import MainSeventhBlock from "@/components/downloads/index.vue";
+import MainSubscriptionBlock from "./components/main-subscription-block.vue";
 import MainEighthBlock from "./components/main-eighth-block.vue";
 </script>
 
