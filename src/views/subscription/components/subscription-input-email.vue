@@ -124,7 +124,7 @@ const isError = computed(() => {
       .caption();
       color: @error;
       margin: 0 0 8px 0;
-      text-align: left;
+      text-align: center;
       padding-left: 20px;
     }
 

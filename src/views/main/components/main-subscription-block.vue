@@ -182,11 +182,11 @@ const submit = () => {
       height: 28px;
       padding: 2px 12px 2px 12px;
       border-radius: 20px;
-      background-color: @error;
       bottom: -32px;
       .caption();
       color: @white;
       text-align: center;
+      color: @error;
       line-height: 23px;
       left: 50%;
       transform: translateX(-50%);
