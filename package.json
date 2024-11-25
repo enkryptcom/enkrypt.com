@@ -1,6 +1,6 @@
 {
   "name": "enkrypt.com",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "yarn download:data && vite",
     "build": "yarn download:data && vue-tsc --noEmit && vite build && cp dist/index.html dist/404.html",
