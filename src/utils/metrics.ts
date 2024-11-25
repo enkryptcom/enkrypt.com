@@ -1,3 +1,4 @@
+import { SubscriptionOptions } from "@/types/subscription";
 import { init, track, Types } from "@amplitude/analytics-browser";
 
 class Metrics {
@@ -41,4 +42,30 @@ const trackDownloadClick = (browser: string) => {
   metrics.track("download_click", { browser });
 };
 
-export { trackDownloadClick, trackPageVisit };
+const trackEmailSubscriptionOpen = (path: string) => {
+  metrics.track("email_sub_open", { path });
+};
+
+const trackEmailSubscriptionSubmitted = (
+  path: string,
+  values: SubscriptionOptions[]
+) => {
+  metrics.track("email_sub_submitted", {
+    path,
+    CRYPTO_KB: values.includes(SubscriptionOptions.CRYPTO_KB),
+    MARKET: values.includes(SubscriptionOptions.MARKET),
+    PRODUCT_UPDATES: values.includes(SubscriptionOptions.PRODUCT_UPDATES),
+  });
+};
+
+const trackEmailSubscriptionClosed = (path: string) => {
+  metrics.track("email_sub_closed", { path });
+};
+
+export {
+  trackDownloadClick,
+  trackPageVisit,
+  trackEmailSubscriptionOpen,
+  trackEmailSubscriptionSubmitted,
+  trackEmailSubscriptionClosed,
+};

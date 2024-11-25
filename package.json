@@ -1,6 +1,6 @@
 {
   "name": "enkrypt.com",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "scripts": {
     "dev": "yarn download:data && vite",
     "build": "yarn download:data && vue-tsc --noEmit && vite build && cp dist/index.html dist/404.html",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "2.6.0",
+    "@vueuse/core": "^11.2.0",
     "marked": "^4.3.0",
     "pinia": "^2.0.23",
     "sitemap": "^7.1.1",
@@ -53,6 +54,9 @@
     "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-require-transform": "^1.0.3",
     "vue-tsc": "^0.33.9"
+  },
+  "engines": {
+    "node": ">=18.17.0"
   },
   "packageManager": "yarn@4.1.1",
   "resolutions": {
