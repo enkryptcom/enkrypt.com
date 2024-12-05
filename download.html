@@ -50,6 +50,9 @@
             `${activityUrl}?platform=enkrypt-${platform}&utm=${utm}`
           ).finally(() => {
             document.location.href = url;
+            setTimeout(()=>{
+              document.location.href = `https://www.enkrypt.com`;
+            },1000);
           });
       };
       const browser = detect();
