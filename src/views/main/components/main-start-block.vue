@@ -21,23 +21,23 @@
         >
           <img
             class="main-start__pic"
-            src="../../../assets/pic/pic1.jpeg"
+            src="../../../assets/pic/main-start1.png"
             alt="Enkrypt extension preview"
             @load="onImgLoad"
           />
           <img
             class="main-start__pic"
-            src="../../../assets/pic/pic2.jpeg"
+            src="../../../assets/pic/main-start2.png"
             alt="Enkrypt extension preview"
           />
           <img
             class="main-start__pic"
-            src="../../../assets/pic/pic3.jpeg"
+            src="../../../assets/pic/main-start3.png"
             alt="Enkrypt extension preview"
           />
           <img
             class="main-start__pic"
-            src="../../../assets/pic/pic4.jpeg"
+            src="../../../assets/pic/main-start4.png"
             alt="Enkrypt extension preview"
           />
         </div>
@@ -215,7 +215,7 @@ const onImgLoad = () => {
     margin-bottom: 52px;
 
     &.ready {
-      border-radius: 12px;
+      border-radius: 18px;
       box-shadow: 0px 33px 13px rgba(0, 0, 0, 0.01),
         0px 19px 11px rgba(0, 0, 0, 0.05), 0px 8px 8px rgba(0, 0, 0, 0.09),
         0px 2px 5px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
