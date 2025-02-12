@@ -11,7 +11,7 @@
         <div class="col-5">
           <img
             class="main-fourth__pic"
-            src="../../../assets/pic/pic2.png"
+            src="../../../assets/pic/main-start3.png"
             alt=""
           />
         </div>
