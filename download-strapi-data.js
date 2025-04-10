@@ -1,5 +1,4 @@
-const { writeFileSync } = require("fs");
-const fetch = require("node-fetch");
+import { writeFileSync } from "node:fs";
 
 const StrapiData = async () => {
   await fetch(
