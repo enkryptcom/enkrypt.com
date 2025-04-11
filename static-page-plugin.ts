@@ -56,7 +56,10 @@ const StaticNetworkPages = (): PluginOption => {
       });
       sitemap.end();
       streamToPromise(sitemap).then((buffer) =>
-        writeFileSync(pathResolve(outDir, "sitemap.xml"), buffer)
+        writeFileSync(
+          pathResolve(outDir, "sitemap.xml"),
+          new Uint8Array(buffer)
+        )
       );
     },
   };
