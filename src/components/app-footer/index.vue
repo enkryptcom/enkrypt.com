@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-10">
           <logo class="footer__logo" color="#1A1919" />
 
           <div class="footer__links">
