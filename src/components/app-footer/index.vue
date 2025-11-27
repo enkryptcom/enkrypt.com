@@ -7,17 +7,13 @@
 
           <div class="footer__links">
             <a href="mailto:support@enkrypt.com" target="_blank">Contact us</a>
-            <a href="https://www.myetherwallet.com/" target="_blank"
-              >MyEtherWallet.com</a
-            >
-            <a href="https://github.com/enkryptcom/enKrypt" target="_blank"
-              >GitHub</a
-            >
-            <a
-              href="https://www.notion.so/Media-kit-ecce7262436c42fa8411e59d548b03fc"
-              target="_blank"
-            >
+            <a href="https://www.myetherwallet.com/" target="_blank">MyEtherWallet.com</a>
+            <a href="https://github.com/enkryptcom/enKrypt" target="_blank">GitHub</a>
+            <a href="https://www.notion.so/Media-kit-ecce7262436c42fa8411e59d548b03fc" target="_blank">
               Media Kit
+            </a>
+            <a href="https://www.myetherwallet.com/terms-of-service" target="_blank">
+              Terms of Service
             </a>
           </div>
 
@@ -40,7 +36,9 @@
             <a href="https://www.reddit.com/r/MyEtherWallet/" target="_blank">
               <reddit />
             </a>
-            <a href="https://discord.gg/Gz8vBneyKe"><discord /></a>
+            <a href="https://discord.gg/Gz8vBneyKe">
+              <discord />
+            </a>
           </div>
         </div>
       </div>
@@ -70,91 +68,91 @@ import Discord from "../../icons/social/discord.vue";
     padding: 115px 0 150px 0;
   });
 
-  .screen-md({
-    padding: 115px 0 150px 0;
+.screen-md({
+  padding: 115px 0 150px 0;
+});
+
+.screen-sm({
+  padding: 80px 0 80px 0;
+});
+
+.screen-xs({
+  padding: 80px 0 80px 0;
+});
+
+.col-8 {
+  .screen-sm({
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   });
+}
+
+&__logo {
+  width: 116px;
+  height: 22px;
+  margin-bottom: 27px;
+  margin-left: -2px;
+}
+
+&__links {
+  margin-bottom: 32px;
 
   .screen-sm({
-    padding: 80px 0 80px 0;
+    margin-bottom: 24px;
   });
 
-  .screen-xs({
-    padding: 80px 0 80px 0;
+a {
+  .caption();
+  letter-spacing: 0.02em;
+  color: @black;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 32px;
+  transition: opacity 300ms ease-in-out;
+  opacity: 1;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .screen-md({
+    margin-right: 28px;
   });
 
-  .col-8 {
-    .screen-sm({
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%;
-      max-width: 100%;
-    });
-  }
+&:hover {
+  opacity: 0.7;
+}
 
-  &__logo {
-    width: 116px;
-    height: 22px;
-    margin-bottom: 27px;
-    margin-left: -2px;
-  }
+.screen-sm({
+  display: block;
+  margin-bottom: 24px;
+});
+}
+}
 
-  &__links {
-    margin-bottom: 32px;
+&__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 
-    .screen-sm({
-      margin-bottom: 24px;
-    });
+  a {
+    text-decoration: none;
+    display: block;
+    margin-right: 24px;
+    transition: opacity 300ms ease-in-out;
+    opacity: 1;
 
-    a {
-      .caption();
-      letter-spacing: 0.02em;
-      color: @black;
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 32px;
-      transition: opacity 300ms ease-in-out;
-      opacity: 1;
+    &:last-child {
+      margin-right: 0;
+    }
 
-      &:last-child {
-        margin-right: 0;
-      }
-
-      .screen-md({
-        margin-right: 28px;
-      });
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      .screen-sm({
-        display: block;
-        margin-bottom: 24px;
-      });
+    &:hover {
+      opacity: 0.7;
     }
   }
-
-  &__social {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    a {
-      text-decoration: none;
-      display: block;
-      margin-right: 24px;
-      transition: opacity 300ms ease-in-out;
-      opacity: 1;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
+}
 }
 </style>
