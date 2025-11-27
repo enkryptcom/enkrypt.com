@@ -19,6 +19,12 @@
             >
               Media Kit
             </a>
+            <a
+              href="https://www.myetherwallet.com/terms-of-service"
+              target="_blank"
+            >
+              Terms of Service
+            </a>
           </div>
 
           <div class="footer__social">
