@@ -66,17 +66,6 @@
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
-  <script>
-    (function () {
-      fetch('https://partners.mewapi.io/o/ipcomply').then((res) => {
-        return res.json();
-      }).then((data) => {
-        if (data.isRestricted) {
-          window.location.href = 'https://www.myetherwallet.com/blocked';
-        }
-      })
-    })();
-  </script>
 </body>
 
 </html>
